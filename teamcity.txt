@@ -7,11 +7,11 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='155' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='152' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='23' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='22' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_label_on_title_column' flowId='1']
 
@@ -23,7 +23,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column_with_error' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column_with_error' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_label_on_title_column_with_error' duration='8' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_label_on_title_column_with_error' duration='9' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest' flowId='1']
 
@@ -31,7 +31,7 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='10' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='9' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
@@ -55,11 +55,11 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='16' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='15' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_select' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_with_select' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_select' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_select' duration='8' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' flowId='1']
 
@@ -67,7 +67,7 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='8' flowId='1']
 
 ##teamcity[testStarted name='test_component_renders_empty_view_without_labels_or_classes' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_renders_empty_view_without_labels_or_classes' flowId='1']
 
@@ -83,7 +83,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_with_null_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_null_value' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_null_value' duration='8' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_null_value' duration='7' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest' flowId='1']
 
@@ -95,7 +95,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest::test_component_can_render_view' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view' duration='19' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view' duration='21' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest' flowId='1']
 
