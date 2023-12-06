@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2023-12-06 07:14:02</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>14</methodCount>
+    <crapMethodCount>0</crapMethodCount>
+    <crapLoad>0</crapLoad>
+    <totalCrap>31</totalCrap>
+    <crapMethodPercent>0</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>GammaMatrix\Playground\Blade</package>
+      <className>GammaMatrix\Playground\Blade\ServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade</package>
+      <className>GammaMatrix\Playground\Blade\ServiceProvider</className>
+      <methodName>about</methodName>
+      <methodSignature>about(): void</methodSignature>
+      <fullMethod>about(): void</fullMethod>
+      <crap>11</crap>
+      <complexity>11</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade</package>
+      <className>GammaMatrix\Playground\Blade\ServiceProvider</className>
+      <methodName>register</methodName>
+      <methodSignature>register(): void</methodSignature>
+      <fullMethod>register(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade</package>
+      <className>GammaMatrix\Playground\Blade\ServiceProvider</className>
+      <methodName>version</methodName>
+      <methodSignature>version(): string</methodSignature>
+      <fullMethod>version(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Forms</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Forms\Column</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, string $default, string $described, ?bool $disabled, string $errorMessage, string $label, string $pattern, bool|string $placeholder, ?bool $readonly, array $rules, ?int $step, string $type, bool $withoutMargin)</methodSignature>
+      <fullMethod>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, string $default, string $described, ?bool $disabled, string $errorMessage, string $label, string $pattern, bool|string $placeholder, ?bool $readonly, array $rules, ?int $step, string $type, bool $withoutMargin)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Forms</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Forms\Column</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Forms</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(bool $advanced, string $class, string $column, string $errorMessage, string $label, array $rules, bool $withoutMargin, string $described, ?bool $disabled, ?bool $readonly)</methodSignature>
+      <fullMethod>__construct(bool $advanced, string $class, string $column, string $errorMessage, string $label, array $rules, bool $withoutMargin, string $described, ?bool $disabled, ?bool $readonly)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Forms</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Forms</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, bool $default, string $described, ?bool $disabled, string $errorMessage, string $id, string $key, string $label, string $pattern, bool|string $placeholder, array $records, array $rules, string $step, ?bool $readonly, string $type, bool $withoutMargin)</methodSignature>
+      <fullMethod>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, bool $default, string $described, ?bool $disabled, string $errorMessage, string $id, string $key, string $label, string $pattern, bool|string $placeholder, array $records, array $rules, string $step, ?bool $readonly, string $type, bool $withoutMargin)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Forms</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\ModelFlag</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(array $columnMeta, mixed $value)</methodSignature>
+      <fullMethod>__construct(array $columnMeta, mixed $value)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\ModelFlag</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Table</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Table\Data</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?Illuminate\Pagination\LengthAwarePaginator $paginator)</methodSignature>
+      <fullMethod>__construct(string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?Illuminate\Pagination\LengthAwarePaginator $paginator)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>GammaMatrix\Playground\Blade\View\Components\Table</package>
+      <className>GammaMatrix\Playground\Blade\View\Components\Table\Data</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>
