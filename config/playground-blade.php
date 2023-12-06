@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'layout' => (string) env('PLAYGROUND_BLADE_LAYOUT', 'playground-blade::layouts.site'),
-    'view' => (string) env('PLAYGROUND_BLADE_VIEW', 'playground-blade::'),
+    'layout' => (string) env('PLAYGROUND_BLADE_LAYOUT', 'playground::layouts.site'),
+    'view' => (string) env('PLAYGROUND_BLADE_VIEW', 'playground::'),
     'load' => [
         'views' => (bool) env('PLAYGROUND_BLADE_LOAD_VIEWS', true),
     ],

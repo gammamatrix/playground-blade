@@ -6,6 +6,7 @@
         "gammamatrix",
         "laravel",
         "playground",
+        "playground",
         "playground-blade"
     ],
     "homepage": "https://github.com/gammamatrix/playground-blade/wiki",
@@ -58,6 +59,6 @@
     "scripts": {
         "test": "phpunit",
         "format": "php-cs-fixer fix --allow-risky=yes",
-        "analyse": "phpstan analyse"
+        "analyse": "phpstan analyse --level max src tests/Unit"
     }
 }

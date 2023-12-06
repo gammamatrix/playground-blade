@@ -7,8 +7,9 @@
 namespace GammaMatrix\Playground\Blade;
 
 use Illuminate\Foundation\Console\AboutCommand;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Str;
 
 /**
  * \GammaMatrix\Playground\Blade\ServiceProvider
@@ -23,16 +24,11 @@ class ServiceProvider extends AuthServiceProvider
     public function boot(): void
     {
         $config = config($this->package);
-
         if (!empty($config)) {
-            // $this->loadTranslationsFrom(
-            //     dirname(__DIR__) . '/lang',
-            //     'playground-blade'
-            // );
 
             $this->loadViewsFrom(
                 dirname(__DIR__) . '/resources/views',
-                'playground-blade'
+                'playground'
             );
 
             Blade::componentNamespace('GammaMatrix\\Playground\\Blade\\View\\Components', 'playground');
@@ -40,18 +36,17 @@ class ServiceProvider extends AuthServiceProvider
             if ($this->app->runningInConsole()) {
                 // Publish configuration
                 $this->publishes([
-                    dirname(__DIR__).'/config/playground-blade.php'
-                        => config_path('playground-blade.php')
+                    sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package))
                 ], 'playground-config');
 
                 // Publish JavaScript assets
                 $this->publishes([
-                    dirname(__DIR__).'/resources/js/playground-blade.js' => public_path('vendor/playground-blade.js'),
+                    sprintf('%1$s/resources/js/%2$s.js', dirname(__DIR__), $this->package) => public_path(sprintf('vendor/%1$s.js', $this->package)),
                 ], 'playground-js');
 
                 // Publish Blade Views
                 $this->publishes([
-                    dirname(__DIR__).'/resources/views' => resource_path('vendor/playground-blade'),
+                    dirname(__DIR__).'/resources/views' => resource_path(Str::of('vendor/'.$this->package)->beforeLast('-blade')),
                 ], 'playground-blade');
             }
 
@@ -89,8 +84,8 @@ class ServiceProvider extends AuthServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/config/playground-blade.php',
-            'playground-blade'
+            sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package),
+            $this->package
         );
     }
 
