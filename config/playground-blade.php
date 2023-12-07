@@ -86,11 +86,11 @@ return [
                 'version' => '5.3.2',
                 'always' => true,
             ],
-            'playground' => [
+            'playground-blade' => [
                 'type' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => '',
-                'src' => '/vendor/playground.js',
+                'src' => '/vendor/playground-blade.js',
                 'version' => '73.0.0',
                 'always' => true,
             ],
