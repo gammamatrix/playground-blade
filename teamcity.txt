@@ -19,7 +19,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_label_on_title_column' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_label_on_title_column' duration='10' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column_with_error' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column_with_error' flowId='1']
 
@@ -31,7 +31,7 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='11' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='9' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
@@ -79,7 +79,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_with_false_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_false_value' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_false_value' duration='8' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_false_value' duration='7' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_null_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_null_value' flowId='1']
 
