@@ -1,6 +1,9 @@
 <!doctype html>
 <?php
 
+/**
+ * @var array<string, mixed> $package_config
+ */
 $package_config = config('playground-blade');
 
 /**
@@ -98,12 +101,12 @@ $withVue = isset($withVue) && is_bool($withVue) ? $withVue : true;
 $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlayground : true;
 
 /**
- * @var array The view library asset information.
+ * @var array<string, array<string, mixed>> $libs The view library asset information.
  */
 $libs = !empty($package_config['libs']) && is_array($package_config['libs']) ? $package_config['libs'] : [];
 
 /**
- * @var array The order matters for the rendering of scripts.
+ * @var array<string> The order matters for the rendering of scripts.
  */
 $scriptListHead = [];
 $scriptListBody = [];
@@ -133,15 +136,15 @@ if ($withScripts) {
     }
 
     if (!empty($libs['head']) && is_array($libs['head'])) {
-        foreach ($libs['head'] as $key => $meta) {
-            if (!empty($meta['always']) && !in_array($key, $scriptListHead)) {
+        foreach ($libs['head'] as $key => $libs_head_meta) {
+            if (is_array($libs_head_meta) && !empty($libs_head_meta['always']) && !in_array($key, $scriptListHead)) {
                 $scriptListHead[] = $key;
             }
         }
     }
     if (!empty($libs['body']) && is_array($libs['body'])) {
-        foreach ($libs['body'] as $key => $meta) {
-            if (!empty($meta['always']) && !in_array($key, $scriptListBody)) {
+        foreach ($libs['body'] as $key => $libs_body_meta) {
+            if (is_array($libs_body_meta) && !empty($libs_body_meta['always']) && !in_array($key, $scriptListBody)) {
                 $scriptListBody[] = $key;
             }
         }

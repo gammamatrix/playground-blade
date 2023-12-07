@@ -1,29 +1,26 @@
 <?php
-// $label = isset($label) && is_string($label) ? $label : '';
-// $column = isset($column) && is_string($column) ? $column : '';
+$label = isset($label) && is_string($label) ? $label : '';
+$column = isset($column) && is_string($column) ? $column : '';
 $oldValue = old($column);
 $hasRules = isset($rules) && is_array($rules) && !empty($rules);
-$hasError = $errors->get($column);
+
+/**
+ * @var bool|string $disabled
+ */
+$disabled = isset($disabled) && $disabled ? 'disabled' : '';
+
+/**
+ * @var bool|string $readonly
+ */
+$readonly = isset($readonly) && $readonly ? 'readonly' : '';
 
 $advanced = isset($advanced) && $advanced ? 'form-advanced' : '';
-// $klass = isset($klass) && is_string($klass) ? $klass : '';
+$klass = isset($klass) && is_string($klass) ? $klass : '';
 $withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
 
 $maxlength = $hasRules && isset($rules['maxlength']) && is_numeric($rules['maxlength']) && $rules['maxlength'] > 0 ? sprintf('maxlength="%1$d" ', $rules['maxlength']) : '';
 
 $required = $hasRules && isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
-
-if (is_bool($disabled) && $disabled) {
-    $disabled = 'disabled';
-} else {
-    $disabled = '';
-}
-
-if (is_bool($readonly) && $readonly) {
-    $readonly = 'readonly';
-} else {
-    $readonly = '';
-}
 
 $attributes = trim(implode(' ', array_filter([$readonly, $disabled, $maxlength, $required, sprintf('id="form-input-%1$s"', $column), sprintf('name="%1$s"', $column), sprintf('class="%1$s"', implode(' ', ['form-control'])), sprintf('aria-label="%1$s"', $label), sprintf('aria-describedby="form-input-%1$s"', $column)])));
 

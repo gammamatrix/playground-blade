@@ -1,13 +1,13 @@
 <?php
-// $default = isset($default) ? $default : null;
-// $type = isset($type) && is_string($type) ? $type : 'text';
-// $label = isset($label) && is_string($label) ? $label : '';
-// $column = isset($column) && is_string($column) ? $column : '';
+$default = isset($default) ? $default : null;
+$type = isset($type) && is_string($type) ? $type : 'text';
+$label = isset($label) && is_string($label) ? $label : '';
+$column = isset($column) && is_string($column) ? $column : '';
 $oldValue = old($column);
 $hasRules = isset($rules) && is_array($rules) && !empty($rules);
 $withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
 
-if ('datetime-local' === $type && $oldValue) {
+if ('datetime-local' === $type && $oldValue && (is_string($oldValue) || $oldValue instanceof DateTimeInterface)) {
     $oldValue = Carbon\Carbon::parse($oldValue)->format('Y-m-d\TH:i:s');
 }
 // dump([
@@ -26,13 +26,11 @@ $step = !empty($step) && is_numeric($step) && in_array($type, ['number']) ? $ste
 $advanced = isset($advanced) && $advanced ? 'form-advanced' : '';
 // $class = isset($class) && is_string($class) ? $class : '';
 
-// $described = isset($described) && is_string($described) ? $described : '';
+$described = isset($described) && is_string($described) ? $described : '';
 // $pattern = isset($pattern) && is_string($pattern) ? $pattern : '';
 // $errorMessage = isset($errorMessage) && is_string($errorMessage) ? $errorMessage : '';
-// $placeholder = isset($placeholder) && (is_string($placeholder) || is_bool($placeholder)) ? $placeholder : false;
-// $autocomplete = isset($autocomplete) && is_bool($autocomplete) ? $autocomplete : null;
-// $disabled = isset($disabled) && is_bool($disabled) ? $disabled : null;
-// $readonly = isset($readonly) && is_bool($readonly) ? $readonly : null;
+$placeholder = isset($placeholder) && (is_string($placeholder) || is_bool($placeholder)) ? $placeholder : false;
+$autocomplete = isset($autocomplete) && is_bool($autocomplete) ? $autocomplete : null;
 
 if (is_bool($autocomplete)) {
     $autocomplete = sprintf('autocomplete="%1$s" ', $autocomplete ? 'on' : 'off');
@@ -40,17 +38,15 @@ if (is_bool($autocomplete)) {
     $autocomplete = '';
 }
 
-if (is_bool($disabled) && $disabled) {
-    $disabled = 'disabled';
-} else {
-    $disabled = '';
-}
+/**
+ * @var bool|string $disabled
+ */
+$disabled = isset($disabled) && $disabled ? 'disabled' : '';
 
-if (is_bool($readonly) && $readonly) {
-    $readonly = 'readonly';
-} else {
-    $readonly = '';
-}
+/**
+ * @var bool|string $readonly
+ */
+$readonly = isset($readonly) && $readonly ? 'readonly' : '';
 
 if (is_string($placeholder)) {
     $placeholder = sprintf('placeholder="%1$s" ', $placeholder);
@@ -88,7 +84,11 @@ if (!is_null($step)) {
     $step = '';
 }
 
-$hasError = $errors->get($column);
+/**
+ * @var ?\Illuminate\Support\ViewErrorBag
+ */
+$errors = $errors ?? null;
+$hasError = $errors && $errors->get($column);
 
 // if (!empty($describedby) && !empty($described)) {
 //     $describedby = sprintf('aria-describedby="%1$s" ', $describedby);
@@ -151,7 +151,7 @@ $attributes = trim(
 ?>
 <div class="{{ trim(sprintf('%s %s %s', $withoutMargin, $advanced, $class)) }}">
     @if (!empty($label))
-    <label for="form-input-{{ $column }}" class="form-label">{{ __($label) }}</label>
+        <label for="form-input-{{ $column }}" class="form-label">{{ __($label) }}</label>
     @endif
     @if (empty($column))
         <div class="alert alert-danger">Expecting a column for the form input.</div>

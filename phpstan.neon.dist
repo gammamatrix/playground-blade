@@ -1,0 +1,17 @@
+includes:
+    - ./vendor/tomasvotruba/bladestan/config/extension.neon
+
+parameters:
+    level: 9
+
+    paths:
+        - config
+        - src
+        - tests
+        - resources/views
+
+    excludePaths:
+        - 'tests/logs/*'
+        - 'output/*'
+
+    treatPhpDocTypesAsCertain: false

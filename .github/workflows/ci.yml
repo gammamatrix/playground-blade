@@ -116,7 +116,9 @@ jobs:
       with:
         level: 9
         php_version: "8.2"
-        path: src/ tests/Unit/
+        error_format: blade
+        path: config/ resources/views/ src/ tests/Unit/
+        args: --verbose --debug
     - name: Stopping timer
       if: ${{ !cancelled() }}
       id: timer_end
