@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="70" lines-valid="70" branches-covered="0" branches-valid="0" complexity="31" version="0.4" timestamp="1701849207">
+<coverage line-rate="1" branch-rate="0" lines-covered="69" lines-valid="69" branches-covered="0" branches-valid="0" complexity="31" version="0.4" timestamp="1701989111">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -11,15 +11,17 @@
           <methods>
             <method name="boot" signature="" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="25" hits="19"/>
+                <line number="26" hits="19"/>
                 <line number="27" hits="19"/>
-                <line number="33" hits="19"/>
+                <line number="29" hits="19"/>
+                <line number="30" hits="19"/>
+                <line number="31" hits="19"/>
+                <line number="32" hits="19"/>
                 <line number="34" hits="19"/>
-                <line number="35" hits="19"/>
                 <line number="36" hits="19"/>
                 <line number="38" hits="19"/>
+                <line number="39" hits="19"/>
                 <line number="40" hits="19"/>
-                <line number="42" hits="19"/>
                 <line number="43" hits="19"/>
                 <line number="44" hits="19"/>
                 <line number="45" hits="19"/>
@@ -27,55 +29,54 @@
                 <line number="49" hits="19"/>
                 <line number="50" hits="19"/>
                 <line number="53" hits="19"/>
-                <line number="54" hits="19"/>
-                <line number="55" hits="19"/>
-                <line number="58" hits="19"/>
               </lines>
             </method>
             <method name="about" signature="" line-rate="1" branch-rate="0" complexity="11">
               <lines>
+                <line number="59" hits="19"/>
+                <line number="60" hits="19"/>
+                <line number="62" hits="19"/>
                 <line number="64" hits="19"/>
                 <line number="65" hits="19"/>
-                <line number="67" hits="19"/>
-                <line number="69" hits="19"/>
+                <line number="66" hits="19"/>
+                <line number="68" hits="19"/>
                 <line number="70" hits="19"/>
                 <line number="71" hits="19"/>
                 <line number="73" hits="19"/>
-                <line number="75" hits="19"/>
+                <line number="74" hits="19"/>
                 <line number="76" hits="19"/>
-                <line number="78" hits="19"/>
+                <line number="77" hits="19"/>
                 <line number="79" hits="19"/>
+                <line number="80" hits="19"/>
                 <line number="81" hits="19"/>
-                <line number="82" hits="19"/>
-                <line number="84" hits="19"/>
-                <line number="85" hits="19"/>
-                <line number="86" hits="19"/>
               </lines>
             </method>
             <method name="register" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="91" hits="19"/>
-                <line number="92" hits="19"/>
-                <line number="93" hits="19"/>
-                <line number="94" hits="19"/>
+                <line number="86" hits="19"/>
+                <line number="87" hits="19"/>
+                <line number="88" hits="19"/>
+                <line number="89" hits="19"/>
               </lines>
             </method>
             <method name="version" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="99" hits="19"/>
+                <line number="94" hits="19"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="25" hits="19"/>
+            <line number="26" hits="19"/>
             <line number="27" hits="19"/>
-            <line number="33" hits="19"/>
+            <line number="29" hits="19"/>
+            <line number="30" hits="19"/>
+            <line number="31" hits="19"/>
+            <line number="32" hits="19"/>
             <line number="34" hits="19"/>
-            <line number="35" hits="19"/>
             <line number="36" hits="19"/>
             <line number="38" hits="19"/>
+            <line number="39" hits="19"/>
             <line number="40" hits="19"/>
-            <line number="42" hits="19"/>
             <line number="43" hits="19"/>
             <line number="44" hits="19"/>
             <line number="45" hits="19"/>
@@ -83,30 +84,27 @@
             <line number="49" hits="19"/>
             <line number="50" hits="19"/>
             <line number="53" hits="19"/>
-            <line number="54" hits="19"/>
-            <line number="55" hits="19"/>
-            <line number="58" hits="19"/>
+            <line number="59" hits="19"/>
+            <line number="60" hits="19"/>
+            <line number="62" hits="19"/>
             <line number="64" hits="19"/>
             <line number="65" hits="19"/>
-            <line number="67" hits="19"/>
-            <line number="69" hits="19"/>
+            <line number="66" hits="19"/>
+            <line number="68" hits="19"/>
             <line number="70" hits="19"/>
             <line number="71" hits="19"/>
             <line number="73" hits="19"/>
-            <line number="75" hits="19"/>
+            <line number="74" hits="19"/>
             <line number="76" hits="19"/>
-            <line number="78" hits="19"/>
+            <line number="77" hits="19"/>
             <line number="79" hits="19"/>
+            <line number="80" hits="19"/>
             <line number="81" hits="19"/>
-            <line number="82" hits="19"/>
-            <line number="84" hits="19"/>
-            <line number="85" hits="19"/>
             <line number="86" hits="19"/>
-            <line number="91" hits="19"/>
-            <line number="92" hits="19"/>
-            <line number="93" hits="19"/>
+            <line number="87" hits="19"/>
+            <line number="88" hits="19"/>
+            <line number="89" hits="19"/>
             <line number="94" hits="19"/>
-            <line number="99" hits="19"/>
           </lines>
         </class>
       </classes>
