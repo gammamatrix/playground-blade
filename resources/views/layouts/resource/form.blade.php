@@ -7,7 +7,17 @@
  *
  */
 
+/**
+ * @var array<string, mixed> $package_config
+ */
 $package_config = config('playground-blade');
+
+/**
+ * @var ?\Illuminate\Database\Eloquent\Model $data
+ */
+$data = empty($data) ? null : $data;
+
+$meta = empty($meta) || !is_array($meta) ? [] : $meta;
 
 /**
  * @var boolean|string $withFormInfo
@@ -64,12 +74,24 @@ $withFormIntroduction = isset($withFormIntroduction) && is_bool($withFormIntrodu
  */
 $withFormSummary = isset($withFormSummary) && is_bool($withFormSummary) ? $withFormSummary : true;
 
+/**
+ * @var boolean $hasMetaInfo
+ */
+$hasMetaInfo = !empty($meta['info']) && is_array($meta['info']) && !empty($meta['info']['model_attribute']) && is_string($meta['info']['model_attribute']);
+
+abort_if(!empty($hasMetaInfo) && !empty($data), 500, 'Expection meta and data info for resources/views/layouts/resource/form.blade.php');
+
+/**
+ * @var string $model_attribute
+ */
+$model_attribute = $hasMetaInfo && $data && is_string($data->getAttributeValue($meta['info']['model_attribute'])) ? $data->getAttributeValue($meta['info']['model_attribute']) : '';
+
 $formTitle = '';
 $_methodUrl = '';
 $_method = empty($_method) ? '' : $_method;
 if ('patch' === $_method) {
-    $formTitle = sprintf('Editing: %1$s', $data[$meta['info']['model_attribute']]);
-    $_methodUrl = route(sprintf('%1$s.patch', $meta['info']['model_route']), $data->id);
+    $formTitle = sprintf('Editing: %1$s', $model_attribute);
+    $_methodUrl = route(sprintf('%1$s.patch', $meta['info']['model_route']), $data?->getAttributeValue('id'));
 } elseif ('post' === $_method) {
     $formTitle = sprintf('Create a %1$s', $meta['info']['model_label']);
     $_methodUrl = route(sprintf('%1$s.post', $meta['info']['model_route']));

@@ -8,13 +8,13 @@
  */
 
 $currentAccessToken = false;
-$user = Auth::user();
-if ($user && class_implements($user, \Laravel\Sanctum\Contracts\HasApiTokens::class)) {
+$user = \Illuminate\Support\Facades\Auth::user();
+if (config('playground.auth.sanctum') && $user && is_callable([$user, 'currentAccessToken'])) {
     $currentAccessToken = $user->currentAccessToken();
 }
 
 /**
- * @var array $columns The columns in the table, keyed by slug.
+ * @var array<string, array<string, mixed>> $columns The columns in the table, keyed by slug.
  */
 $columns = isset($columns) && is_array($columns) ? $columns : [];
 
@@ -39,7 +39,10 @@ $perPage = $paginator->perPage();
 // $routeDeleteRelationship = isset($routeDeleteRelationship) ? (string) $routeDeleteRelationship : '';
 // $routeDeleteRelationshipId = isset($routeDeleteRelationshipId) ? (string) $routeDeleteRelationshipId : '';
 // $collapsible = isset($collapsible) ? (boolean) $collapsible : false;
-$returnUrl = empty($returnUrl) ? url()->full() : $returnUrl;
+if (empty($returnUrl)) {
+    $url = url();
+    $returnUrl = $url instanceof \Illuminate\Routing\UrlGenerator ? $url->full() : '';
+}
 // $filters = isset($filters) ? $filters : null;
 // $validated = isset($validated) ? $validated : null;
 // $input = isset($input) ? $input : null;

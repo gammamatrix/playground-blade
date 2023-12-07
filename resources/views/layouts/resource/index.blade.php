@@ -9,6 +9,8 @@
 
 $package_config = config('playground-blade');
 
+$meta = empty($meta) || !is_array($meta) ? [] : $meta;
+
 /**
  * @var boolean $withCreate
  */
@@ -17,8 +19,8 @@ $withCreate = isset($withCreate) && is_bool($withCreate) ? $withCreate : true;
 $withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
 
 $currentAccessToken = false;
-$user = Auth::user();
-if ($user && class_implements($user, \Laravel\Sanctum\Contracts\HasApiTokens::class)) {
+$user = \Illuminate\Support\Facades\Auth::user();
+if (config('playground.auth.sanctum') && $user && is_callable([$user, 'currentAccessToken'])) {
     $currentAccessToken = $user->currentAccessToken();
     $withCreate = $withCreate && $currentAccessToken && ($currentAccessToken->can($withPrivilege . ':create') || $currentAccessToken->can($withPrivilege . ':*'));
 }
@@ -34,7 +36,7 @@ $withTable = isset($withTable) && is_bool($withTable) ? $withTable : true;
 $withTable = isset($withTable) && (is_bool($withTable) || is_string($withTable)) ? $withTable : true;
 
 /**
- * @var array $withTableColumns
+ * @var array<string, array<string, mixed>> $withTableColumns
  */
 $withTableColumns = isset($withTableColumns) && is_array($withTableColumns) && !empty($withTableColumns) ? $withTableColumns : [];
 
@@ -94,16 +96,16 @@ if ($withTable) {
         'columns' => $withTableColumns,
         'id' => sprintf('%1$s-index', $meta['info']['model_slug']),
         'collapsible' => true,
-        'sort' => $sort,
-        'filters' => $filters,
-        'validated' => $validated,
+        'sort' => $sort ?? [],
+        'filters' => $filters ?? [],
+        'validated' => $validated ?? [],
         'modelActions' => true,
         'routeParameter' => $meta['info']['model_slug'],
         'routeParameterKey' => 'id',
         'routeEdit' => sprintf('%1$s.edit', $meta['info']['model_route']),
         'routeDelete' => sprintf('%1$s.destroy', $meta['info']['model_route']),
         'routeRestore' => sprintf('%1$s.restore', $meta['info']['model_route']),
-        'paginator' => $paginator,
+        'paginator' => $paginator ?? null,
         'privilege' => $withPrivilege,
         'styling' => [
             'header' => [

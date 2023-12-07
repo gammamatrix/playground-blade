@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'layout' => (string) env('PLAYGROUND_BLADE_LAYOUT', 'playground-blade::layouts.site'),
-    'view' => (string) env('PLAYGROUND_BLADE_VIEW', 'playground-blade::'),
+    'layout' => env('PLAYGROUND_BLADE_LAYOUT', 'playground::layouts.site'),
+    'view' => env('PLAYGROUND_BLADE_VIEW', 'playground::'),
     'load' => [
         'views' => (bool) env('PLAYGROUND_BLADE_LOAD_VIEWS', true),
     ],
@@ -86,11 +86,11 @@ return [
                 'version' => '5.3.2',
                 'always' => true,
             ],
-            'playground' => [
+            'playground-blade' => [
                 'type' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => '',
-                'src' => '/vendor/playground.js',
+                'src' => '/vendor/playground-blade.js',
                 'version' => '73.0.0',
                 'always' => true,
             ],

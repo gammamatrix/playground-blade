@@ -1,7 +1,7 @@
 <?php
-// $label = isset($label) && is_string($label) ? $label : '';
-// $column = isset($column) && is_string($column) ? $column : '';
-// $default = isset($default) && is_bool($default) && $default;
+$label = isset($label) && is_string($label) ? $label : '';
+$column = isset($column) && is_string($column) ? $column : '';
+$default = isset($default) && is_bool($default) && $default;
 // $records = isset($records) ? $records : [];
 // $id = isset($id) && is_string($id) && !empty($id) ? $id : 'id';
 // $key = isset($key) && is_string($key) && !empty($key) ? $key : 'label';
@@ -9,11 +9,18 @@ $oldValue = old($column);
 $withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
 // $class = isset($class) && is_string($class) ? $class : '';
 // $errorMessage = isset($errorMessage) && is_string($errorMessage) ? $errorMessage : '';
-// $disabled = isset($disabled) && is_bool($disabled) ? $disabled : null;
-// $readonly = isset($readonly) && is_bool($readonly) ? $readonly : null;
+
+/**
+ * @var bool|string $disabled
+ */
+$disabled = isset($disabled) && $disabled ? 'disabled' : '';
+
+/**
+ * @var bool|string $readonly
+ */
+$readonly = isset($readonly) && $readonly ? 'readonly' : '';
 
 $hasRules = isset($rules) && is_array($rules) && !empty($rules);
-$hasError = $errors->get($column);
 
 $required = $hasRules && isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
 
