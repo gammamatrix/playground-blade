@@ -1,7 +1,7 @@
 # Playground Blade
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-blade/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/testdox.txt)
-[![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-auth/testing/develop/coverage.svg)](tests)
+[![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/coverage.svg)](tests)
 [![PHPStan Level 9 src and tests](https://img.shields.io/badge/PHPStan-level%209-brightgreen)](.github/workflows/ci.yml#L115)
 
 The Playground Blade package for [Laravel](https://laravel.com/docs/10.x) applications.
@@ -40,6 +40,12 @@ php artisan vendor:publish --provider="GammaMatrix\Playground\Blade\ServiceProvi
 |-------------------------------|-------------------------------|
 | `PLAYGROUND_BLADE_LOAD_VIEWS` | `playground-blade.load.views` |
 
+### UI
+
+| env()                     | config()                  |
+|---------------------------|---------------------------|
+| `PLAYGROUND_BLADE_LAYOUT` | `playground-blade.layout` |
+| `PLAYGROUND_BLADE_VIEW`   | `playground-blade.view`   |
 
 ## Testing
 
@@ -47,11 +53,23 @@ php artisan vendor:publish --provider="GammaMatrix\Playground\Blade\ServiceProvi
 composer test
 ```
 
+## PHPStan
+
+Tests at level 9 on:
+- `config/`
+- `resources/views/`
+- `src/`
+- `tests/Unit/`
+
+```sh
+composer analyse
+```
+
 ## About
 
 Playground Blade provides information in the `artisan about` command.
 
-<!-- <img src="resources/docs/artisan-about-playground-blade.png" alt="screenshot of artisan about command with Playground Blade."> -->
+<img src="resources/docs/artisan-about-playground-blade.png" alt="screenshot of artisan about command with Playground Blade.">
 
 ## Changelog
 
