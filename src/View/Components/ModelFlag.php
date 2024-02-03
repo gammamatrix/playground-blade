@@ -1,18 +1,15 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Blade\View\Components;
+namespace Playground\Blade\View\Components;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 /**
- * \GammaMatrix\Playground\Blade\View\Components\ModelFlag
- *
+ * \Playground\Blade\View\Components\ModelFlag
  */
 class ModelFlag extends Component
 {
@@ -28,6 +25,7 @@ class ModelFlag extends Component
     public function render(): Factory|View
     {
         $prefix = config('playground-blade.view');
+
         return view(sprintf(
             '%1$scomponents.model.flag',
             is_string($prefix) ? $prefix : ''

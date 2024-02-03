@@ -1,18 +1,15 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Blade\View\Components\Forms;
+namespace Playground\Blade\View\Components\Forms;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 /**
- * \GammaMatrix\Playground\Blade\View\Components\Forms\Column
- *
+ * \Playground\Blade\View\Components\Forms\Column
  */
 class Column extends Component
 {
@@ -36,6 +33,7 @@ class Column extends Component
          * - int $rules[maxlength] - Limit the number of characters in the content.
          * - ?int $rules[max] - Require a maximum value.
          * - ?int $rules[min] - Require a minumum value.
+         *
          * @var array<string, mixed> $rules
          */
         public array $rules = [],
@@ -48,6 +46,7 @@ class Column extends Component
     public function render(): Factory|View
     {
         $prefix = config('playground-blade.view');
+
         return view(sprintf(
             '%1$scomponents.forms.column',
             is_string($prefix) ? $prefix : ''
