@@ -1,102 +1,114 @@
 
-##teamcity[testCount count='19' flowId='1']
+##teamcity[testCount count='20' flowId='1']
 
 ##teamcity[testSuiteStarted name='Unit' flowId='1']
 
-##teamcity[testSuiteStarted name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest' flowId='1']
 
-##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_instance' flowId='1']
+##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_instance' flowId='1']
 
 ##teamcity[testFinished name='test_component_instance' duration='152' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
 ##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='23' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_without_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_label_on_title_column' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_without_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_label_on_title_column' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_label_on_title_column' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_label_on_title_column' duration='8' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column' flowId='1']
 
 ##teamcity[testFinished name='test_component_can_render_view_with_label_on_title_column' duration='10' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column_with_error' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column_with_error' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column_with_error' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column_with_error' flowId='1']
 
 ##teamcity[testFinished name='test_component_can_render_view_with_label_on_title_column_with_error' duration='9' flowId='1']
 
-##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\ComponentTest' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest' flowId='1']
 
-##teamcity[testSuiteStarted name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest' flowId='1']
 
-##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_instance' flowId='1']
+##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_instance' flowId='1']
 
 ##teamcity[testFinished name='test_component_instance' duration='10' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='12' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='11' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_content_textarea' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_with_content_textarea' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_content_textarea' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_with_content_textarea' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_content_textarea' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_content_textarea' duration='8' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_content_textarea_and_described' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_with_content_textarea_and_described' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_content_textarea_and_described' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_with_content_textarea_and_described' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_content_textarea_and_described' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_content_textarea_and_described' duration='8' flowId='1']
 
-##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest' flowId='1']
 
-##teamcity[testSuiteStarted name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' flowId='1']
 
-##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_instance' flowId='1']
+##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='12' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='11' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='17' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='16' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_select' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_with_select' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_select' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_with_select' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_select' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_select' duration='8' flowId='1']
 
-##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' flowId='1']
 
-##teamcity[testSuiteStarted name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest' flowId='1']
 
-##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_instance' flowId='1']
+##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_instance' flowId='1']
 
 ##teamcity[testFinished name='test_component_instance' duration='8' flowId='1']
 
-##teamcity[testStarted name='test_component_renders_empty_view_without_labels_or_classes' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_renders_empty_view_without_labels_or_classes' flowId='1']
+##teamcity[testStarted name='test_component_renders_empty_view_without_labels_or_classes' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_renders_empty_view_without_labels_or_classes' flowId='1']
 
-##teamcity[testFinished name='test_component_renders_empty_view_without_labels_or_classes' duration='10' flowId='1']
+##teamcity[testFinished name='test_component_renders_empty_view_without_labels_or_classes' duration='11' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_true_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_true_value' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_true_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_true_value' flowId='1']
 
 ##teamcity[testFinished name='test_component_can_render_view_with_true_value' duration='8' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_false_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_false_value' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_false_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_false_value' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_false_value' duration='8' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_false_value' duration='9' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view_with_null_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_null_value' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view_with_null_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_null_value' flowId='1']
 
 ##teamcity[testFinished name='test_component_can_render_view_with_null_value' duration='8' flowId='1']
 
-##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest' flowId='1']
 
-##teamcity[testSuiteStarted name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest' flowId='1']
 
-##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest::test_component_instance' flowId='1']
+##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest::test_component_instance' flowId='1']
 
 ##teamcity[testFinished name='test_component_instance' duration='14' flowId='1']
 
-##teamcity[testStarted name='test_component_can_render_view' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest::test_component_can_render_view' flowId='1']
+##teamcity[testStarted name='test_component_can_render_view' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest::test_component_can_render_view' flowId='1']
 
 ##teamcity[testFinished name='test_component_can_render_view' duration='19' flowId='1']
 
-##teamcity[testSuiteFinished name='Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\ComponentTest' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest' flowId='1']
 
 ##teamcity[testSuiteFinished name='Unit' flowId='1']
+
+##teamcity[testSuiteStarted name='Feature' flowId='1']
+
+##teamcity[testSuiteStarted name='Tests\Feature\Playground\Blade\Console\Commands\About\CommandTest' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Blade\Console\Commands\About\CommandTest' flowId='1']
+
+##teamcity[testStarted name='test_command_about_displays_package_information_and_succeed_with_code_0' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Blade\Console\Commands\About\CommandTest::test_command_about_displays_package_information_and_succeed_with_code_0' flowId='1']
+
+##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='109' flowId='1']
+
+##teamcity[testSuiteFinished name='Tests\Feature\Playground\Blade\Console\Commands\About\CommandTest' flowId='1']
+
+##teamcity[testSuiteFinished name='Feature' flowId='1']

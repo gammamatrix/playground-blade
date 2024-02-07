@@ -1,29 +1,32 @@
-Component (Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnEditor\Component)
+Command (Tests\Feature\Playground\Blade\Console\Commands\About\Command)
+ [x] Command about displays package information and succeed with code 0
+
+Component (Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\Component)
  [x] Component instance
  [x] Component can render view without parameters
  [x] Component can render view with content textarea
  [x] Component can render view with content textarea and described
 
-Component (Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect\Component)
+Component (Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\Component)
  [x] Component instance
  [x] Component can render view without parameters
  [x] Component can render view with select
 
-Component (Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Forms\Column\Component)
+Component (Tests\Unit\Playground\Blade\View\Components\Forms\Column\Component)
  [x] Component instance
  [x] Component can render view without parameters
  [x] Component can render view without label on title column
  [x] Component can render view with label on title column
  [x] Component can render view with label on title column with error
 
-Component (Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\Component)
+Component (Tests\Unit\Playground\Blade\View\Components\ModelFlag\Component)
  [x] Component instance
  [x] Component renders empty view without labels or classes
  [x] Component can render view with true value
  [x] Component can render view with false value
  [x] Component can render view with null value
 
-Component (Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data\Component)
+Component (Tests\Unit\Playground\Blade\View\Components\Table\Data\Component)
  [x] Component instance
  [x] Component can render view
 
