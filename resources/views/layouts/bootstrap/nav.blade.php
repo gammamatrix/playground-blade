@@ -65,8 +65,8 @@
                                 </li>
                             @endif
                         @endguest
-                        @if (Route::has('theme') && is_array(config('playground.themes')))
-                            @foreach (config('playground.themes') as $theme)
+                        @if (Route::has('theme') && is_array(config('playground-blade.themes')))
+                            @foreach (config('playground-blade.themes') as $theme)
                                 @continue(empty($theme['enable']) || empty($theme['label']))
                                 <li>
                                     <a class="dropdown-item"

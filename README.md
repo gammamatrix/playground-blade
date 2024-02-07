@@ -22,14 +22,14 @@ composer require gammamatrix/playground-blade
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="GammaMatrix\Playground\Blade\ServiceProvider" --tag="playground-config"
+php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-config"
 ```
 
 See the contents of the published config file: [config/playground-blade.php](config/playground-blade.php)
 
 You can publish the views file with:
 ```bash
-php artisan vendor:publish --provider="GammaMatrix\Playground\Blade\ServiceProvider" --tag="playground-view"
+php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-view"
 ```
 
 ### Environment Variables
@@ -71,7 +71,7 @@ Optionally, a page may load:
 
 If you are using the Playground Blade UI, you can publish the JS assets with:
 ```bash
-php artisan vendor:publish --provider="GammaMatrix\Playground\Blade\ServiceProvider" --tag="playground-js"
+php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-js"
 ```
 - These Javascript assets, [resources/js/playground-blade.js](resources/js/playground-blade.js), provide simple helpers for features such as Bootstrap Form Validation and loading CKEditor for textarea elements on forms.
 

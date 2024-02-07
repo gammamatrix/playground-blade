@@ -1,10 +1,8 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Blade;
+namespace Playground\Blade;
 
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
@@ -12,8 +10,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 
 /**
- * \GammaMatrix\Playground\Blade\ServiceProvider
- *
+ * \Playground\Blade\ServiceProvider
  */
 class ServiceProvider extends AuthServiceProvider
 {
@@ -24,19 +21,19 @@ class ServiceProvider extends AuthServiceProvider
     public function boot(): void
     {
         $config = config($this->package);
-        if (!empty($config)) {
+        if (! empty($config)) {
 
             $this->loadViewsFrom(
-                dirname(__DIR__) . '/resources/views',
+                dirname(__DIR__).'/resources/views',
                 'playground'
             );
 
-            Blade::componentNamespace('GammaMatrix\\Playground\\Blade\\View\\Components', 'playground');
+            Blade::componentNamespace('Playground\\Blade\\View\\Components', 'playground');
 
             if ($this->app->runningInConsole()) {
                 // Publish configuration
                 $this->publishes([
-                    sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package))
+                    sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package)),
                 ], 'playground-config');
 
                 // Publish JavaScript assets
@@ -59,16 +56,16 @@ class ServiceProvider extends AuthServiceProvider
         $config = config($this->package);
         $config = is_array($config) ? $config : [];
 
-        $load = !empty($config['load']) && is_array($config['load']) ? $config['load'] : [];
+        $load = ! empty($config['load']) && is_array($config['load']) ? $config['load'] : [];
 
-        $libs = !empty($config['libs']) && is_array($config['libs']) ? $config['libs'] : [];
-        $libs_head = !empty($libs['head']) && is_array($libs['head']) ? implode(', ', array_keys($libs['head'])) : '';
-        $libs_body = !empty($libs['body']) && is_array($libs['body']) ? implode(', ', array_keys($libs['body'])) : '';
+        $libs = ! empty($config['libs']) && is_array($config['libs']) ? $config['libs'] : [];
+        $libs_head = ! empty($libs['head']) && is_array($libs['head']) ? implode(', ', array_keys($libs['head'])) : '';
+        $libs_body = ! empty($libs['body']) && is_array($libs['body']) ? implode(', ', array_keys($libs['body'])) : '';
 
         $version = $this->version();
 
-        AboutCommand::add('Playground Blade', fn () => [
-            '<fg=yellow;options=bold>Load</> Views' => !empty($load['views']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
+        AboutCommand::add('Playground: Blade', fn () => [
+            '<fg=yellow;options=bold>Load</> Views' => ! empty($load['views']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
 
             '<fg=blue;options=bold>View</> [layout]' => sprintf('[%s]', $config['layout']),
             '<fg=blue;options=bold>View</> [prefix]' => sprintf('[%s]', $config['view']),

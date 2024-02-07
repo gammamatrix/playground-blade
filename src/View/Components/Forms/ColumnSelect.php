@@ -1,18 +1,15 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Blade\View\Components\Forms;
+namespace Playground\Blade\View\Components\Forms;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 /**
- * \GammaMatrix\Playground\Blade\View\Components\Forms\ColumnSelect
- *
+ * \Playground\Blade\View\Components\Forms\ColumnSelect
  */
 class ColumnSelect extends Component
 {
@@ -38,6 +35,7 @@ class ColumnSelect extends Component
          * Options for rules:
          *
          * - bool $rules[required] - Make the column required.
+         *
          * @var array<string, mixed> $rules
          */
         public array $rules = [],
@@ -51,6 +49,7 @@ class ColumnSelect extends Component
     public function render(): Factory|View
     {
         $prefix = config('playground-blade.view');
+
         return view(sprintf(
             '%1$scomponents.forms.column-select',
             is_string($prefix) ? $prefix : ''

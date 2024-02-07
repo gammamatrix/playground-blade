@@ -1,25 +1,20 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Blade\View\Components\ModelFlag;
 
-namespace Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag;
-
-use GammaMatrix\Playground\Blade\View\Components\ModelFlag;
-use Tests\Unit\GammaMatrix\Playground\Blade\TestCase;
 use Illuminate\Contracts\View\View;
+use Playground\Blade\View\Components\ModelFlag;
+use Tests\Unit\Playground\Blade\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Blade\View\Components\ModelFlag\ComponentTest
- *
+ * \Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest
  */
 class ComponentTest extends TestCase
 {
     /**
      * Setup the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {

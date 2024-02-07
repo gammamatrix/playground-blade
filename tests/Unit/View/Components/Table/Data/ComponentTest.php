@@ -1,25 +1,20 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Blade\View\Components\Table\Data;
 
-namespace Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\Data;
-
-use GammaMatrix\Playground\Blade\View\Components\Table\Data as DataTable;
-use Tests\Unit\GammaMatrix\Playground\Blade\TestCase;
 use Illuminate\Contracts\View\View;
+use Playground\Blade\View\Components\Table\Data as DataTable;
+use Tests\Unit\Playground\Blade\TestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Blade\View\Components\Table\ComponentTest
- *
+ * \Tests\Unit\Playground\Blade\View\Components\Table\ComponentTest
  */
 class ComponentTest extends TestCase
 {
     /**
      * Setup the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {

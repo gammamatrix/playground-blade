@@ -1,18 +1,15 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
+namespace Tests\Unit\Playground\Blade;
 
-namespace Tests\Unit\GammaMatrix\Playground\Blade;
-
-use GammaMatrix\Playground\Test\OrchestraTestCase;
-use GammaMatrix\Playground\Blade\ServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+use Playground\Blade\ServiceProvider;
+use Playground\Test\OrchestraTestCase;
 
 /**
- * \Tests\Unit\GammaMatrix\Playground\Blade\TestCase
- *
+ * \Tests\Unit\Playground\Blade\TestCase
  */
 class TestCase extends OrchestraTestCase
 {
@@ -37,7 +34,7 @@ class TestCase extends OrchestraTestCase
          */
         $config = $app['config'];
 
-        $config->set('auth.providers.users.model', 'GammaMatrix\\Playground\\Test\\Models\\User');
+        $config->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
         $config->set('playground.auth.verify', 'user');
     }
 }

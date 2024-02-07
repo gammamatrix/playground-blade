@@ -1,19 +1,16 @@
 <?php
 /**
- * GammaMatrix
- *
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Blade\View\Components\Table;
+namespace Playground\Blade\View\Components\Table;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\View\Component;
 
 /**
- * \GammaMatrix\Playground\Blade\View\Components\Table\Data
- *
+ * \Playground\Blade\View\Components\Table\Data
  */
 class Data extends Component
 {
@@ -90,6 +87,7 @@ class Data extends Component
     public function render(): Factory|View
     {
         $prefix = config('playground-blade.view');
+
         return view(sprintf(
             '%1$scomponents.table.data',
             is_string($prefix) ? $prefix : ''

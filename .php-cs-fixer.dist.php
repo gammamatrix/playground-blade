@@ -213,11 +213,9 @@ $rules_laravel = [
 
 $finder = PhpCsFixer\Finder::create()
     ->in([
-        __DIR__ . '/config',
-        __DIR__ . '/lang',
-        __DIR__ . '/src',
-        __DIR__ . '/tests/Feature',
-        __DIR__ . '/tests/Unit',
+        __DIR__.'/config',
+        __DIR__.'/src',
+        __DIR__.'/tests/Unit',
     ])
     ->name('*.php')
     ->notName('*.blade.php')
