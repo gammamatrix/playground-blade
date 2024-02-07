@@ -6,6 +6,26 @@ return [
     'load' => [
         'views' => (bool) env('PLAYGROUND_BLADE_LOAD_VIEWS', true),
     ],
+    'themes' => [
+        'default' => [
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DEFAULT_ENABLE', true),
+            'label' => 'Default Theme',
+            'key' => '',
+            'icon' => '',
+        ],
+        'dark' => [
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DARK_ENABLE', true),
+            'label' => 'Dark Theme',
+            'key' => 'dark',
+            'icon' => 'fa-solid fa-moon',
+        ],
+        'light' => [
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_LIGHT_ENABLE', true),
+            'label' => 'Light Theme',
+            'key' => 'light',
+            'icon' => 'fa-solid fa-sun',
+        ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Software library versions and integrity verification.
