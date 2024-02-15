@@ -79,7 +79,9 @@ $withFormSummary = isset($withFormSummary) && is_bool($withFormSummary) ? $withF
  */
 $hasMetaInfo = !empty($meta['info']) && is_array($meta['info']) && !empty($meta['info']['model_attribute']) && is_string($meta['info']['model_attribute']);
 
-abort_if(!empty($hasMetaInfo) && !empty($data), 500, 'Expection meta and data info for resources/views/layouts/resource/form.blade.php');
+if (empty($hasMetaInfo) && !empty($data)) {
+    throw new RuntimeException('Expection meta and data info for resources/views/layouts/resource/form.blade.php', 500);
+}
 
 /**
  * @var string $model_attribute
