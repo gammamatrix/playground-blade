@@ -1,4 +1,7 @@
 <?php
+if (empty($trashed)) {
+    $trashed = 'hide';
+}
 if (!empty($trashable) && !empty($validated) && !empty($validated['filter']) && !empty($validated['filter']['trash'])) {
     if ('with' === $validated['filter']['trash']) {
         $trashed = 'with';
