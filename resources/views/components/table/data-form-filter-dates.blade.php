@@ -26,7 +26,11 @@
                     <label class="input-group-text" for="form_filter_{{$column}}">
                         {{$meta_column['label']}}
                     </label>
+                    @if ($hasValidated && is_array($validated['filter'][$column]))
+                    <input type="text" class="form-control" aria-label="" id="form_filter_{{$column}}" name="filter[{{$column}}][value]" value="{{$hasValidated && !empty($validated['filter'][$column]['value'])? $validated['filter'][$column]['value'] : ''}}">
+                    @elseif ($hasValidated && is_string($validated['filter'][$column]))
                     <input type="text" class="form-control" aria-label="" id="form_filter_{{$column}}" name="filter[{{$column}}]" value="{{$hasValidated ? $validated['filter'][$column] : ''}}">
+                    @endif
                 </div>
             </div>
 
