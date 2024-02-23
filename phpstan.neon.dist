@@ -14,7 +14,6 @@ parameters:
         - resources/views
 
     excludePaths:
-        - 'tests/logs/*'
         - 'output/*'
 
     treatPhpDocTypesAsCertain: false
