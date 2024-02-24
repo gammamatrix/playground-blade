@@ -92,11 +92,11 @@
     if (empty($columnMeta['linkRoute'])) {
         $link = '';
     } elseif ($preferLinkSlug) {
-        $link = route($columnMeta['linkRoute'], ['slug' => $record['slug']]);
+        $link = empty($record['slug']) ? '' : route($columnMeta['linkRoute'], [$routeParameter => $record['slug']]);
     } elseif ($preferLinkId) {
-        $link = route($columnMeta['linkRoute'], [$routeParameter => $record[$routeParameterKey]]);
+        $link = empty($record[$routeParameterKey]) ? '' : route($columnMeta['linkRoute'], [$routeParameter => $record[$routeParameterKey]]);
     } elseif ($preferLinkGo) {
-        $link = route($columnMeta['linkRoute'], ['go' => $record[$routeParameterKey]]);
+        $link = empty($record[$routeParameterKey]) ? '' : route($columnMeta['linkRoute'], ['go' => $record[$routeParameterKey]]);
     } elseif ($isFk) {
         $link = empty($record[$column]) ? '' : route($columnMeta['linkRoute'], [$routeParameter => $record[$column]]);
     }

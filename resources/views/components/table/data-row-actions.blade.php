@@ -11,6 +11,9 @@
                 $withEdit = $routeEdit && ($currentAccessToken->can($privilege . ':edit') || $currentAccessToken->can($privilege . ':*'));
                 $withRestore = $routeRestore && ($currentAccessToken->can($privilege . ':restore') || $currentAccessToken->can($privilege . ':*'));
             }
+            if (! empty($record['deleted_at'])) {
+                $withDelete = false;
+            }
         @endphp
 
         @if ($withDelete && $routeDeleteRelationship && $routeDelete)
