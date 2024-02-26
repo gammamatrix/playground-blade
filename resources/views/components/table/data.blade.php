@@ -7,11 +7,31 @@
  * @component components/table
  */
 
-$currentAccessToken = false;
 $user = \Illuminate\Support\Facades\Auth::user();
-if (config('playground.auth.sanctum') && $user && is_callable([$user, 'currentAccessToken'])) {
-    $currentAccessToken = $user->currentAccessToken();
-}
+
+$meta = empty($meta) || !is_array($meta) ? [] : $meta;
+$withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
+
+$withRestore = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':restore',
+    'roles' => ['admin', 'manager'],
+])->allowed();
+
+$withDelete = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':delete',
+    'roles' => ['admin', 'manager'],
+])->allowed();
+
+$withEdit = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':edit',
+    'roles' => ['admin', 'manager'],
+])->allowed();
 
 /**
  * @var array<string, array<string, mixed>> $columns The columns in the table, keyed by slug.

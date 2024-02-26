@@ -26,23 +26,33 @@ $withParent = isset($withParent) && is_bool($withParent) ? $withParent : true;
 
 $parent = $withParent && $data && is_callable([$data, 'parent']) ? $data->parent()->first() : null;
 
-$withCreate = isset($withCreate) && is_bool($withCreate) ? $withCreate : true;
-$withDelete = isset($withDelete) && is_bool($withDelete) ? $withDelete : true;
-$withEdit = isset($withEdit) && is_bool($withEdit) ? $withEdit : true;
-
 $withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
 
 $routeDelete = !$data ? '' : route(sprintf('%1$s.destroy', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 $routeEdit = !$data ? '' : route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 
-$currentAccessToken = false;
 $user = \Illuminate\Support\Facades\Auth::user();
-if (config('playground.auth.sanctum') && $user && is_callable([$user, 'currentAccessToken'])) {
-    $currentAccessToken = $user->currentAccessToken();
-    $withCreate = $withCreate && $currentAccessToken && ($currentAccessToken->can($withPrivilege . ':create') || $currentAccessToken->can($withPrivilege . ':*'));
-    $withDelete = $withDelete && $currentAccessToken && ($currentAccessToken->can($withPrivilege . ':delete') || $currentAccessToken->can($withPrivilege . ':*'));
-    $withEdit = $withEdit && $currentAccessToken && ($currentAccessToken->can($withPrivilege . ':edit') || $currentAccessToken->can($withPrivilege . ':*'));
-}
+
+$withCreate = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':create',
+    'roles' => ['admin', 'manager'],
+])->allowed();
+
+$withDelete = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':delete',
+    'roles' => ['admin', 'manager'],
+])->allowed();
+
+$withEdit = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':edit',
+    'roles' => ['admin', 'manager'],
+])->allowed();
 
 /**
  * @var boolean|string $withInfo

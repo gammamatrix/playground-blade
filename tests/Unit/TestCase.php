@@ -5,7 +5,9 @@
 namespace Tests\Unit\Playground\Blade;
 
 use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+use Playground\Auth\ServiceProvider as PlaygroundAuthServiceProvider;
 use Playground\Blade\ServiceProvider;
+use Playground\ServiceProvider as PlaygroundServiceProvider;
 use Playground\Test\OrchestraTestCase;
 
 /**
@@ -18,6 +20,8 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
+            PlaygroundServiceProvider::class,
+            PlaygroundAuthServiceProvider::class,
             ServiceProvider::class,
         ];
     }
@@ -35,6 +39,6 @@ class TestCase extends OrchestraTestCase
         $config = $app['config'];
 
         $config->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
-        $config->set('playground.auth.verify', 'user');
+        // $config->set('playground.auth.verify', 'user');
     }
 }

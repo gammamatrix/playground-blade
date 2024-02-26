@@ -2,16 +2,7 @@
     <div class="text-nowrap" role="group" aria-label="{{ __('playground::pagination.row.actions.label') }}">
 
         @php
-            if (false === $currentAccessToken) {
-                $withDelete = !empty($routeDelete);
-                $withEdit = !empty($routeEdit);
-                $withRestore = !empty($routeRestore);
-            } elseif(is_object($currentAccessToken)) {
-                $withDelete = $routeDelete && ($currentAccessToken->can($privilege . ':delete') || $currentAccessToken->can($privilege . ':*'));
-                $withEdit = $routeEdit && ($currentAccessToken->can($privilege . ':edit') || $currentAccessToken->can($privilege . ':*'));
-                $withRestore = $routeRestore && ($currentAccessToken->can($privilege . ':restore') || $currentAccessToken->can($privilege . ':*'));
-            }
-            if (! empty($record['deleted_at'])) {
+            if (!empty($record['deleted_at'])) {
                 $withDelete = false;
             }
         @endphp
