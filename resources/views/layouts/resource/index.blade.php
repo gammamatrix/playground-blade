@@ -10,20 +10,16 @@
 $package_config = config('playground-blade');
 
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
+$withPrivilege = \Playground\Auth\Facades\Can::withPrivilege($meta);
 
-/**
- * @var boolean $withCreate
- */
-$withCreate = isset($withCreate) && is_bool($withCreate) ? $withCreate : true;
-
-$withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
-
-$currentAccessToken = false;
 $user = \Illuminate\Support\Facades\Auth::user();
-if (config('playground.auth.sanctum') && $user && is_callable([$user, 'currentAccessToken'])) {
-    $currentAccessToken = $user->currentAccessToken();
-    $withCreate = $withCreate && $currentAccessToken && ($currentAccessToken->can($withPrivilege . ':create') || $currentAccessToken->can($withPrivilege . ':*'));
-}
+
+$withCreate = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':create',
+    'roles' => ['admin', 'manager'],
+])->allowed();
 
 /**
  * @var boolean $withTable
