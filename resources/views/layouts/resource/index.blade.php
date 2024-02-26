@@ -10,8 +10,7 @@
 $package_config = config('playground-blade');
 
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
-
-$withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
+$withPrivilege = \Playground\Auth\Facades\Can::withPrivilege($meta);
 
 $user = \Illuminate\Support\Facades\Auth::user();
 

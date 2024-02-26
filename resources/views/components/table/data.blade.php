@@ -10,7 +10,7 @@
 $user = \Illuminate\Support\Facades\Auth::user();
 
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
-$withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
+$withPrivilege = \Playground\Auth\Facades\Can::withPrivilege($meta);
 
 $withRestore = \Playground\Auth\Facades\Can::access($user, [
     'allow' => false,
