@@ -75,6 +75,11 @@ php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="
 ```
 - These Javascript assets, [resources/js/playground-blade.js](resources/js/playground-blade.js), provide simple helpers for features such as Bootstrap Form Validation and loading CKEditor for textarea elements on forms.
 
+Publishes CSS
+```bash
+php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-css"
+```
+
 
 ## Testing
 

@@ -12,11 +12,36 @@ $package_config = config('playground-blade');
 $appName = isset($appName) && is_string($appName) && !empty($appName) ? $appName : config('app.name');
 
 /**
+ * @var \Playground\Blade\Themes\Theme|\Playground\Blade\Themes\Bootstrap
+ */
+$theme = Playground\Blade\Facades\Ui::theme();
+
+$bodyAssets = Playground\Blade\Facades\Ui::bodyAssets();
+$headAssets = Playground\Blade\Facades\Ui::headAssets();
+
+$ckTheme = $theme->editor();
+
+// dump([
+//     '__FILE__' => __FILE__,
+//     '$bodyAssets' => $bodyAssets,
+//     '$headAssets' => $headAssets,
+//     '$ckTheme' => $ckTheme,
+//     '$theme' => $theme,
+// ]);
+
+
+/**
  * @var string $appTheme The application theme.
  */
-$appTheme = isset($appTheme) && is_string($appTheme) && !empty($appTheme) ? $appTheme : session('appTheme');
+// $appTheme = isset($appTheme) && is_string($appTheme) && !empty($appTheme) ? $appTheme : session('appTheme');
+// $appTheme = is_string($appTheme) ? trim($appTheme) : '';
+// $ckTheme = $appTheme;
+// if (str_contains($appTheme, ' ')) {
+//     $appTheme = Illuminate\Support\Str::of($appTheme)->before(' ')->toString();
+// }
 ?>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="{{ $appTheme }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="{{ $theme->bsTheme() }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="{{ $appTheme }}"> --}}
 <?php
 /**
  * @var string $appName The application name.
@@ -100,61 +125,62 @@ $withVue = isset($withVue) && is_bool($withVue) ? $withVue : true;
 
 $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlayground : true;
 
-/**
- * @var array<string, array<string, mixed>> $libs The view library asset information.
- */
-$libs = !empty($package_config['libs']) && is_array($package_config['libs']) ? $package_config['libs'] : [];
+// /**
+//  * @var array<string, array<string, mixed>> $libs The view library asset information.
+//  */
+// $libs = !empty($package_config['libs']) && is_array($package_config['libs']) ? $package_config['libs'] : [];
 
-/**
- * @var array<string> The order matters for the rendering of scripts.
- */
-$scriptListHead = [];
-$scriptListBody = [];
+// /**
+//  * @var array<string> The order matters for the rendering of scripts.
+//  */
+// $scriptListHead = [];
+// $scriptListBody = [];
 
-if ($withScripts) {
-    $scriptListBody[] = 'moment';
-    $scriptListBody[] = 'bootstrap';
-    $scriptListHead[] = 'bootstrap-css';
+// if ($withScripts) {
+//     $scriptListBody[] = 'moment';
+//     $scriptListBody[] = 'bootstrap';
+//     $scriptListHead[] = 'bootstrap-css';
 
-    if ($withEditor) {
-        $scriptListHead[] = 'ckeditor';
-    }
+//     if ($withEditor) {
+//         $scriptListHead[] = 'ckeditor';
+//     }
 
-    if ($withPlayground) {
-        $scriptListBody[] = 'playground';
-    }
+//     if ($withPlayground) {
+//         $scriptListBody[] = 'playground';
+//     }
 
-    $scriptListBody[] = 'jquery';
-    $scriptListBody[] = 'popper';
+//     $scriptListBody[] = 'jquery';
+//     $scriptListBody[] = 'popper';
 
-    if ($withIcons) {
-        $scriptListHead[] = 'fontawesome-css';
-        $scriptListBody[] = 'fontawesome';
-    }
-    if ($withVue) {
-        $scriptListHead[] = 'vue';
-    }
+//     if ($withIcons) {
+//         $scriptListHead[] = 'fontawesome-css';
+//         $scriptListBody[] = 'fontawesome';
+//     }
+//     if ($withVue) {
+//         $scriptListHead[] = 'vue';
+//     }
 
-    if (!empty($libs['head']) && is_array($libs['head'])) {
-        foreach ($libs['head'] as $key => $libs_head_meta) {
-            if (is_array($libs_head_meta) && !empty($libs_head_meta['always']) && !in_array($key, $scriptListHead)) {
-                $scriptListHead[] = $key;
-            }
-        }
-    }
-    if (!empty($libs['body']) && is_array($libs['body'])) {
-        foreach ($libs['body'] as $key => $libs_body_meta) {
-            if (is_array($libs_body_meta) && !empty($libs_body_meta['always']) && !in_array($key, $scriptListBody)) {
-                $scriptListBody[] = $key;
-            }
-        }
-    }
-}
+//     if (!empty($libs['head']) && is_array($libs['head'])) {
+//         foreach ($libs['head'] as $key => $libs_head_meta) {
+//             if (is_array($libs_head_meta) && !empty($libs_head_meta['always']) && !in_array($key, $scriptListHead)) {
+//                 $scriptListHead[] = $key;
+//             }
+//         }
+//     }
+//     if (!empty($libs['body']) && is_array($libs['body'])) {
+//         foreach ($libs['body'] as $key => $libs_body_meta) {
+//             if (is_array($libs_body_meta) && !empty($libs_body_meta['always']) && !in_array($key, $scriptListBody)) {
+//                 $scriptListBody[] = $key;
+//             }
+//         }
+//     }
+// }
 // dump([
 //     '__FILE__' => __FILE__,
-//     '$scriptListHead' => $scriptListHead,
-//     '$scriptListBody' => $scriptListBody,
-//     '$libs' => $libs,
+//     // '$scriptListHead' => $scriptListHead,
+//     // '$scriptListBody' => $scriptListBody,
+//     // '$libs' => $libs,
+//     '$theme' => $theme,
 // ]);
 ?>
 
@@ -165,15 +191,22 @@ if ($withScripts) {
 
     <title>{{ !empty($appName) ? sprintf('%1$s: ', $appName) : '' }}@yield('title')</title>
 
-    @if (!empty($libs['head']) && is_array($libs['head']))
+    @foreach (Playground\Blade\Facades\Ui::headAssets() as $asset)
+        {!! $asset !!}
+    @endforeach
+    {{-- @if (!empty($libs['head']) && is_array($libs['head']))
         @include(sprintf('%1$slayouts/bootstrap/libraries', $package_config['view']), [
             'libs' => $libs['head'],
             'required' => $scriptListHead,
         ])
-    @endif
+    @endif --}}
 
     @stack('scripts')
     @yield('head')
+
+    @if (!empty($theme->editor()))
+    <link rel="stylesheet" href="{{$theme->editor()}}" type="text/css">
+    @endif
 
     @if (!$withBreadcrumbs)
         <style>
@@ -241,12 +274,16 @@ if ($withScripts) {
     @stack('modals')
     @stack('body-last')
 
-    @if (!empty($libs['head']) && is_array($libs['body']))
+    @foreach (Playground\Blade\Facades\Ui::bodyAssets() as $asset)
+        {!! $asset !!}
+    @endforeach
+
+    {{-- @if (!empty($libs['head']) && is_array($libs['body']))
         @include(sprintf('%1$slayouts/bootstrap/libraries', $package_config['view']), [
             'libs' => $libs['body'],
             'required' => $scriptListBody,
         ])
-    @endif
+    @endif --}}
 
 </body>
 
