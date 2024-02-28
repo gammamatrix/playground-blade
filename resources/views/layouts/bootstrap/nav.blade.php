@@ -73,7 +73,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <p class="ms-3 text-info">
+                                <p class="ms-3 my-1 text-info">
                                     Themes
                                 </p>
                             </li>

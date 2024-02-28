@@ -44,7 +44,7 @@ return [
         'bootstrap-dark' => [
             'bsTheme' => 'dark',
             'editor' => '/vendor/ckeditor-bootstrap.css',
-            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_LIGHT_ENABLE', true),
+            'enable' => false,
             'label' => 'CkEditor Unified Bootstrap Theme under Dark',
             'key' => 'bootstrap-dark',
             'icon' => 'fa-brands fa-bootstrap',
@@ -54,7 +54,7 @@ return [
         'bootstrap-light' => [
             'bsTheme' => 'light',
             'editor' => '/vendor/ckeditor-bootstrap.css',
-            'enable' => true,
+            'enable' => false,
             'label' => 'CkEditor Unified Bootstrap Theme under Light',
             'key' => 'bootstrap-light',
             'icon' => 'fa-brands fa-bootstrap',
@@ -64,7 +64,7 @@ return [
         'lark-dark' => [
             'bsTheme' => 'dark',
             'editor' => '/vendor/ckeditor-lark.css',
-            'enable' => true,
+            'enable' => false,
             'label' => 'CkEditor Lark Theme under Dark',
             'key' => 'lark-dark',
             'icon' => 'fa-solid fa-dove fa-moon',
@@ -74,7 +74,7 @@ return [
         'lark-light' => [
             'bsTheme' => 'light',
             'editor' => '/vendor/ckeditor-lark.css',
-            'enable' => true,
+            'enable' => false,
             'label' => 'CkEditor Lark Theme under Light',
             'key' => 'lark-light',
             'icon' => 'fa-solid fa-dove fa-sun',
