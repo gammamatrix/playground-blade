@@ -15,6 +15,10 @@ use Playground\Blade\Themes\Theme;
  * @method static array<string, Theme> themes()
  * @method static array<string, Asset> bodyAssets()
  * @method static array<string, Asset> headAssets()
+ * @method static ?Theme getTheme(string $themeKey)
+ * @method static bool hasTheme(string $themeKey)
+ * @method static \Playground\Blade\Ui saveTheme(Theme $theme)
+ * @method static \Playground\Blade\Ui setTheme(string $themeKey = '')
  */
 class Ui extends Facade
 {

@@ -4,7 +4,6 @@
  */
 namespace Playground\Blade\Concerns;
 
-use Illuminate\Support\Str;
 use Playground\Blade\Themes;
 
 /**
@@ -34,11 +33,11 @@ trait WithThemes
         $config = config('playground-blade');
 
         if (is_array($config)) {
-            if (!empty($config['themes']) && is_array($config['themes'])) {
+            if (! empty($config['themes']) && is_array($config['themes'])) {
                 $this->loadThemes($config['themes']);
             }
 
-            if (!empty($config['session']) && is_array($config['session'])) {
+            if (! empty($config['session']) && is_array($config['session'])) {
 
                 $this->session = ! empty($config['session']['enable']);
 
@@ -48,22 +47,6 @@ trait WithThemes
                     $this->sessionThemeName = $config['session']['theme_name'];
                 }
             }
-        }
-
-        $theme = '';
-
-        if ($this->session && $this->sessionThemeName) {
-            $theme = session($this->sessionThemeName);
-        }
-
-        $theme = is_string($theme) && $theme ? $theme : 'default';
-
-        if (! empty($this->themes[$theme])) {
-            $this->theme = $this->themes[$theme];
-        } elseif (! empty($this->themes)) {
-            $this->theme = current($this->themes);
-        } else {
-            $this->theme = new Themes\Bootstrap;
         }
 
         $this->initThemes = true;
@@ -80,7 +63,7 @@ trait WithThemes
             // Only Bootstrap themes are supported for now.
             if ($key && is_string($key)) {
 
-                $theme = new Themes\Bootstrap($meta, $this->sessionThemeName);
+                $theme = new Themes\Bootstrap($meta);
 
                 $this->themes[$key] = $theme;
             }
@@ -91,7 +74,17 @@ trait WithThemes
 
     public function theme(): Themes\Theme
     {
-        return $this->initThemes()->theme;
+        $this->initThemes();
+
+        $themeKey = '';
+
+        if ($this->session && $this->sessionThemeName) {
+            $themeKey = session($this->sessionThemeName);
+        }
+
+        $this->setTheme(is_string($themeKey) ? $themeKey : '', false);
+
+        return $this->theme;
     }
 
     /**
@@ -102,15 +95,73 @@ trait WithThemes
         return $this->initThemes()->themes;
     }
 
+    public function getTheme(string $key): ?Themes\Theme
+    {
+        return $this->initThemes()->hasTheme($key) ? $this->initThemes()->themes[$key] : null;
+    }
+
+    public function hasTheme(string $themeKey): bool
+    {
+        return $themeKey && ! empty($this->initThemes()->themes[$themeKey]);
+    }
+
     public function saveTheme(Themes\Theme $theme): self
     {
-        $sessionThemeName = $theme->sessionThemeName();
-        if ($this->session && $theme->session() && $sessionThemeName) {
+        $this->initThemes();
+
+        // dd([
+        //     '__FILE__' => __FILE__,
+        //     '$this->sessionThemeName' => $this->sessionThemeName,
+        //     '$theme' => $theme,
+        // ]);
+        if ($this->session && $theme->session() && $this->sessionThemeName) {
             session([
-                $sessionThemeName => $theme->key(),
+                $this->sessionThemeName => $theme->key(),
             ]);
         }
 
         return $this;
+    }
+
+    public function setTheme(string $themeKey = '', bool $save = true): self
+    {
+        $this->initThemes();
+
+        // dump([
+        //     '__FILE__' => __FILE__,
+        //     '$save' => $save,
+        //     '$save' => $save,
+        //     '$themeKey' => $themeKey,
+        // ]);
+        $themeKey = empty($themeKey) ? 'default' : $themeKey;
+        // dump([
+        //     '__FILE__' => __FILE__,
+        //     '$themeKey' => $themeKey,
+        //     '$this' => $this,
+        // ]);
+
+        if (! empty($this->themes[$themeKey])) {
+            $this->theme = $this->themes[$themeKey];
+        } elseif (! empty($this->themes)) {
+            $this->theme = current($this->themes);
+        } else {
+            $this->theme = new Themes\Bootstrap;
+        }
+
+        if ($save) {
+            $this->saveTheme($this->theme);
+        }
+
+        return $this;
+    }
+
+    public function session(): bool
+    {
+        return $this->session;
+    }
+
+    public function sessionThemeName(): string
+    {
+        return $this->sessionThemeName;
     }
 }

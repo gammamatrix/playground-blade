@@ -4,7 +4,6 @@
  */
 namespace Playground\Blade\Concerns;
 
-use Illuminate\Support\Str;
 use Playground\Blade\Assets;
 
 /**
@@ -33,11 +32,11 @@ trait WithAssets
         $config = config('playground-blade');
 
         if (is_array($config)) {
-            if (!empty($config['assets']) && is_array($config['assets'])) {
-                if (!empty($config['assets']['head']) && is_array($config['assets']['head'])) {
+            if (! empty($config['assets']) && is_array($config['assets'])) {
+                if (! empty($config['assets']['head']) && is_array($config['assets']['head'])) {
                     $this->loadHeadAssets($config['assets']['head']);
                 }
-                if (!empty($config['assets']['body']) && is_array($config['assets']['body'])) {
+                if (! empty($config['assets']['body']) && is_array($config['assets']['body'])) {
                     $this->loadBodyAssets($config['assets']['body']);
                 }
             }
@@ -70,11 +69,11 @@ trait WithAssets
             if ($key && is_string($key) && in_array($type, $allowed)) {
 
                 $asset = null;
-                if ('script' === $type) {
+                if ($type === 'script') {
                     $asset = new Assets\Script($meta);
-                } elseif ('style' === $type) {
+                } elseif ($type === 'style') {
                     $asset = new Assets\Style($meta);
-                } elseif ('link' === $type) {
+                } elseif ($type === 'link') {
                     $asset = new Assets\Link($meta);
                 }
                 if ($asset) {
@@ -85,7 +84,6 @@ trait WithAssets
 
         return $this;
     }
-
 
     /**
      * @param array<string, mixed> $assets
@@ -112,17 +110,17 @@ trait WithAssets
             if ($key && is_string($key) && in_array($type, $allowed)) {
 
                 $asset = null;
-                if ('font' === $type) {
+                if ($type === 'font') {
                     $asset = new Assets\Font($meta);
-                } elseif ('icon' === $type) {
+                } elseif ($type === 'icon') {
                     $asset = new Assets\Icon($meta);
-                } elseif ('link' === $type) {
+                } elseif ($type === 'link') {
                     $asset = new Assets\Link($meta);
-                } elseif ('script' === $type) {
+                } elseif ($type === 'script') {
                     $asset = new Assets\Script($meta);
-                } elseif ('style' === $type) {
+                } elseif ($type === 'style') {
                     $asset = new Assets\Style($meta);
-                } elseif ('stylesheet' === $type) {
+                } elseif ($type === 'stylesheet') {
                     $asset = new Assets\Stylesheet($meta);
                 }
 

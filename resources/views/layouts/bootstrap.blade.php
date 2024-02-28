@@ -16,15 +16,10 @@ $appName = isset($appName) && is_string($appName) && !empty($appName) ? $appName
  */
 $theme = Playground\Blade\Facades\Ui::theme();
 
-$bodyAssets = Playground\Blade\Facades\Ui::bodyAssets();
-$headAssets = Playground\Blade\Facades\Ui::headAssets();
-
 $ckTheme = $theme->editor();
 
-// dump([
+// dd([
 //     '__FILE__' => __FILE__,
-//     '$bodyAssets' => $bodyAssets,
-//     '$headAssets' => $headAssets,
 //     '$ckTheme' => $ckTheme,
 //     '$theme' => $theme,
 // ]);

@@ -4,11 +4,10 @@
  */
 namespace Playground\Blade\Assets;
 
-use \Playground\Blade\Assets\Contracts\Icon as IconContract;
+use Playground\Blade\Assets\Contracts\Icon as IconContract;
 
 /**
  * \Playground\Blade\Assets\Icon
- *
  */
 class Icon extends Link implements IconContract
 {

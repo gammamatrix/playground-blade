@@ -4,11 +4,10 @@
  */
 namespace Playground\Blade\Assets;
 
-use \Playground\Blade\Assets\Contracts\Stylesheet as StylesheetContract;
+use Playground\Blade\Assets\Contracts\Stylesheet as StylesheetContract;
 
 /**
  * \Playground\Blade\Assets\Link
- *
  */
 class Stylesheet extends Link implements StylesheetContract
 {

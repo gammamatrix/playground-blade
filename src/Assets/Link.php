@@ -4,26 +4,29 @@
  */
 namespace Playground\Blade\Assets;
 
-use \Playground\Blade\Assets\Contracts\Link as LinkContract;
+use Playground\Blade\Assets\Contracts\Link as LinkContract;
 
 /**
  * \Playground\Blade\Assets\Link
- *
  */
 class Link extends Asset implements LinkContract
 {
     protected bool $always = false;
 
     protected string $as = '';
+
     protected string $crossorigin = '';
 
     protected string $href = '';
 
     protected string $integrity = '';
+
     protected string $media = '';
 
     protected string $rel = '';
+
     protected string $title = '';
+
     protected string $type = '';
 
     public function setOptions(array $options = []): self

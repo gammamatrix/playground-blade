@@ -12,26 +12,28 @@ class Theme
     protected bool $enable = false;
 
     protected string $key = '';
+
     protected string $label = '';
 
     protected string $editor = '';
+
     protected string $icon = '';
 
     protected string $provider = '';
 
     protected bool $session = true;
 
-    protected string $sessionThemeName = '';
+    // protected string $sessionThemeName = '';
 
     public function __construct(
-        mixed $options = null,
-        string $sessionThemeName = ''
+        mixed $options = null
+        // string $sessionThemeName = ''
     ) {
         if (is_array($options)) {
             $this->setOptions($options);
         }
 
-        $this->sessionThemeName = $sessionThemeName;
+        // $this->sessionThemeName = $sessionThemeName;
     }
 
     /**
@@ -85,18 +87,23 @@ class Theme
         return $this->key;
     }
 
-    public function session(): bool
-    {
-        return $this->session;
-    }
-
-    public function sessionThemeName(): string
-    {
-        return $this->sessionThemeName;
-    }
-
     public function editor(): string
     {
         return $this->editor;
+    }
+
+    public function label(): string
+    {
+        return $this->label;
+    }
+
+    public function icon(): string
+    {
+        return $this->icon;
+    }
+
+    public function session(): bool
+    {
+        return $this->session;
     }
 }

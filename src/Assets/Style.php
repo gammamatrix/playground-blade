@@ -4,11 +4,10 @@
  */
 namespace Playground\Blade\Assets;
 
-use \Playground\Blade\Assets\Contracts\Style as StyleContract;
+use Playground\Blade\Assets\Contracts\Style as StyleContract;
 
 /**
  * \Playground\Blade\Assets\Style
- *
  */
 class Style extends Asset implements StyleContract
 {
@@ -25,6 +24,7 @@ class Style extends Asset implements StyleContract
         ) {
             $this->style = $options['style'];
         }
+
         return $this;
     }
 

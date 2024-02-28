@@ -10,5 +10,6 @@ namespace Playground\Blade\Assets\Contracts;
 interface Style
 {
     public function always(): bool;
+
     public function style(): string;
 }

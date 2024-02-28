@@ -59,22 +59,33 @@
                             </li>
                             @if (Route::has('dashboard'))
                                 <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
                                     <a class="dropdown-item" href="{{ route('dashboard') }}">
                                         {{ __('Dashboard') }}
                                     </a>
                                 </li>
                             @endif
                         @endguest
-                        @if (Route::has('theme') && is_array(config('playground-blade.themes')))
-                            @foreach (config('playground-blade.themes') as $theme)
-                                @continue(empty($theme['enable']) || empty($theme['label']))
+                        @if (Route::has('theme'))
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <p class="ms-3 text-info">
+                                    Themes
+                                </p>
+                            </li>
+                            @foreach (Playground\Blade\Facades\Ui::themes() as $themeKey => $theme)
+                                @continue(!$theme->enabled() || !$theme->label())
                                 <li>
                                     <a class="dropdown-item"
-                                        href="{{ route('theme', ['appTheme' => $theme['key'] ?? '', '_return_url' => request()->url()]) }}">
-                                        @if (!empty($theme['icon']) && is_string($theme['icon']))
-                                            <i class="{{ $theme['icon'] }}"></i>
+                                        href="{{ route('theme', ['appTheme' => $themeKey ?? '', '_return_url' => request()->url()]) }}">
+                                        @if ($theme->icon())
+                                            <i class="{{ $theme->icon() }}"></i>
                                         @endif
-                                        {{ $theme['label'] }}
+                                        {{ $theme->label() }}
                                     </a>
                                 </li>
                             @endforeach

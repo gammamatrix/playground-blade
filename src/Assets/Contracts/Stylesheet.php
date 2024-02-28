@@ -10,5 +10,6 @@ namespace Playground\Blade\Assets\Contracts;
 interface Stylesheet
 {
     public function docs(): string;
+
     public function version(): string;
 }

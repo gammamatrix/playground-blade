@@ -6,7 +6,6 @@ namespace Playground\Blade\Assets;
 
 /**
  * \Playground\Blade\Assets\Font
- *
  */
 class Font extends Stylesheet
 {

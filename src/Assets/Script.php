@@ -4,7 +4,7 @@
  */
 namespace Playground\Blade\Assets;
 
-use \Playground\Blade\Assets\Contracts\Script as ScriptContract;
+use Playground\Blade\Assets\Contracts\Script as ScriptContract;
 
 /**
  * \Playground\Blade\Assets\Script
@@ -14,19 +14,27 @@ use \Playground\Blade\Assets\Contracts\Script as ScriptContract;
 class Script extends Asset implements ScriptContract
 {
     protected bool $always = false;
+
     protected bool $async = false;
+
     protected bool $nomodule = false;
+
     protected bool $defer = false;
+
     protected bool $scoped = false;
 
     protected string $crossorigin = '';
+
     protected string $fetchpriority = '';
 
     protected string $integrity = '';
 
     protected string $referrerpolicy = '';
+
     protected string $script = '';
+
     protected string $src = '';
+
     protected string $type = '';
 
     protected string $version = '';
@@ -38,7 +46,6 @@ class Script extends Asset implements ScriptContract
         $this->nomodule = ! empty($options['nomodule']);
         $this->defer = ! empty($options['defer']);
         $this->scoped = ! empty($options['scoped']);
-
 
         if (! empty($options['crossorigin'])
             && is_string($options['crossorigin'])
