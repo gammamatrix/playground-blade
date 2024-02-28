@@ -41,6 +41,11 @@ class ServiceProvider extends AuthServiceProvider
                     sprintf('%1$s/resources/js/%2$s.js', dirname(__DIR__), $this->package) => public_path(sprintf('vendor/%1$s.js', $this->package)),
                 ], 'playground-js');
 
+                // Publish CSS assets
+                $this->publishes([
+                    sprintf('%1$s/resources/css/%2$s.css', dirname(__DIR__), 'ckeditor-dark') => public_path(sprintf('vendor/%1$s.css', 'ckeditor-dark')),
+                ], 'playground-css');
+
                 // Publish Blade Views
                 $this->publishes([
                     dirname(__DIR__).'/resources/views' => resource_path(Str::of('vendor/'.$this->package)->beforeLast('-blade')),
@@ -84,6 +89,10 @@ class ServiceProvider extends AuthServiceProvider
             sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package),
             $this->package
         );
+
+        $this->app->scoped('playground-blade-ui', function () {
+            return new Ui();
+        });
     }
 
     public function version(): string

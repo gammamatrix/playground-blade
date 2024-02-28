@@ -6,24 +6,80 @@ return [
     'load' => [
         'views' => (bool) env('PLAYGROUND_BLADE_LOAD_VIEWS', true),
     ],
+    'session' => [
+        'enable' => (bool) env('PLAYGROUND_BLADE_SESSION_ENABLE', true),
+        'theme_name' => env('PLAYGROUND_BLADE_SESSION_THEME_NAME', 'appTheme'),
+    ],
     'themes' => [
         'default' => [
+            'bsTheme' => '',
+            'editor' => '',
             'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DEFAULT_ENABLE', true),
             'label' => 'Default Theme',
-            'key' => '',
+            'key' => 'default',
             'icon' => '',
+            'provider' => 'bootstrap',
+            'session' => true,
         ],
         'dark' => [
+            'bsTheme' => 'dark',
+            'editor' => '/vendor/ckeditor-dark.css',
             'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DARK_ENABLE', true),
             'label' => 'Dark Theme',
             'key' => 'dark',
             'icon' => 'fa-solid fa-moon',
+            'provider' => 'bootstrap',
+            'session' => true,
         ],
         'light' => [
+            'bsTheme' => 'light',
+            'editor' => '/vendor/ckeditor-light.css',
             'enable' => (bool) env('PLAYGROUND_BLADE_THEME_LIGHT_ENABLE', true),
             'label' => 'Light Theme',
             'key' => 'light',
             'icon' => 'fa-solid fa-sun',
+            'provider' => 'bootstrap',
+            'session' => true,
+        ],
+        'bootstrap-dark' => [
+            'bsTheme' => 'dark',
+            'editor' => '/vendor/ckeditor-bootstrap.css',
+            'enable' => false,
+            'label' => 'CkEditor Unified Bootstrap Theme under Dark',
+            'key' => 'bootstrap-dark',
+            'icon' => 'fa-brands fa-bootstrap',
+            'provider' => 'bootstrap',
+            'session' => true,
+        ],
+        'bootstrap-light' => [
+            'bsTheme' => 'light',
+            'editor' => '/vendor/ckeditor-bootstrap.css',
+            'enable' => false,
+            'label' => 'CkEditor Unified Bootstrap Theme under Light',
+            'key' => 'bootstrap-light',
+            'icon' => 'fa-brands fa-bootstrap',
+            'provider' => 'bootstrap',
+            'session' => true,
+        ],
+        'lark-dark' => [
+            'bsTheme' => 'dark',
+            'editor' => '/vendor/ckeditor-lark.css',
+            'enable' => false,
+            'label' => 'CkEditor Lark Theme under Dark',
+            'key' => 'lark-dark',
+            'icon' => 'fa-solid fa-dove fa-moon',
+            'provider' => 'bootstrap',
+            'session' => true,
+        ],
+        'lark-light' => [
+            'bsTheme' => 'light',
+            'editor' => '/vendor/ckeditor-lark.css',
+            'enable' => false,
+            'label' => 'CkEditor Lark Theme under Light',
+            'key' => 'lark-light',
+            'icon' => 'fa-solid fa-dove fa-sun',
+            'provider' => 'bootstrap',
+            'session' => true,
         ],
     ],
     /*
@@ -38,33 +94,29 @@ return [
     |      integrity with a SHA256 checksum.
     |
     */
-    'libs' => [
+    'assets' => [
         'head' => [
             'favicon' => [
+                'asset' => 'icon',
                 'type' => 'link',
                 'href' => '/favicon.ico',
                 'rel' => 'icon',
                 'always' => true,
             ],
             // 'gstatic' => [
-            //     'type' => 'link',
+            //     'asset' => 'font',
             //     'version' => '',
             //     'integrity' => '',
             //     'href' => 'https://fonts.gstatic.com/',
             // ],
             'nunito' => [
-                'type' => 'link',
+                'asset' => 'font',
                 'href' => 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap',
                 'rel' => 'stylesheet',
                 'always' => true,
             ],
-            'body-nunito' => [
-                'type' => 'style',
-                'style' => 'body {font-family: Nunito, sans-serif;}',
-                'always' => true,
-            ],
             'ckeditor' => [
-                'type' => 'script',
+                'asset' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => '',
                 'src' => 'https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js',
@@ -72,7 +124,7 @@ return [
             ],
             'bootstrap-css' => [
                 'rel' => 'stylesheet',
-                'type' => 'link',
+                'asset' => 'stylesheet',
                 'crossorigin' => 'anonymous',
                 'integrity' => 'sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN',
                 'href' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
@@ -81,7 +133,7 @@ return [
             ],
             'fontawesome-css' => [
                 'rel' => 'stylesheet',
-                'type' => 'link',
+                'asset' => 'font',
                 'crossorigin' => 'anonymous',
                 'integrity' => 'sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==',
                 'href' => 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
@@ -89,17 +141,22 @@ return [
                 'always' => true,
             ],
             'vue' => [
-                'type' => 'script',
+                'asset' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => '',
                 'src' => 'https://unpkg.com/vue@3',
                 'version' => '',
                 'always' => true,
             ],
+            'body-nunito' => [
+                'asset' => 'style',
+                'style' => 'body {font-family: Nunito, sans-serif;}',
+                'always' => true,
+            ],
         ],
         'body' => [
             'bootstrap' => [
-                'type' => 'script',
+                'asset' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => 'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL',
                 'src' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
@@ -107,7 +164,7 @@ return [
                 'always' => true,
             ],
             'playground-blade' => [
-                'type' => 'script',
+                'asset' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => '',
                 'src' => '/vendor/playground-blade.js',
@@ -115,7 +172,7 @@ return [
                 'always' => true,
             ],
             'jquery' => [
-                'type' => 'script',
+                'asset' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => 'sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==',
                 'referrerpolicy' => 'no-referrer',
@@ -124,7 +181,7 @@ return [
                 'always' => true,
             ],
             'fontawesome' => [
-                'type' => 'script',
+                'asset' => 'script',
                 'referrerpolicy' => 'no-referrer',
                 'crossorigin' => 'anonymous',
                 'integrity' => 'sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==',
