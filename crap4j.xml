@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-28 19:47:11</timestamp>
+  <timestamp>2024-02-28 21:32:43</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>74</methodCount>
+    <methodCount>80</methodCount>
     <crapMethodCount>7</crapMethodCount>
-    <crapLoad>94</crapLoad>
-    <totalCrap>1739</totalCrap>
-    <crapMethodPercent>9.46</crapMethodPercent>
+    <crapLoad>88</crapLoad>
+    <totalCrap>1655</totalCrap>
+    <crapMethodPercent>8.75</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -512,10 +512,10 @@
       <methodName>initThemes</methodName>
       <methodSignature>initThemes(): self</methodSignature>
       <fullMethod>initThemes(): self</fullMethod>
-      <crap>240</crap>
-      <complexity>15</complexity>
+      <crap>90</crap>
+      <complexity>9</complexity>
       <coverage>0</coverage>
-      <crapLoad>15</crapLoad>
+      <crapLoad>9</crapLoad>
     </method>
     <method>
       <package>Playground\Blade\Concerns</package>
@@ -534,8 +534,8 @@
       <methodName>theme</methodName>
       <methodSignature>theme(): Playground\Blade\Themes\Theme</methodSignature>
       <fullMethod>theme(): Playground\Blade\Themes\Theme</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
+      <crap>20</crap>
+      <complexity>4</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -553,11 +553,66 @@
     <method>
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>getTheme</methodName>
+      <methodSignature>getTheme(string $key): ?Playground\Blade\Themes\Theme</methodSignature>
+      <fullMethod>getTheme(string $key): ?Playground\Blade\Themes\Theme</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>hasTheme</methodName>
+      <methodSignature>hasTheme(string $themeKey): bool</methodSignature>
+      <fullMethod>hasTheme(string $themeKey): bool</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
       <methodName>saveTheme</methodName>
       <methodSignature>saveTheme(Playground\Blade\Themes\Theme $theme): self</methodSignature>
       <fullMethod>saveTheme(Playground\Blade\Themes\Theme $theme): self</fullMethod>
       <crap>20</crap>
       <complexity>4</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>setTheme</methodName>
+      <methodSignature>setTheme(string $themeKey, bool $save): self</methodSignature>
+      <fullMethod>setTheme(string $themeKey, bool $save): self</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>session</methodName>
+      <methodSignature>session(): bool</methodSignature>
+      <fullMethod>session(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>sessionThemeName</methodName>
+      <methodSignature>sessionThemeName(): string</methodSignature>
+      <fullMethod>sessionThemeName(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -642,8 +697,8 @@
       <package>Playground\Blade\Themes</package>
       <className>Playground\Blade\Themes\Theme</className>
       <methodName>__construct</methodName>
-      <methodSignature>__construct(mixed $options, string $sessionThemeName)</methodSignature>
-      <fullMethod>__construct(mixed $options, string $sessionThemeName)</fullMethod>
+      <methodSignature>__construct(mixed $options)</methodSignature>
+      <fullMethod>__construct(mixed $options)</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -685,31 +740,42 @@
     <method>
       <package>Playground\Blade\Themes</package>
       <className>Playground\Blade\Themes\Theme</className>
-      <methodName>session</methodName>
-      <methodSignature>session(): bool</methodSignature>
-      <fullMethod>session(): bool</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Blade\Themes</package>
-      <className>Playground\Blade\Themes\Theme</className>
-      <methodName>sessionThemeName</methodName>
-      <methodSignature>sessionThemeName(): string</methodSignature>
-      <fullMethod>sessionThemeName(): string</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Blade\Themes</package>
-      <className>Playground\Blade\Themes\Theme</className>
       <methodName>editor</methodName>
       <methodSignature>editor(): string</methodSignature>
       <fullMethod>editor(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>label</methodName>
+      <methodSignature>label(): string</methodSignature>
+      <fullMethod>label(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>icon</methodName>
+      <methodSignature>icon(): string</methodSignature>
+      <fullMethod>icon(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>session</methodName>
+      <methodSignature>session(): bool</methodSignature>
+      <fullMethod>session(): bool</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
