@@ -18,7 +18,7 @@ use Playground\Blade\Themes\Theme;
  * @method static ?Theme getTheme(string $themeKey)
  * @method static bool hasTheme(string $themeKey)
  * @method static \Playground\Blade\Ui saveTheme(Theme $theme)
- * @method static \Playground\Blade\Ui setTheme(string $themeKey = '')
+ * @method static \Playground\Blade\Ui setTheme(string $themeKey = '', bool $save = true)
  */
 class Ui extends Facade
 {
