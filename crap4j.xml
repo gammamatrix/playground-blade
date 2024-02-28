@@ -1,16 +1,577 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-02-26 01:35:08</timestamp>
+  <timestamp>2024-02-28 19:47:11</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>14</methodCount>
-    <crapMethodCount>0</crapMethodCount>
-    <crapLoad>0</crapLoad>
-    <totalCrap>31</totalCrap>
-    <crapMethodPercent>0</crapMethodPercent>
+    <methodCount>74</methodCount>
+    <crapMethodCount>7</crapMethodCount>
+    <crapLoad>94</crapLoad>
+    <totalCrap>1739</totalCrap>
+    <crapMethodPercent>9.46</crapMethodPercent>
   </stats>
   <methods>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Asset</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(mixed $options)</methodSignature>
+      <fullMethod>__construct(mixed $options)</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Asset</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Font</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Icon</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Icon</className>
+      <methodName>sizes</methodName>
+      <methodSignature>sizes(): string</methodSignature>
+      <fullMethod>sizes(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Icon</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>42</crap>
+      <complexity>6</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>240</crap>
+      <complexity>15</complexity>
+      <coverage>0</coverage>
+      <crapLoad>15</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>always</methodName>
+      <methodSignature>always(): bool</methodSignature>
+      <fullMethod>always(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>as</methodName>
+      <methodSignature>as(): string</methodSignature>
+      <fullMethod>as(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>crossorigin</methodName>
+      <methodSignature>crossorigin(): string</methodSignature>
+      <fullMethod>crossorigin(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>href</methodName>
+      <methodSignature>href(): string</methodSignature>
+      <fullMethod>href(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>integrity</methodName>
+      <methodSignature>integrity(): string</methodSignature>
+      <fullMethod>integrity(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>media</methodName>
+      <methodSignature>media(): string</methodSignature>
+      <fullMethod>media(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>rel</methodName>
+      <methodSignature>rel(): string</methodSignature>
+      <fullMethod>rel(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>title</methodName>
+      <methodSignature>title(): string</methodSignature>
+      <fullMethod>title(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>type</methodName>
+      <methodSignature>type(): string</methodSignature>
+      <fullMethod>type(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Link</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>240</crap>
+      <complexity>15</complexity>
+      <coverage>0</coverage>
+      <crapLoad>15</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>always</methodName>
+      <methodSignature>always(): bool</methodSignature>
+      <fullMethod>always(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>async</methodName>
+      <methodSignature>async(): bool</methodSignature>
+      <fullMethod>async(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>nomodule</methodName>
+      <methodSignature>nomodule(): bool</methodSignature>
+      <fullMethod>nomodule(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>defer</methodName>
+      <methodSignature>defer(): bool</methodSignature>
+      <fullMethod>defer(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>scoped</methodName>
+      <methodSignature>scoped(): bool</methodSignature>
+      <fullMethod>scoped(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>crossorigin</methodName>
+      <methodSignature>crossorigin(): string</methodSignature>
+      <fullMethod>crossorigin(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>fetchpriority</methodName>
+      <methodSignature>fetchpriority(): string</methodSignature>
+      <fullMethod>fetchpriority(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>integrity</methodName>
+      <methodSignature>integrity(): string</methodSignature>
+      <fullMethod>integrity(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>referrerpolicy</methodName>
+      <methodSignature>referrerpolicy(): string</methodSignature>
+      <fullMethod>referrerpolicy(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>script</methodName>
+      <methodSignature>script(): string</methodSignature>
+      <fullMethod>script(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>src</methodName>
+      <methodSignature>src(): string</methodSignature>
+      <fullMethod>src(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>version</methodName>
+      <methodSignature>version(): string</methodSignature>
+      <fullMethod>version(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>type</methodName>
+      <methodSignature>type(): string</methodSignature>
+      <fullMethod>type(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Script</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Style</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Style</className>
+      <methodName>always</methodName>
+      <methodSignature>always(): bool</methodSignature>
+      <fullMethod>always(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Style</className>
+      <methodName>style</methodName>
+      <methodSignature>style(): string</methodSignature>
+      <fullMethod>style(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Style</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Stylesheet</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Stylesheet</className>
+      <methodName>docs</methodName>
+      <methodSignature>docs(): string</methodSignature>
+      <fullMethod>docs(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Stylesheet</className>
+      <methodName>version</methodName>
+      <methodSignature>version(): string</methodSignature>
+      <fullMethod>version(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Stylesheet</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithAssets</className>
+      <methodName>initAssets</methodName>
+      <methodSignature>initAssets(): self</methodSignature>
+      <fullMethod>initAssets(): self</fullMethod>
+      <crap>90</crap>
+      <complexity>9</complexity>
+      <coverage>0</coverage>
+      <crapLoad>9</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithAssets</className>
+      <methodName>loadBodyAssets</methodName>
+      <methodSignature>loadBodyAssets(array $assets): self</methodSignature>
+      <fullMethod>loadBodyAssets(array $assets): self</fullMethod>
+      <crap>156</crap>
+      <complexity>12</complexity>
+      <coverage>0</coverage>
+      <crapLoad>12</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithAssets</className>
+      <methodName>loadHeadAssets</methodName>
+      <methodSignature>loadHeadAssets(array $assets): self</methodSignature>
+      <fullMethod>loadHeadAssets(array $assets): self</fullMethod>
+      <crap>240</crap>
+      <complexity>15</complexity>
+      <coverage>0</coverage>
+      <crapLoad>15</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithAssets</className>
+      <methodName>bodyAssets</methodName>
+      <methodSignature>bodyAssets(): array</methodSignature>
+      <fullMethod>bodyAssets(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithAssets</className>
+      <methodName>headAssets</methodName>
+      <methodSignature>headAssets(): array</methodSignature>
+      <fullMethod>headAssets(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>initThemes</methodName>
+      <methodSignature>initThemes(): self</methodSignature>
+      <fullMethod>initThemes(): self</fullMethod>
+      <crap>240</crap>
+      <complexity>15</complexity>
+      <coverage>0</coverage>
+      <crapLoad>15</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>loadThemes</methodName>
+      <methodSignature>loadThemes(array $themes): self</methodSignature>
+      <fullMethod>loadThemes(array $themes): self</fullMethod>
+      <crap>20</crap>
+      <complexity>4</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>theme</methodName>
+      <methodSignature>theme(): Playground\Blade\Themes\Theme</methodSignature>
+      <fullMethod>theme(): Playground\Blade\Themes\Theme</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>themes</methodName>
+      <methodSignature>themes(): array</methodSignature>
+      <fullMethod>themes(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Concerns</package>
+      <className>Playground\Blade\Concerns\WithThemes</className>
+      <methodName>saveTheme</methodName>
+      <methodSignature>saveTheme(Playground\Blade\Themes\Theme $theme): self</methodSignature>
+      <fullMethod>saveTheme(Playground\Blade\Themes\Theme $theme): self</fullMethod>
+      <crap>20</crap>
+      <complexity>4</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Facades</package>
+      <className>Playground\Blade\Facades\Ui</className>
+      <methodName>getFacadeAccessor</methodName>
+      <methodSignature>getFacadeAccessor()</methodSignature>
+      <fullMethod>getFacadeAccessor()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
     <method>
       <package>Playground\Blade</package>
       <className>Playground\Blade\ServiceProvider</className>
@@ -41,7 +602,7 @@
       <fullMethod>register(): void</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>85.71</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -53,6 +614,105 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Bootstrap</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Bootstrap</className>
+      <methodName>bsTheme</methodName>
+      <methodSignature>bsTheme(): string</methodSignature>
+      <fullMethod>bsTheme(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(mixed $options, string $sessionThemeName)</methodSignature>
+      <fullMethod>__construct(mixed $options, string $sessionThemeName)</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>setOptions</methodName>
+      <methodSignature>setOptions(array $options): self</methodSignature>
+      <fullMethod>setOptions(array $options): self</fullMethod>
+      <crap>132</crap>
+      <complexity>11</complexity>
+      <coverage>0</coverage>
+      <crapLoad>11</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>enabled</methodName>
+      <methodSignature>enabled(): bool</methodSignature>
+      <fullMethod>enabled(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>key</methodName>
+      <methodSignature>key(): string</methodSignature>
+      <fullMethod>key(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>session</methodName>
+      <methodSignature>session(): bool</methodSignature>
+      <fullMethod>session(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>sessionThemeName</methodName>
+      <methodSignature>sessionThemeName(): string</methodSignature>
+      <fullMethod>sessionThemeName(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>editor</methodName>
+      <methodSignature>editor(): string</methodSignature>
+      <fullMethod>editor(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
