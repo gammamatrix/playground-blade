@@ -107,16 +107,12 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
 
     <title>{{ !empty($appName) ? sprintf('%1$s: ', $appName) : '' }}@yield('title')</title>
 
-    @foreach (Playground\Blade\Facades\Ui::headAssets() as $asset)
+    @foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset)
         {!! $asset !!}
     @endforeach
 
     @stack('scripts')
     @yield('head')
-
-    @if (!empty($theme->editor()))
-        <link rel="stylesheet" href="{{ $theme->editor() }}" type="text/css">
-    @endif
 
     @if (!$withBreadcrumbs)
         <style>
@@ -125,12 +121,6 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
             }
         </style>
     @endif
-    <style>
-        .ck-editor__editable_inline,
-        .editor__editable {
-            min-height: 200px;
-        }
-    </style>
 </head>
 
 <body class="{{ $withBodyClass }}">
@@ -184,7 +174,7 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
     @stack('modals')
     @stack('body-last')
 
-    @foreach (Playground\Blade\Facades\Ui::bodyAssets() as $asset)
+    @foreach (Playground\Blade\Facades\Ui::bodyAssets($theme) as $asset)
         {!! $asset !!}
     @endforeach
 

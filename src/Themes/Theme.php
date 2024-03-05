@@ -4,18 +4,21 @@
  */
 namespace Playground\Blade\Themes;
 
+use Playground\Blade\Concerns\WithAssets;
+use Playground\Blade\Contracts\HasAssets;
+
 /**
- * \Playground\Blade\Ui\Theme
+ * Playground\Blade\Themes\Theme
  */
-class Theme
+class Theme implements HasAssets
 {
+    use WithAssets;
+
     protected bool $enable = false;
 
     protected string $key = '';
 
     protected string $label = '';
-
-    protected string $editor = '';
 
     protected string $icon = '';
 
@@ -34,6 +37,17 @@ class Theme
         }
 
         // $this->sessionThemeName = $sessionThemeName;
+    }
+
+    public function initAssets(): self
+    {
+        if ($this->initAssets) {
+            return $this;
+        }
+
+        $this->initAssets = true;
+
+        return $this;
     }
 
     /**
@@ -62,17 +76,30 @@ class Theme
             $this->label = $options['label'];
         }
 
-        if (! empty($options['editor'])
-            && is_string($options['editor'])
+        if (! empty($options['provider'])
+            && is_string($options['provider'])
         ) {
-            $this->editor = $options['editor'];
+            $this->provider = $options['provider'];
         }
 
-        if (! empty($options['editor'])
-            && is_string($options['editor'])
+        if (! empty($options['body'])
+            && is_array($options['body'])
         ) {
-            $this->editor = $options['editor'];
+            $this->loadBodyAssets($options['body']);
         }
+
+        if (! empty($options['head'])
+            && is_array($options['head'])
+        ) {
+            $this->loadHeadAssets($options['head']);
+        }
+
+        $this->initAssets();
+        // dd([
+        //     '__METHOD__' => __METHOD__,
+        //     '$options' => $options,
+        //     '$this' => $this,
+        // ]);
 
         return $this;
     }
@@ -87,9 +114,9 @@ class Theme
         return $this->key;
     }
 
-    public function editor(): string
+    public function provider(): string
     {
-        return $this->editor;
+        return $this->provider;
     }
 
     public function label(): string

@@ -30,6 +30,21 @@ $withFormInfo = isset($withFormInfo) && (is_bool($withFormInfo) || is_string($wi
 $withFormLabel = isset($withFormLabel) && is_bool($withFormLabel) ? $withFormLabel : true;
 
 /**
+ * @var boolean $withFormLabelRequired
+ */
+$withFormLabelRequired = $withFormLabel && !empty($withFormLabelRequired);
+
+/**
+ * @var boolean $withFormTitle
+ */
+$withFormTitle = isset($withFormTitle) && is_bool($withFormTitle) ? $withFormTitle : true;
+
+/**
+ * @var boolean $withFormTitleRequired
+ */
+$withFormTitleRequired = $withFormTitle && !empty($withFormTitleRequired);
+
+/**
  * @var boolean $withFormSlug
  */
 $withFormSlug = isset($withFormSlug) && is_bool($withFormSlug) ? $withFormSlug : true;
@@ -38,11 +53,6 @@ $withFormSlug = isset($withFormSlug) && is_bool($withFormSlug) ? $withFormSlug :
  * @var boolean $withFormParent
  */
 $withFormParent = isset($withFormParent) && is_bool($withFormParent) ? $withFormParent : true;
-
-/**
- * @var boolean $withFormSpec
- */
-$withFormSpec = isset($withFormSpec) && is_bool($withFormSpec) ? $withFormSpec : true;
 
 /**
  * @var boolean|string $withFormButtons

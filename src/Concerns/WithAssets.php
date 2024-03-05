@@ -5,6 +5,7 @@
 namespace Playground\Blade\Concerns;
 
 use Playground\Blade\Assets;
+use Playground\Blade\Themes\Theme;
 
 /**
  * \Playground\Blade\Concerns\WithAssets
@@ -23,36 +24,13 @@ trait WithAssets
      */
     protected array $headAssets = [];
 
-    public function initAssets(): self
-    {
-        if ($this->initAssets) {
-            return $this;
-        }
-
-        $config = config('playground-blade');
-
-        if (is_array($config)) {
-            if (! empty($config['assets']) && is_array($config['assets'])) {
-                if (! empty($config['assets']['head']) && is_array($config['assets']['head'])) {
-                    $this->loadHeadAssets($config['assets']['head']);
-                }
-                if (! empty($config['assets']['body']) && is_array($config['assets']['body'])) {
-                    $this->loadBodyAssets($config['assets']['body']);
-                }
-            }
-        }
-
-        $this->initAssets = true;
-
-        return $this;
-    }
-
     /**
      * @param array<string, mixed> $assets
      */
     public function loadBodyAssets(array $assets = []): self
     {
         $allowed = [
+            'comment',
             'script',
             'style',
             'link',
@@ -75,6 +53,8 @@ trait WithAssets
                     $asset = new Assets\Style($meta);
                 } elseif ($type === 'link') {
                     $asset = new Assets\Link($meta);
+                } elseif ($type === 'comment') {
+                    $asset = new Assets\Comment($meta);
                 }
                 if ($asset) {
                     $this->bodyAssets[$key] = $asset;
@@ -91,6 +71,7 @@ trait WithAssets
     public function loadHeadAssets(array $assets = []): self
     {
         $allowed = [
+            'comment',
             'font',
             'icon',
             'link',
@@ -122,6 +103,8 @@ trait WithAssets
                     $asset = new Assets\Style($meta);
                 } elseif ($type === 'stylesheet') {
                     $asset = new Assets\Stylesheet($meta);
+                } elseif ($type === 'comment') {
+                    $asset = new Assets\Comment($meta);
                 }
 
                 if ($asset) {
@@ -136,16 +119,30 @@ trait WithAssets
     /**
      * @return array<string, Assets\Asset>
      */
-    public function bodyAssets(): array
+    public function bodyAssets(Theme $theme = null): array
     {
-        return $this->initAssets()->bodyAssets;
+        if (! $theme) {
+            return $this->initAssets()->bodyAssets;
+        }
+
+        return array_replace(
+            $this->initAssets()->bodyAssets,
+            $theme->bodyAssets()
+        );
     }
 
     /**
      * @return array<string, Assets\Asset>
      */
-    public function headAssets(): array
+    public function headAssets(Theme $theme = null): array
     {
-        return $this->initAssets()->headAssets;
+        if (! $theme) {
+            return $this->initAssets()->headAssets;
+        }
+
+        return array_replace(
+            $this->initAssets()->headAssets,
+            $theme->headAssets()
+        );
     }
 }

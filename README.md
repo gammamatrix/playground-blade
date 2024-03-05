@@ -59,8 +59,9 @@ By default, the following libraries are loaded.
 
 - `favicon`: `/favicon.ico`
 - [Nunito](https://fonts.google.com/specimen/Nunito): Loaded from Google Fonts.
-- [Bootstrap: 5.3.2](https://getbootstrap.com/docs/5.3/)
-- [FontAwesome: 6.4.2](https://fontawesome.com/search?o=r&m=free)
+- [Bootstrap: v5.3.3](https://getbootstrap.com/docs/5.3/)
+- [FontAwesome: v6.5.1](https://fontawesome.com/search?o=r&m=free)
+- [CKEditor 5: v41.1.0](https://github.com/ckeditor/ckeditor5)
 - [Vue 3 - https://unpkg.com/vue@3](https://vuejs.org/)
 - `/vendor/playground-blade.js` A small library to be loaded for Blade UI usage. Needs to be published.
 

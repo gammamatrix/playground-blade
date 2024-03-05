@@ -101,6 +101,7 @@ if ($withTable) {
         'routeEdit' => sprintf('%1$s.edit', $meta['info']['model_route']),
         'routeDelete' => sprintf('%1$s.destroy', $meta['info']['model_route']),
         'routeRestore' => sprintf('%1$s.restore', $meta['info']['model_route']),
+        'routeUnlock' => sprintf('%1$s.unlock', $meta['info']['model_route']),
         'paginator' => $paginator ?? null,
         'privilege' => $withPrivilege,
         'styling' => [
@@ -152,7 +153,7 @@ if ($withTable) {
             <x-playground::table.data :columns="$withTableColumns" :paginator="$paginator" :model-actions="true" :trashable="true"
                 :id="$tableComponent['id']" :meta="$meta" :validated="$meta['validated']" :sort="$meta['sortable']" :privilege="$tableComponent['privilege']" :collapsible="true"
                 :route-parameter="$tableComponent['routeParameter']" :route-parameter-key="$tableComponent['routeParameterKey']" :route-edit="$tableComponent['routeEdit']" :route-delete="$tableComponent['routeDelete']" :route-restore="$tableComponent['routeRestore']"
-                :styling="$tableComponent['styling']">
+                :route-unlock="$tableComponent['routeUnlock']" :styling="$tableComponent['styling']">
                 {{ $meta['info']['model_label_plural'] }}
             </x-playground::table.data>
 

@@ -8,8 +8,6 @@ use Playground\Blade\Themes\Contracts\Bootstrap as BootstrapContract;
 
 /**
  * \Playground\Blade\Themed\Bootstrap
- *
- * @method string editor()
  */
 class Bootstrap extends Theme implements BootstrapContract
 {

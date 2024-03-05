@@ -33,6 +33,13 @@ $withEdit = \Playground\Auth\Facades\Can::access($user, [
     'roles' => ['admin', 'manager'],
 ])->allowed();
 
+$withUnlock = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':unlock',
+    'roles' => ['admin', 'manager'],
+])->allowed();
+
 /**
  * @var array<string, array<string, mixed>> $columns The columns in the table, keyed by slug.
  */
