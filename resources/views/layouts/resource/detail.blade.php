@@ -28,6 +28,7 @@ $parent = $withParent && $data && is_callable([$data, 'parent']) ? $data->parent
 
 $withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
 
+$routeUnlock = !$data ? '' : route(sprintf('%1$s.unlock', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 $routeDelete = !$data ? '' : route(sprintf('%1$s.destroy', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 $routeEdit = !$data ? '' : route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 
@@ -51,6 +52,13 @@ $withEdit = \Playground\Auth\Facades\Can::access($user, [
     'allow' => false,
     'any' => true,
     'privilege' => $withPrivilege . ':edit',
+    'roles' => ['admin', 'manager'],
+])->allowed();
+
+$withUnlock = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => $withPrivilege . ':unlock',
     'roles' => ['admin', 'manager'],
 ])->allowed();
 

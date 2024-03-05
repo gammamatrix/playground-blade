@@ -27,6 +27,7 @@ class Data extends Component
         public string $routeParameterKey = 'id',
         public string $routeEdit = '',
         public string $routeRestore = '',
+        public string $routeUnlock = '',
         public string $routeDelete = '',
         public string $routeDeleteRelationship = '',
         public string $routeDeleteRelationshipId = '',
