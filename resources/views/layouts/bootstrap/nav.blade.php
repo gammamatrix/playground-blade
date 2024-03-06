@@ -77,15 +77,18 @@
                                     Themes
                                 </p>
                             </li>
-                            @foreach (Playground\Blade\Facades\Ui::themes() as $themeKey => $theme)
-                                @continue(!$theme->enabled() || !$theme->label())
+                            @php
+                                $selectedTheme = Playground\Blade\Facades\Ui::theme()->bsTheme();
+                            @endphp
+                            @foreach (Playground\Blade\Facades\Ui::themes() as $themeKey => $_theme)
+                                @continue(!$_theme->enabled() || !$_theme->label())
                                 <li>
-                                    <a class="dropdown-item"
+                                    <a class="dropdown-item{{ (empty($selectedTheme) && 'default' === $themeKey || $selectedTheme === $themeKey) ? ' active' : ''}}"
                                         href="{{ route('theme', ['appTheme' => $themeKey ?? '', '_return_url' => request()->url()]) }}">
-                                        @if ($theme->icon())
-                                            <i class="{{ $theme->icon() }}"></i>
+                                        @if ($_theme->icon())
+                                            <i class="{{ $_theme->icon() }}"></i>
                                         @endif
-                                        {{ $theme->label() }}
+                                        {{ $_theme->label() }}
                                     </a>
                                 </li>
                             @endforeach
