@@ -33,4 +33,9 @@ abstract class Asset implements Stringable
 
         return $this;
     }
+
+    public function docs(): string
+    {
+        return $this->docs;
+    }
 }

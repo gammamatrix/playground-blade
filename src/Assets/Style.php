@@ -17,6 +17,8 @@ class Style extends Asset implements StyleContract
 
     public function setOptions(array $options = []): self
     {
+        parent::setOptions($options);
+
         $this->always = ! empty($options['always']);
 
         if (! empty($options['style'])

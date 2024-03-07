@@ -31,6 +31,8 @@ class Link extends Asset implements LinkContract
 
     public function setOptions(array $options = []): self
     {
+        parent::setOptions($options);
+
         $this->always = ! empty($options['always']);
 
         if (! empty($options['crossorigin'])

@@ -36,20 +36,7 @@ class ServiceProvider extends AuthServiceProvider
                     sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package)),
                 ], 'playground-config');
 
-                // Publish JavaScript assets
-                $this->publishes([
-                    sprintf('%1$s/resources/js/%2$s.js', dirname(__DIR__), $this->package) => public_path(sprintf('vendor/%1$s.js', $this->package)),
-                ], 'playground-js');
-
-                // Publish CSS assets
-                $this->publishes([
-                    sprintf('%1$s/resources/css/%2$s.css', dirname(__DIR__), 'ckeditor-dark') => public_path(sprintf('vendor/%1$s.css', 'ckeditor-dark')),
-                ], 'playground-css');
-
-                // Publish Blade Views
-                $this->publishes([
-                    dirname(__DIR__).'/resources/views' => resource_path(Str::of('vendor/'.$this->package)->beforeLast('-blade')),
-                ], 'playground-blade');
+                $this->publishesAssets();
             }
 
             $this->about();
@@ -98,5 +85,23 @@ class ServiceProvider extends AuthServiceProvider
     public function version(): string
     {
         return static::VERSION;
+    }
+
+    public function publishesAssets(): void
+    {
+        // Publish JavaScript assets
+        $this->publishes([
+            sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__)) => public_path('vendor/playground/blade.js'),
+        ], 'playground-js');
+
+        // Publish Blade Views
+        $this->publishes([
+            dirname(__DIR__).'/resources/views' => resource_path(Str::of('vendor/'.$this->package)->beforeLast('-blade')),
+        ], 'playground-blade');
+
+        // Publish CSS assets
+        $this->publishes([
+            sprintf('%1$s/resources/css', dirname(__DIR__)) => public_path('vendor/playground'),
+        ], 'playground-css');
     }
 }
