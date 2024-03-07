@@ -30,3 +30,24 @@ Component (Tests\Unit\Playground\Blade\View\Components\Table\Data\Component)
  [x] Component instance
  [x] Component can render view
 
+Instance (Tests\Unit\Playground\Blade\Assets\Comment\Instance)
+ [x] Instance with docs
+
+Instance (Tests\Unit\Playground\Blade\Assets\Font\Instance)
+ [x] Instance with docs
+
+Instance (Tests\Unit\Playground\Blade\Assets\Icon\Instance)
+ [x] Instance with docs
+
+Instance (Tests\Unit\Playground\Blade\Assets\Link\Instance)
+ [x] Instance with docs
+
+Instance (Tests\Unit\Playground\Blade\Assets\Script\Instance)
+ [x] Instance with docs
+
+Instance (Tests\Unit\Playground\Blade\Assets\Style\Instance)
+ [x] Instance with docs
+
+Instance (Tests\Unit\Playground\Blade\Assets\Stylesheet\Instance)
+ [x] Instance with docs
+
