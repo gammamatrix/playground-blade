@@ -25,12 +25,12 @@ return [
                     'comment' => 'head: using the default theme',
                 ],
             ],
-            'body' => [
-                'comment' => [
-                    'asset' => 'comment',
-                    'comment' => 'body: using the default theme',
-                ],
-            ],
+            // 'body' => [
+            //     'comment' => [
+            //         'asset' => 'comment',
+            //         'comment' => 'body: using the default theme',
+            //     ],
+            // ],
         ],
         'blue' => [
             'bsTheme' => 'blue',
@@ -48,7 +48,7 @@ return [
                 'bootstrap-root' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/bootstrap-root-blue.css',
+                    'href' => '/vendor/playground/bootstrap/themes/blue.css',
                     'version' => '5.3.3',
                     'always' => true,
                 ],
@@ -67,8 +67,8 @@ return [
                 'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/ckeditor-bootstrap.css',
-                    'version' => '41.1.0',
+                    'href' => '/vendor/playground/ckeditor/bootstrap.css',
+                    'version' => '41.2.0',
                     'always' => true,
                 ],
             ],
@@ -81,8 +81,7 @@ return [
         ],
         'pepper' => [
             'bsTheme' => 'pepper',
-            // 'editor' => '',
-            'enable' => true,
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_PEPPER_ENABLE', true),
             'label' => 'Pepper Theme',
             'key' => 'pepper',
             'icon' => 'fa-solid fa-pepper-hot',
@@ -96,7 +95,7 @@ return [
                 'bootstrap-root' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/bootstrap-root-pepper.css',
+                    'href' => '/vendor/playground/bootstrap/themes/pepper.css',
                     'version' => '5.3.3',
                     'always' => true,
                 ],
@@ -156,8 +155,8 @@ return [
                 'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/ckeditor-bootstrap.css',
-                    'version' => '41.1.0',
+                    'href' => '/vendor/playground/ckeditor/bootstrap.css',
+                    'version' => '41.2.0',
                     'always' => true,
                 ],
             ],
@@ -184,7 +183,7 @@ return [
                 'bootstrap-root' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/bootstrap-root-purple.css',
+                    'href' => '/vendor/playground/bootstrap/themes/purple.css',
                     'version' => '5.3.3',
                     'always' => true,
                 ],
@@ -227,8 +226,8 @@ return [
                 'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/ckeditor-bootstrap.css',
-                    'version' => '41.1.0',
+                    'href' => '/vendor/playground/ckeditor/bootstrap.css',
+                    'version' => '41.2.0',
                     'always' => true,
                 ],
             ],
@@ -239,9 +238,79 @@ return [
                 ],
             ],
         ],
+        'wheat' => [
+            'bsTheme' => 'wheat',
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_WHEAT_ENABLE', true),
+            'label' => 'Wheat Theme',
+            'key' => 'wheat',
+            'icon' => 'fa-solid fa-wheat-awn',
+            'provider' => 'bootstrap',
+            'session' => true,
+            'head' => [
+                'comment' => [
+                    'asset' => 'comment',
+                    'comment' => 'head: using the wheat theme',
+                ],
+                'bootstrap-root' => [
+                    'rel' => 'stylesheet',
+                    'asset' => 'stylesheet',
+                    'href' => '/vendor/playground/bootstrap/themes/wheat.css',
+                    'version' => '5.3.3',
+                    'always' => true,
+                ],
+                'font-anta' => [
+                    'asset' => 'font',
+                    'docs' => 'https://fonts.google.com/specimen/Anta',
+                    'href' => 'https://fonts.googleapis.com/css2?family=Anta&display=swap',
+                    'rel' => 'stylesheet',
+                    'always' => true,
+                ],
+                'font-bruno-ace-sc' => [
+                    'asset' => 'font',
+                    'docs' => 'https://fonts.google.com/specimen/Bruno+Ace+SC',
+                    'href' => 'https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap',
+                    'rel' => 'stylesheet',
+                    'always' => true,
+                ],
+                'font-kode-mono' => [
+                    'asset' => 'font',
+                    'docs' => 'https://fonts.google.com/specimen/Kode+Mono',
+                    'href' => 'https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap',
+                    'rel' => 'stylesheet',
+                    'always' => true,
+                ],
+                'font-headers' => [
+                    'asset' => 'style',
+                    'style' => 'h1, h2, h3, h4, h5, h6, label, nav {font-family: Anta, sans-serif;}',
+                    'always' => true,
+                ],
+                'font-title' => [
+                    'asset' => 'style',
+                    'style' => '.card-header, legend {font-family: "Bruno Ace SC", sans-serif;}',
+                    'always' => true,
+                ],
+                'font-monospace' => [
+                    'asset' => 'style',
+                    'style' => 'code, pre {font-family: "Kode Mono", monospace;}',
+                    'always' => true,
+                ],
+                'ckeditor-bootstrap' => [
+                    'rel' => 'stylesheet',
+                    'asset' => 'stylesheet',
+                    'href' => '/vendor/playground/ckeditor/bootstrap.css',
+                    'version' => '41.2.0',
+                    'always' => true,
+                ],
+            ],
+            'body' => [
+                'comment' => [
+                    'asset' => 'comment',
+                    'comment' => 'body: using the wheat theme',
+                ],
+            ],
+        ],
         'dark' => [
             'bsTheme' => 'dark',
-            // 'editor' => '/vendor/ckeditor-dark.css',
             'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DARK_ENABLE', true),
             'label' => 'Dark Theme',
             'key' => 'dark',
@@ -249,11 +318,11 @@ return [
             'provider' => 'bootstrap',
             'session' => true,
             'head' => [
-                'ckeditor-dark' => [
+                'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/ckeditor-dark.css',
-                    'version' => '41.1.0',
+                    'href' => '/vendor/playground/ckeditor/bootstrap-dark.css',
+                    'version' => '41.2.0',
                     'always' => true,
                 ],
             ],
@@ -267,11 +336,11 @@ return [
             'provider' => 'bootstrap',
             'session' => true,
             'head' => [
-                'ckeditor-light' => [
+                'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
                     'asset' => 'stylesheet',
-                    'href' => '/vendor/ckeditor-light.css',
-                    'version' => '41.1.0',
+                    'href' => '/vendor/playground/ckeditor/bootstrap-light.css',
+                    'version' => '41.2.0',
                     'always' => true,
                 ],
             ],
@@ -316,14 +385,14 @@ return [
             'ckeditor' => [
                 'asset' => 'script',
                 'crossorigin' => 'anonymous',
-                'integrity' => '',
-                'src' => 'https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js',
-                'version' => '41.1.0',
+                'integrity' => 'sha512-Efdza5hyWLCHfsMBMeA4CI43/pkApXWwLkOp2G/pzLpXaRvKVlskbnBJ1hN0zyszukpImHS3440x5gM1iw8/Qw==',
+                'src' => 'https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/41.2.0/ckeditor.min.js',
+                'version' => '41.2.0',
             ],
             'ckeditor-style' => [
                 'asset' => 'style',
                 'style' => '.ck-editor__editable_inline, .editor__editable {min-height: 200px;}',
-                'version' => '41.1.0',
+                'version' => '41.2.0',
             ],
             'bootstrap-css' => [
                 'rel' => 'stylesheet',
@@ -343,14 +412,26 @@ return [
                 'version' => '6.5.1',
                 'always' => true,
             ],
+            // Prod
             'vue' => [
                 'asset' => 'script',
                 'crossorigin' => 'anonymous',
-                'integrity' => '',
-                'src' => 'https://unpkg.com/vue@3',
-                'version' => '',
+                'integrity' => 'sha512-tltvjJD1pUnXVAp0L9id/mcR+zc0xsIKmPMJksEclJ6uEyI8D6eZWpR0jSVWUTXOKcmeBMyND+LQH4ECf/5WKg==',
+                'src' => 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js',
+                'version' => '3.4.21',
+                'referrerpolicy' => 'no-referrer',
                 'always' => true,
             ],
+            // Dev version
+            // 'vue' => [
+            //     'asset' => 'script',
+            //     'crossorigin' => 'anonymous',
+            //     'integrity' => 'sha512-gEM2INjX66kRUIwrPiTBzAA6d48haC9kqrWZWjzrtnpCtBNxOXqXVFEeRDOeVC13pw4EOBrvlsJnNr2MXiQGvg==',
+            //     'src' => 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.min.js',
+            //     'version' => '3.4.21',
+            //     'referrerpolicy' => 'no-referrer',
+            //     'always' => true,
+            // ],
             'font-body' => [
                 'asset' => 'style',
                 'style' => 'body {font-family: Nunito, sans-serif;}',
@@ -370,7 +451,7 @@ return [
                 'asset' => 'script',
                 'crossorigin' => 'anonymous',
                 'integrity' => '',
-                'src' => '/vendor/playground-blade.js',
+                'src' => '/vendor/playground/blade.js',
                 'version' => '73.0.0',
                 'always' => true,
             ],

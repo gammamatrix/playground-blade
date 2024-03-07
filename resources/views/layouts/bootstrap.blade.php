@@ -78,9 +78,9 @@ $withSidebarLeft = isset($withSidebarLeft) && (is_bool($withSidebarLeft) || is_s
 $withSidebarRight = isset($withSidebarRight) && (is_bool($withSidebarRight) || is_string($withSidebarRight)) ? $withSidebarRight : false;
 
 /**
- * @var boolean $withScripts Enable the script assets.
+ * @var boolean $withSearch Show the search form.
  */
-$withScripts = isset($withScripts) && is_bool($withScripts) ? $withScripts : true;
+$withSearch = isset($withSearch) && is_bool($withSearch) ? $withSearch : false;
 
 /**
  * @var boolean $withSnippets Show the snippets in the layout.
@@ -88,14 +88,9 @@ $withScripts = isset($withScripts) && is_bool($withScripts) ? $withScripts : tru
 $withSnippets = isset($withSnippets) && is_bool($withSnippets) ? $withSnippets : false;
 
 /**
- * @var boolean $withIcons Enable the script assets.
- */
-$withIcons = isset($withIcons) && is_bool($withIcons) ? $withIcons : true;
-
-/**
  * @var boolean $withVue Enable Vue JS
  */
-$withVue = isset($withVue) && is_bool($withVue) ? $withVue : true;
+$withVue = isset($withVue) && is_bool($withVue) ? $withVue : false;
 
 $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlayground : true;
 ?>
@@ -107,7 +102,15 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
 
     <title>{{ !empty($appName) ? sprintf('%1$s: ', $appName) : '' }}@yield('title')</title>
 
-    @foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset)
+    @foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset_slug => $asset)
+        @if (!$withEditor)
+            @continue(in_array($asset_slug, ['ckeditor', 'ckeditor-style', 'ckeditor-bootstrap']))
+        @endif
+
+        @if (!$withVue)
+            @continue(in_array($asset_slug, ['vue']))
+        @endif
+
         {!! $asset !!}
     @endforeach
 

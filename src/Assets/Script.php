@@ -9,7 +9,6 @@ use Playground\Blade\Assets\Contracts\Script as ScriptContract;
 /**
  * \Playground\Blade\Assets\Script
  *
- * @method string editor()
  */
 class Script extends Asset implements ScriptContract
 {

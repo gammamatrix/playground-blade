@@ -1,0 +1,19 @@
+[data-bs-theme="wheat"] {
+    color-scheme: wheat;
+    --bs-body-color: #2f4f4f;
+    --bs-body-color-rgb: 47, 79, 79;
+    --bs-border-color: #2f4f4f;
+    --bs-border-color-translucent: rgba(47, 79, 79, 0.175);
+    --bs-body-bg: #f5deb3;
+    --bs-body-bg-rgb: rgba(245, 222, 179, 50);
+    --bs-emphasis-color: #3f2f4f;
+    --bs-emphasis-color-rgb: 63, 47, 79;
+    --bs-secondary-color: rgba(63, 79, 47, 0.75);
+    --bs-secondary-color-rgb: 63, 79, 47;
+    --bs-secondary-bg: #f5b3eb;
+    --bs-secondary-bg-rgb: 245, 179, 235;
+    --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+    --bs-tertiary-color-rgb: 222, 226, 230;
+    --bs-tertiary-bg: #b3f5bd;
+    --bs-tertiary-bg-rgb: 179, 245, 189;
+}

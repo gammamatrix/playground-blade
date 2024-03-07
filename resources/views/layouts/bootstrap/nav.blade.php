@@ -83,7 +83,7 @@
                             @foreach (Playground\Blade\Facades\Ui::themes() as $themeKey => $_theme)
                                 @continue(!$_theme->enabled() || !$_theme->label())
                                 <li>
-                                    <a class="dropdown-item{{ (empty($selectedTheme) && 'default' === $themeKey || $selectedTheme === $themeKey) ? ' active' : ''}}"
+                                    <a class="dropdown-item{{ (empty($selectedTheme) && 'default' === $themeKey) || $selectedTheme === $themeKey ? ' active' : '' }}"
                                         href="{{ route('theme', ['appTheme' => $themeKey ?? '', '_return_url' => request()->url()]) }}">
                                         @if ($_theme->icon())
                                             <i class="{{ $_theme->icon() }}"></i>
@@ -106,12 +106,15 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">
-                    {{ __('Search') }}
-                </button>
-            </form>
+            @if ($withSearch)
+                <form class="d-flex">
+                    <input class="form-control me-2" id="search" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        {{ __('Search') }}
+                    </button>
+                </form>
+            @endif
         </div>
     </div>
 </nav>
