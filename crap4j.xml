@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-06 22:01:42</timestamp>
+  <timestamp>2024-03-07 07:27:47</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>85</methodCount>
+    <methodCount>87</methodCount>
     <crapMethodCount>7</crapMethodCount>
     <crapLoad>92</crapLoad>
-    <totalCrap>1795</totalCrap>
-    <crapMethodPercent>8.24</crapMethodPercent>
+    <totalCrap>1798</totalCrap>
+    <crapMethodPercent>8.05</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -30,6 +30,17 @@
       <fullMethod>setOptions(array $options): self</fullMethod>
       <crap>12</crap>
       <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Assets</package>
+      <className>Playground\Blade\Assets\Asset</className>
+      <methodName>docs</methodName>
+      <methodSignature>docs(): string</methodSignature>
+      <fullMethod>docs(): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -699,6 +710,17 @@
       <methodName>version</methodName>
       <methodSignature>version(): string</methodSignature>
       <fullMethod>version(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade</package>
+      <className>Playground\Blade\ServiceProvider</className>
+      <methodName>publishesAssets</methodName>
+      <methodSignature>publishesAssets(): void</methodSignature>
+      <fullMethod>publishesAssets(): void</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
