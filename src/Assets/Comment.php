@@ -41,6 +41,5 @@ class Comment extends Asset implements CommentContract
     public function __toString(): string
     {
         return sprintf('<!-- %1$s -->', $this->comment());
-        // return sprintf('<!-- %1$s -->', e($this->commentq()));
     }
 }

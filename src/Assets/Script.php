@@ -8,7 +8,6 @@ use Playground\Blade\Assets\Contracts\Script as ScriptContract;
 
 /**
  * \Playground\Blade\Assets\Script
- *
  */
 class Script extends Asset implements ScriptContract
 {
@@ -40,6 +39,8 @@ class Script extends Asset implements ScriptContract
 
     public function setOptions(array $options = []): self
     {
+        parent::setOptions($options);
+
         $this->always = ! empty($options['always']);
         $this->async = ! empty($options['async']);
         $this->nomodule = ! empty($options['nomodule']);
@@ -158,12 +159,22 @@ class Script extends Asset implements ScriptContract
 
     public function __toString(): string
     {
+        $attributes = trim(implode(' ', array_filter([
+            $this->async() ? 'async' : '',
+            $this->nomodule() ? 'nomodule' : '',
+            $this->defer() ? 'defer' : '',
+            $this->scoped() ? 'scoped' : '',
+            $this->crossorigin() ? sprintf('crossorigin="%1$s"', $this->crossorigin()) : '',
+            $this->fetchpriority() ? sprintf('fetchpriority="%1$s"', $this->fetchpriority()) : '',
+            $this->integrity() ? sprintf('integrity="%1$s"', $this->integrity()) : '',
+            $this->referrerpolicy() ? sprintf('referrerpolicy="%1$s"', $this->referrerpolicy()) : '',
+            $this->src() ? sprintf('src="%1$s"', $this->src()) : '',
+            $this->type() ? sprintf('type="%1$s"', $this->type()) : '',
+        ])));
+
         return sprintf(
-            '<script%1$s%2$s%3$s%4$s>%5$s</script>',
-            empty($this->src()) ? '' : sprintf(' src="%1$s"', $this->src()),
-            empty($this->integrity()) ? '' : sprintf(' integrity="%1$s"', $this->integrity()),
-            empty($this->crossorigin()) ? '' : sprintf(' crossorigin="%1$s"', $this->crossorigin()),
-            empty($this->type()) ? '' : sprintf(' type="%1$s"', $this->type()),
+            '<script %1$s>%2$s</script>',
+            $attributes,
             $this->script()
         );
     }

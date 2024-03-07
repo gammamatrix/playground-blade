@@ -102,17 +102,15 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
 
     <title>{{ !empty($appName) ? sprintf('%1$s: ', $appName) : '' }}@yield('title')</title>
 
-    @foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset_slug => $asset)
-        @if (!$withEditor)
-            @continue(in_array($asset_slug, ['ckeditor', 'ckeditor-style', 'ckeditor-bootstrap']))
-        @endif
-
-        @if (!$withVue)
-            @continue(in_array($asset_slug, ['vue']))
-        @endif
-
-        {!! $asset !!}
-    @endforeach
+@foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset_slug => $asset)
+@if (!$withEditor)
+@continue(in_array($asset_slug, ['ckeditor', 'ckeditor-style', 'ckeditor-bootstrap']))
+@endif
+@if (!$withVue)
+@continue(in_array($asset_slug, ['vue']))
+@endif
+    {!! $asset !!}
+@endforeach
 
     @stack('scripts')
     @yield('head')

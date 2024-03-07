@@ -91,7 +91,7 @@ class ServiceProvider extends AuthServiceProvider
     {
         // Publish JavaScript assets
         $this->publishes([
-            sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__), $this->package) => public_path('vendor/playground/blade.js'),
+            sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__)) => public_path('vendor/playground/blade.js'),
         ], 'playground-js');
 
         // Publish Blade Views
