@@ -6,8 +6,8 @@
 declare(strict_types=1);
 namespace Tests\Feature\Playground\Blade\Console\Commands\About;
 
-use Playground\Blade\ServiceProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
+use Playground\Blade\ServiceProvider;
 use Tests\Feature\Playground\Blade\TestCase;
 
 /**

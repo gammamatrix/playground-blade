@@ -1,8 +1,8 @@
 includes:
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/phpstan/phpstan-phpunit/rules.neon
-    - vendor/tomasvotruba/bladestan/config/extension.neon
-    #- vendor/larastan/larastan/extension.neon
+    #- vendor/tomasvotruba/bladestan/config/extension.neon
+    - vendor/larastan/larastan/extension.neon
 
 parameters:
     level: 9
@@ -13,9 +13,9 @@ parameters:
         - tests
         - resources/views
 
-    bladestan:
-        template_paths:
-            - resources/views
+    #bladestan:
+    #    template_paths:
+    #        - resources/views
 
     excludePaths:
         - 'output/*'
@@ -24,5 +24,5 @@ parameters:
 
     checkGenericClassInNonGenericObjectType: false
 
-    # editorUrl: 'vscode://file/%%file%%:%%line%%'
+    editorUrl: 'vscode://file/%%file%%:%%line%%'
     # editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'

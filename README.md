@@ -4,11 +4,11 @@
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/coverage.svg)](tests)
 [![PHPStan Level 9 src and tests](https://img.shields.io/badge/PHPStan-level%209-brightgreen)](.github/workflows/ci.yml#L115)
 
-The Playground Blade package for [Laravel](https://laravel.com/docs/10.x) applications.
+The Playground Blade package for [Laravel](https://laravel.com/docs/11.x) applications.
 
 This package provides Blade UI handling.
 
-More information is available [on the Playground Blade wiki.](https://github.com/gammamatrix/playground-blade/wiki)
+Read more on using Playground Blade [at the Read the Docs for Playground.](https://gammamatrix-playground.readthedocs.io/)
 
 ## Installation
 

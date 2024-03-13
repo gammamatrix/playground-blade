@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Playground
  */
@@ -7,7 +9,6 @@ namespace Playground\Blade;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Str;
 
 /**
  * \Playground\Blade\ServiceProvider
@@ -33,7 +34,7 @@ class ServiceProvider extends AuthServiceProvider
             if ($this->app->runningInConsole()) {
                 // Publish configuration
                 $this->publishes([
-                    sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package)),
+                    sprintf('%1$s/config/playground-blade.php', dirname(__DIR__)) => config_path('playground-blade.php'),
                 ], 'playground-config');
 
                 $this->publishesAssets();
@@ -91,17 +92,17 @@ class ServiceProvider extends AuthServiceProvider
     {
         // Publish JavaScript assets
         $this->publishes([
-            sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__)) => public_path('vendor/playground/blade.js'),
-        ], 'playground-js');
+            sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__)) => public_path('vendor/playground/blade.js'), ], 'playground-js'
+        );
 
         // Publish Blade Views
         $this->publishes([
-            dirname(__DIR__).'/resources/views' => resource_path(Str::of('vendor/'.$this->package)->beforeLast('-blade')),
-        ], 'playground-blade');
+            sprintf('%1$s/resources/views', dirname(__DIR__)) => resource_path('vendor/playground'), ], 'playground-blade'
+        );
 
         // Publish CSS assets
         $this->publishes([
-            sprintf('%1$s/resources/css', dirname(__DIR__)) => public_path('vendor/playground'),
-        ], 'playground-css');
+            sprintf('%1$s/resources/css', dirname(__DIR__)) => public_path('vendor/playground'), ], 'playground-css'
+        );
     }
 }
