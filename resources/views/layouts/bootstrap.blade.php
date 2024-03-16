@@ -93,6 +93,7 @@ $withSnippets = isset($withSnippets) && is_bool($withSnippets) ? $withSnippets :
 $withVue = isset($withVue) && is_bool($withVue) ? $withVue : false;
 
 $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlayground : true;
+
 ?>
 
 <head>
@@ -124,7 +125,7 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
     @endif
 </head>
 
-<body class="{{ $withBodyClass }}">
+<body class="{{ $withBodyClass }}" {!! $theme->bodyStyle() !!}>
 
     @yield('pre-header')
 

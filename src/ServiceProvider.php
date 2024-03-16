@@ -88,21 +88,64 @@ class ServiceProvider extends AuthServiceProvider
         return static::VERSION;
     }
 
+    /**
+     * Publishing assets for Blade UI sites.
+     *
+     * Tags with published assets destinations:
+     *
+     * playground-blade-js
+     * - vendor/playground/blade.js
+     *
+     * playground-blade-components
+     * - vendor/playground/components
+     * - vendor/playground/pagination
+     *
+     * playground-blade-errors
+     * - views/errors
+     *
+     * playground-blade-layouts
+     * - vendor/playground/components
+     * - vendor/playground/pagination
+     *
+     * playground-blade-css
+     * - vendor/playground/backgrounds
+     * - vendor/playground/bootstrap
+     * - vendor/playground/ckeditor
+     *
+     * NOTE: Pagination is under two tags: playground-blade-components
+     */
     public function publishesAssets(): void
     {
         // Publish JavaScript assets
-        $this->publishes([
-            sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__)) => public_path('vendor/playground/blade.js'), ], 'playground-js'
-        );
+        $this->publishes([sprintf('%1$s/resources/js/playground-blade.js', dirname(__DIR__)) => public_path('vendor/playground/blade.js'),
+        ], 'playground-blade-js');
 
-        // Publish Blade Views
-        $this->publishes([
-            sprintf('%1$s/resources/views', dirname(__DIR__)) => resource_path('vendor/playground'), ], 'playground-blade'
-        );
+        // Publish Blade: Components
+        $this->publishes([sprintf('%1$s/resources/views/components', dirname(__DIR__)) => resource_path('vendor/playground/components'),
+        ], 'playground-blade-components');
+
+        // Publish Blade: Components - Pagination
+        $this->publishes([sprintf('%1$s/resources/views/pagination', dirname(__DIR__)) => resource_path('vendor/playground/pagination'),
+        ], 'playground-blade-components');
+
+        // Publish Blade: Error pages
+        $this->publishes([sprintf('%1$s/resources/views/errors', dirname(__DIR__)) => resource_path('views/errors'),
+        ], 'playground-blade-errors');
+
+        // Publish Blade: Layouts
+        $this->publishes([sprintf('%1$s/resources/views/layouts', dirname(__DIR__)) => resource_path('vendor/playground/layouts'),
+        ], 'playground-blade-layouts');
+
+        // Publish Blade: Layouts - Pagination
+        $this->publishes([sprintf('%1$s/resources/views/pagination', dirname(__DIR__)) => resource_path('vendor/playground/pagination'),
+        ], 'playground-blade-layouts');
 
         // Publish CSS assets
-        $this->publishes([
-            sprintf('%1$s/resources/css', dirname(__DIR__)) => public_path('vendor/playground'), ], 'playground-css'
-        );
+        $this->publishes([sprintf('%1$s/resources/css', dirname(__DIR__)) => public_path('vendor/playground'),
+        ], 'playground-blade-css');
+
+        // Publish body backgrounds
+        $this->publishes([sprintf('%1$s/resources/backgrounds', dirname(__DIR__)) => public_path('vendor/playground/backgrounds'),
+        ], 'playground-blade-css');
     }
 }

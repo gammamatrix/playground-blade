@@ -111,11 +111,6 @@ trait WithThemes
     {
         $this->initThemes();
 
-        // dd([
-        //     '__FILE__' => __FILE__,
-        //     '$this->sessionThemeName' => $this->sessionThemeName,
-        //     '$theme' => $theme,
-        // ]);
         if ($this->session && $theme->session() && $this->sessionThemeName) {
             session([
                 $this->sessionThemeName => $theme->key(),
@@ -129,18 +124,7 @@ trait WithThemes
     {
         $this->initThemes();
 
-        // dump([
-        //     '__FILE__' => __FILE__,
-        //     '$save' => $save,
-        //     '$save' => $save,
-        //     '$themeKey' => $themeKey,
-        // ]);
         $themeKey = empty($themeKey) ? 'default' : $themeKey;
-        // dump([
-        //     '__FILE__' => __FILE__,
-        //     '$themeKey' => $themeKey,
-        //     '$this' => $this,
-        // ]);
 
         if (! empty($this->themes[$themeKey])) {
             $this->theme = $this->themes[$themeKey];

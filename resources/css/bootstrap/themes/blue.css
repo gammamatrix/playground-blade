@@ -1,17 +1,17 @@
 [data-bs-theme="blue"] {
     color-scheme: blue;
-    --bs-body-color: #7864ed;
-    --bs-body-color-rgb: 120, 100, 237;
-    --bs-body-bg: #6495ed;
-    --bs-body-bg-rgb: 100, 149, 237;
+    --bs-body-color: #2F4F4F;
+    --bs-body-color-rgb: 47, 79, 79;
+    --bs-body-bg: #1E90FF;
+    --bs-body-bg-rgb: 30, 144, 255;
     --bs-emphasis-color: #fff;
     --bs-emphasis-color-rgb: 255, 255, 255;
-    --bs-secondary-color: rgba(222, 226, 230, 0.75);
-    --bs-secondary-color-rgb: 222, 226, 230;
+    --bs-secondary-color: #DCDCDC;
+    --bs-secondary-color-rgb: 220, 220, 220;
     --bs-secondary-bg: #64daed;
     --bs-secondary-bg-rgb: 100, 218, 237;
     --bs-tertiary-color: rgba(222, 226, 230, 0.5);
     --bs-tertiary-color-rgb: 222, 226, 230;
-    --bs-tertiary-bg: #2b3035;
-    --bs-tertiary-bg-rgb: 43, 48, 53;
+    --bs-tertiary-bg: #00BFFF;
+    --bs-tertiary-bg-rgb: 0, 191, 255;
 }

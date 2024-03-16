@@ -1,7 +1,7 @@
 [data-bs-theme="pepper"] {
     color-scheme: pepper;
-    --bs-body-color: #95cd5c;
-    --bs-body-color-rgb: 149, 205, 92;
+    --bs-body-color: #2F4F4F;
+    --bs-body-color-rgb: 47, 79, 79;
     --bs-body-bg: #cd5c5c;
     --bs-body-bg-rgb: 205, 92, 92;
     --bs-emphasis-color: #fff;
@@ -12,6 +12,6 @@
     --bs-secondary-bg-rgb: 92, 205, 205;
     --bs-tertiary-color: rgba(222, 226, 230, 0.5);
     --bs-tertiary-color-rgb: 222, 226, 230;
-    --bs-tertiary-bg: #955ccd;
-    --bs-tertiary-bg-rgb: 149, 92, 205;
+    --bs-tertiary-bg: #8FBC8F;
+    --bs-tertiary-bg-rgb: 143, 188, 143;
 }
