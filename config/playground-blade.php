@@ -3,6 +3,10 @@
 declare(strict_types=1);
 
 return [
+    'app' => [
+        'name' => env('PLAYGROUND_BLADE_APP_NAME', 'Demo'),
+        'url' => env('PLAYGROUND_BLADE_APP_URL', '/'),
+    ],
     'layout' => env('PLAYGROUND_BLADE_LAYOUT', 'playground::layouts.site'),
     'view' => env('PLAYGROUND_BLADE_VIEW', 'playground::'),
     'load' => [
@@ -21,10 +25,17 @@ return [
             'icon' => 'fa-solid fa-square',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                'linear-gradient' => 'rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)',
+                // 'image' => 'https://laravel.com/assets/img/welcome/background.svg',
+                // 'repeat' => 'no-repeat',
+                // 'attachment' => 'fixed',
+            ],
             'head' => [
                 'comment' => [
                     'asset' => 'comment',
                     'comment' => 'head: using the default theme',
+                    'repeat' => 'no-repeat',
                 ],
             ],
             // 'body' => [
@@ -42,6 +53,12 @@ return [
             'icon' => 'fa-solid fa-fish-fins',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                'repeat' => 'no-repeat',
+                'attachment' => 'fixed',
+                // 'linear-gradient' => 'rgba(0, 255, 255, 0.5), rgba(255, 255, 0, 0.1)',
+                'linear-gradient' => 'rgba(0, 255, 255, 0.95), rgba(255, 245, 238, 0.5)',
+            ],
             'head' => [
                 'comment' => [
                     'asset' => 'comment',
@@ -89,6 +106,11 @@ return [
             'icon' => 'fa-solid fa-pepper-hot',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
             'head' => [
                 'comment' => [
                     'asset' => 'comment',
@@ -177,6 +199,11 @@ return [
             'icon' => 'fa-solid fa-microchip',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
             'head' => [
                 'comment' => [
                     'asset' => 'comment',
@@ -248,6 +275,11 @@ return [
             'icon' => 'fa-solid fa-wheat-awn',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                // 'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
             'head' => [
                 'comment' => [
                     'asset' => 'comment',
@@ -319,6 +351,11 @@ return [
             'icon' => 'fa-solid fa-moon',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
             'head' => [
                 'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
@@ -337,6 +374,11 @@ return [
             'icon' => 'fa-solid fa-sun',
             'provider' => 'bootstrap',
             'session' => true,
+            'background' => [
+                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
             'head' => [
                 'ckeditor-bootstrap' => [
                     'rel' => 'stylesheet',
