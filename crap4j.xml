@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-14 05:07:11</timestamp>
+  <timestamp>2024-03-16 21:24:40</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>87</methodCount>
-    <crapMethodCount>5</crapMethodCount>
-    <crapLoad>61</crapLoad>
-    <totalCrap>1140.26</totalCrap>
-    <crapMethodPercent>5.75</crapMethodPercent>
+    <methodCount>89</methodCount>
+    <crapMethodCount>7</crapMethodCount>
+    <crapLoad>90</crapLoad>
+    <totalCrap>1570.26</totalCrap>
+    <crapMethodPercent>7.87</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -776,10 +776,10 @@
       <methodName>setOptions</methodName>
       <methodSignature>setOptions(array $options): self</methodSignature>
       <fullMethod>setOptions(array $options): self</fullMethod>
-      <crap>182</crap>
-      <complexity>13</complexity>
+      <crap>240</crap>
+      <complexity>15</complexity>
       <coverage>0</coverage>
-      <crapLoad>13</crapLoad>
+      <crapLoad>15</crapLoad>
     </method>
     <method>
       <package>Playground\Blade\Themes</package>
@@ -846,6 +846,28 @@
       <complexity>1</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>setBackground</methodName>
+      <methodSignature>setBackground(array $background): self</methodSignature>
+      <fullMethod>setBackground(array $background): self</fullMethod>
+      <crap>240</crap>
+      <complexity>15</complexity>
+      <coverage>0</coverage>
+      <crapLoad>15</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\Themes</package>
+      <className>Playground\Blade\Themes\Theme</className>
+      <methodName>bodyStyle</methodName>
+      <methodSignature>bodyStyle(): string</methodSignature>
+      <fullMethod>bodyStyle(): string</fullMethod>
+      <crap>132</crap>
+      <complexity>11</complexity>
+      <coverage>0</coverage>
+      <crapLoad>11</crapLoad>
     </method>
     <method>
       <package>Playground\Blade</package>
