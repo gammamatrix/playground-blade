@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.41747572815534" branch-rate="0" lines-covered="215" lines-valid="515" branches-covered="0" branches-valid="0" complexity="276" version="0.4" timestamp="1710624280">
+<coverage line-rate="0.41747572815534" branch-rate="0" lines-covered="215" lines-valid="515" branches-covered="0" branches-valid="0" complexity="276" version="0.4" timestamp="1710625158">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -992,6 +992,8 @@
             </method>
             <method name="publishesAssets" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
+                <line number="120" hits="27"/>
+                <line number="121" hits="27"/>
                 <line number="124" hits="27"/>
                 <line number="125" hits="27"/>
                 <line number="128" hits="27"/>
@@ -1006,8 +1008,6 @@
                 <line number="145" hits="27"/>
                 <line number="148" hits="27"/>
                 <line number="149" hits="27"/>
-                <line number="152" hits="27"/>
-                <line number="153" hits="27"/>
               </lines>
             </method>
           </methods>
@@ -1049,6 +1049,8 @@
             <line number="82" hits="0"/>
             <line number="83" hits="27"/>
             <line number="88" hits="27"/>
+            <line number="120" hits="27"/>
+            <line number="121" hits="27"/>
             <line number="124" hits="27"/>
             <line number="125" hits="27"/>
             <line number="128" hits="27"/>
@@ -1063,8 +1065,6 @@
             <line number="145" hits="27"/>
             <line number="148" hits="27"/>
             <line number="149" hits="27"/>
-            <line number="152" hits="27"/>
-            <line number="153" hits="27"/>
           </lines>
         </class>
       </classes>
