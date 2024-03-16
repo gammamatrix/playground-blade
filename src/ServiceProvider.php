@@ -103,10 +103,6 @@ class ServiceProvider extends AuthServiceProvider
      * playground-blade-errors
      * - views/errors
      *
-     * playground-blade-components
-     * - vendor/playground/components
-     * - vendor/playground/pagination
-     *
      * playground-blade-layouts
      * - vendor/playground/components
      * - vendor/playground/pagination

@@ -27,25 +27,9 @@ php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="
 
 See the contents of the published config file: [config/playground-blade.php](config/playground-blade.php)
 
-You can publish the views file with:
-```bash
-php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-view"
-```
 
-### Environment Variables
+Read more on using [Environment Variables at the Read the Docs for Playground Blade.](https://gammamatrix-playground.readthedocs.io/en/develop/playground/blade.html#environment-variables)
 
-#### Loading
-
-| env()                         | config()                      |
-|-------------------------------|-------------------------------|
-| `PLAYGROUND_BLADE_LOAD_VIEWS` | `playground-blade.load.views` |
-
-### UI
-
-| env()                     | config()                  |
-|---------------------------|---------------------------|
-| `PLAYGROUND_BLADE_LAYOUT` | `playground-blade.layout` |
-| `PLAYGROUND_BLADE_VIEW`   | `playground-blade.view`   |
 
 ## UI Layouts
 
@@ -62,8 +46,8 @@ By default, the following libraries are loaded.
 - [Bootstrap: v5.3.3](https://getbootstrap.com/docs/5.3/)
 - [FontAwesome: v6.5.1](https://fontawesome.com/search?o=r&m=free)
 - [CKEditor 5: v41.1.0](https://github.com/ckeditor/ckeditor5)
-- [Vue 3 - https://unpkg.com/vue@3](https://vuejs.org/)
-- `/vendor/playground-blade.js` A small library to be loaded for Blade UI usage. Needs to be published.
+- [Vue 3 - v3.4.21](https://vuejs.org/)
+- `/vendor/playground/blade.js` A small library to be loaded for Blade UI usage. Needs to be published.
 
 Optionally, a page may load:
 - [CKEditor 5](https://ckeditor.com/ckeditor-5/) an advanced WYSIWYG editor for forms.
@@ -72,15 +56,29 @@ Optionally, a page may load:
 
 If you are using the Playground Blade UI, you can publish the JS assets with:
 ```bash
-php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-js"
+php artisan vendor:publish --tag playground-blade-js
 ```
 - These Javascript assets, [resources/js/playground-blade.js](resources/js/playground-blade.js), provide simple helpers for features such as Bootstrap Form Validation and loading CKEditor for textarea elements on forms.
 
-Publishes CSS
+Publishes CSS:
 ```bash
-php artisan vendor:publish --provider="Playground\Blade\ServiceProvider" --tag="playground-css"
+php artisan vendor:publish --tag playground-blade-css
 ```
 
+You can publish the layouts file with:
+```bash
+php artisan vendor:publish --tag playground-blade-layouts
+```
+
+Components may also be published:
+```bash
+php artisan vendor:publish --tag playground-blade-components
+```
+
+Error pages are available at:
+```bash
+php artisan vendor:publish --tag playground-blade-errors
+```
 
 ## Testing
 
@@ -94,6 +92,7 @@ Tests at level 9 on:
 - `config/`
 - `resources/views/`
 - `src/`
+- `tests/Feature/`
 - `tests/Unit/`
 
 ```sh
