@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-16 21:41:55</timestamp>
+  <timestamp>2024-03-17 01:24:40</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>89</methodCount>
-    <crapMethodCount>7</crapMethodCount>
-    <crapLoad>90</crapLoad>
-    <totalCrap>1570.26</totalCrap>
-    <crapMethodPercent>7.87</crapMethodPercent>
+    <crapMethodCount>8</crapMethodCount>
+    <crapLoad>97</crapLoad>
+    <totalCrap>1606.26</totalCrap>
+    <crapMethodPercent>8.99</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -565,12 +565,12 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithThemes</className>
       <methodName>loadThemes</methodName>
-      <methodSignature>loadThemes(array $themes): self</methodSignature>
-      <fullMethod>loadThemes(array $themes): self</fullMethod>
-      <crap>20</crap>
-      <complexity>4</complexity>
+      <methodSignature>loadThemes(array $themes, bool $enabled): self</methodSignature>
+      <fullMethod>loadThemes(array $themes, bool $enabled): self</fullMethod>
+      <crap>56</crap>
+      <complexity>7</complexity>
       <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
+      <crapLoad>7</crapLoad>
     </method>
     <method>
       <package>Playground\Blade\Concerns</package>

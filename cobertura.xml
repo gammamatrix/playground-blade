@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.41747572815534" branch-rate="0" lines-covered="215" lines-valid="515" branches-covered="0" branches-valid="0" complexity="276" version="0.4" timestamp="1710625315">
+<coverage line-rate="0.41505791505792" branch-rate="0" lines-covered="215" lines-valid="518" branches-covered="0" branches-valid="0" complexity="279" version="0.4" timestamp="1710638680">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -771,9 +771,9 @@
         </class>
       </classes>
     </package>
-    <package name="Concerns/WithThemes.php" line-rate="0" branch-rate="0" complexity="33">
+    <package name="Concerns/WithThemes.php" line-rate="0" branch-rate="0" complexity="36">
       <classes>
-        <class name="Playground\Blade\Concerns\WithThemes" filename="Concerns/WithThemes.php" line-rate="0" branch-rate="0" complexity="33">
+        <class name="Playground\Blade\Concerns\WithThemes" filename="Concerns/WithThemes.php" line-rate="0" branch-rate="0" complexity="36">
           <methods>
             <method name="initThemes" signature="" line-rate="0" branch-rate="0" complexity="9">
               <lines>
@@ -792,72 +792,75 @@
                 <line number="56" hits="0"/>
               </lines>
             </method>
-            <method name="loadThemes" signature="array $themes" line-rate="0" branch-rate="0" complexity="4">
+            <method name="loadThemes" signature="array $themes, bool $enabled" line-rate="0" branch-rate="0" complexity="7">
               <lines>
                 <line number="64" hits="0"/>
+                <line number="65" hits="0"/>
                 <line number="66" hits="0"/>
-                <line number="68" hits="0"/>
-                <line number="70" hits="0"/>
-                <line number="74" hits="0"/>
+                <line number="67" hits="0"/>
+                <line number="71" hits="0"/>
+                <line number="73" hits="0"/>
+                <line number="75" hits="0"/>
+                <line number="79" hits="0"/>
               </lines>
             </method>
             <method name="theme" signature="" line-rate="0" branch-rate="0" complexity="4">
               <lines>
-                <line number="79" hits="0"/>
-                <line number="81" hits="0"/>
-                <line number="83" hits="0"/>
                 <line number="84" hits="0"/>
-                <line number="87" hits="0"/>
+                <line number="86" hits="0"/>
+                <line number="88" hits="0"/>
                 <line number="89" hits="0"/>
+                <line number="92" hits="0"/>
+                <line number="94" hits="0"/>
               </lines>
             </method>
             <method name="themes" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="97" hits="0"/>
+                <line number="102" hits="0"/>
               </lines>
             </method>
             <method name="getTheme" signature="string $key" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="102" hits="0"/>
+                <line number="107" hits="0"/>
               </lines>
             </method>
             <method name="hasTheme" signature="string $themeKey" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="107" hits="0"/>
+                <line number="112" hits="0"/>
               </lines>
             </method>
             <method name="saveTheme" signature="Playground\Blade\Themes\Theme $theme" line-rate="0" branch-rate="0" complexity="4">
               <lines>
-                <line number="112" hits="0"/>
-                <line number="114" hits="0"/>
-                <line number="115" hits="0"/>
-                <line number="116" hits="0"/>
                 <line number="117" hits="0"/>
+                <line number="119" hits="0"/>
                 <line number="120" hits="0"/>
+                <line number="121" hits="0"/>
+                <line number="122" hits="0"/>
+                <line number="125" hits="0"/>
               </lines>
             </method>
             <method name="setTheme" signature="string $themeKey, bool $save" line-rate="0" branch-rate="0" complexity="5">
               <lines>
-                <line number="125" hits="0"/>
-                <line number="127" hits="0"/>
-                <line number="129" hits="0"/>
                 <line number="130" hits="0"/>
-                <line number="131" hits="0"/>
                 <line number="132" hits="0"/>
                 <line number="134" hits="0"/>
+                <line number="135" hits="0"/>
+                <line number="136" hits="0"/>
                 <line number="137" hits="0"/>
-                <line number="138" hits="0"/>
-                <line number="141" hits="0"/>
+                <line number="139" hits="0"/>
+                <line number="142" hits="0"/>
+                <line number="143" hits="0"/>
+                <line number="146" hits="0"/>
               </lines>
             </method>
             <method name="session" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="146" hits="0"/>
+                <line number="151" hits="0"/>
               </lines>
             </method>
             <method name="sessionThemeName" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="151" hits="0"/>
+                <line number="156" hits="0"/>
               </lines>
             </method>
           </methods>
@@ -876,37 +879,40 @@
             <line number="54" hits="0"/>
             <line number="56" hits="0"/>
             <line number="64" hits="0"/>
+            <line number="65" hits="0"/>
             <line number="66" hits="0"/>
-            <line number="68" hits="0"/>
-            <line number="70" hits="0"/>
-            <line number="74" hits="0"/>
+            <line number="67" hits="0"/>
+            <line number="71" hits="0"/>
+            <line number="73" hits="0"/>
+            <line number="75" hits="0"/>
             <line number="79" hits="0"/>
-            <line number="81" hits="0"/>
-            <line number="83" hits="0"/>
             <line number="84" hits="0"/>
-            <line number="87" hits="0"/>
+            <line number="86" hits="0"/>
+            <line number="88" hits="0"/>
             <line number="89" hits="0"/>
-            <line number="97" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="94" hits="0"/>
             <line number="102" hits="0"/>
             <line number="107" hits="0"/>
             <line number="112" hits="0"/>
-            <line number="114" hits="0"/>
-            <line number="115" hits="0"/>
-            <line number="116" hits="0"/>
             <line number="117" hits="0"/>
+            <line number="119" hits="0"/>
             <line number="120" hits="0"/>
+            <line number="121" hits="0"/>
+            <line number="122" hits="0"/>
             <line number="125" hits="0"/>
-            <line number="127" hits="0"/>
-            <line number="129" hits="0"/>
             <line number="130" hits="0"/>
-            <line number="131" hits="0"/>
             <line number="132" hits="0"/>
             <line number="134" hits="0"/>
+            <line number="135" hits="0"/>
+            <line number="136" hits="0"/>
             <line number="137" hits="0"/>
-            <line number="138" hits="0"/>
-            <line number="141" hits="0"/>
+            <line number="139" hits="0"/>
+            <line number="142" hits="0"/>
+            <line number="143" hits="0"/>
             <line number="146" hits="0"/>
             <line number="151" hits="0"/>
+            <line number="156" hits="0"/>
           </lines>
         </class>
       </classes>
