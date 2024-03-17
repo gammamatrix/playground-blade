@@ -19,7 +19,7 @@ return [
     'themes' => [
         'default' => [
             'bsTheme' => '',
-            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DEFAULT_ENABLE', true),
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DEFAULT_ENABLE', false),
             'label' => 'Default Theme',
             'key' => 'default',
             'icon' => 'fa-solid fa-square',
@@ -44,6 +44,52 @@ return [
             //         'comment' => 'body: using the default theme',
             //     ],
             // ],
+        ],
+        'dark' => [
+            'bsTheme' => 'dark',
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DARK_ENABLE', true),
+            'label' => 'Dark Theme',
+            'key' => 'dark',
+            'icon' => 'fa-solid fa-moon',
+            'provider' => 'bootstrap',
+            'session' => true,
+            'background' => [
+                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
+            'head' => [
+                'ckeditor-bootstrap' => [
+                    'rel' => 'stylesheet',
+                    'asset' => 'stylesheet',
+                    'href' => '/vendor/playground/ckeditor/bootstrap-dark.css',
+                    'version' => '41.2.0',
+                    'always' => true,
+                ],
+            ],
+        ],
+        'light' => [
+            'bsTheme' => 'light',
+            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_LIGHT_ENABLE', true),
+            'label' => 'Light Theme',
+            'key' => 'light',
+            'icon' => 'fa-solid fa-sun',
+            'provider' => 'bootstrap',
+            'session' => true,
+            'background' => [
+                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
+                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
+                'repeat' => 'no-repeat',
+            ],
+            'head' => [
+                'ckeditor-bootstrap' => [
+                    'rel' => 'stylesheet',
+                    'asset' => 'stylesheet',
+                    'href' => '/vendor/playground/ckeditor/bootstrap-light.css',
+                    'version' => '41.2.0',
+                    'always' => true,
+                ],
+            ],
         ],
         'blue' => [
             'bsTheme' => 'blue',
@@ -340,52 +386,6 @@ return [
                 'comment' => [
                     'asset' => 'comment',
                     'comment' => 'body: using the wheat theme',
-                ],
-            ],
-        ],
-        'dark' => [
-            'bsTheme' => 'dark',
-            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_DARK_ENABLE', true),
-            'label' => 'Dark Theme',
-            'key' => 'dark',
-            'icon' => 'fa-solid fa-moon',
-            'provider' => 'bootstrap',
-            'session' => true,
-            'background' => [
-                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
-                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
-                'repeat' => 'no-repeat',
-            ],
-            'head' => [
-                'ckeditor-bootstrap' => [
-                    'rel' => 'stylesheet',
-                    'asset' => 'stylesheet',
-                    'href' => '/vendor/playground/ckeditor/bootstrap-dark.css',
-                    'version' => '41.2.0',
-                    'always' => true,
-                ],
-            ],
-        ],
-        'light' => [
-            'bsTheme' => 'light',
-            'enable' => (bool) env('PLAYGROUND_BLADE_THEME_LIGHT_ENABLE', true),
-            'label' => 'Light Theme',
-            'key' => 'light',
-            'icon' => 'fa-solid fa-sun',
-            'provider' => 'bootstrap',
-            'session' => true,
-            'background' => [
-                'image' => '/vendor/playground/backgrounds/oval-dark.svg',
-                // 'image' => '/vendor/playground/backgrounds/spiral-dark.svg',
-                'repeat' => 'no-repeat',
-            ],
-            'head' => [
-                'ckeditor-bootstrap' => [
-                    'rel' => 'stylesheet',
-                    'asset' => 'stylesheet',
-                    'href' => '/vendor/playground/ckeditor/bootstrap-light.css',
-                    'version' => '41.2.0',
-                    'always' => true,
                 ],
             ],
         ],

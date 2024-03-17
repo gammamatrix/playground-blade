@@ -8,7 +8,7 @@ The Playground Blade package for [Laravel](https://laravel.com/docs/11.x) applic
 
 This package provides Blade UI handling.
 
-Read more on using Playground Blade [at the Read the Docs for Playground.](https://gammamatrix-playground.readthedocs.io/)
+Read more on using [Playground Blade at Read the Docs: Playground Documentation.](https://gammamatrix-playground.readthedocs.io/en/latest/playground/blade.html)
 
 ## Installation
 

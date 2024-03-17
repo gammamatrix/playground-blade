@@ -59,9 +59,14 @@ trait WithThemes
     /**
      * @param array<string, mixed> $themes
      */
-    public function loadThemes(array $themes = []): self
+    public function loadThemes(array $themes = [], bool $enabled = true): self
     {
         foreach ($themes as $key => $meta) {
+            if ($enabled) {
+                if (! is_array($meta) || empty($meta['enable'])) {
+                    continue;
+                }
+            }
             // Only Bootstrap themes are supported for now.
             if ($key && is_string($key)) {
 
