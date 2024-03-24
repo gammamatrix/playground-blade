@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.41505791505792" branch-rate="0" lines-covered="215" lines-valid="518" branches-covered="0" branches-valid="0" complexity="279" version="0.4" timestamp="1710638680">
+<coverage line-rate="0.41030534351145" branch-rate="0" lines-covered="215" lines-valid="524" branches-covered="0" branches-valid="0" complexity="282" version="0.4" timestamp="1711318270">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -1590,6 +1590,36 @@
             <line number="32" hits="5"/>
             <line number="33" hits="5"/>
             <line number="34" hits="5"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="View/Components/Snippets.php" line-rate="0" branch-rate="0" complexity="3">
+      <classes>
+        <class name="Playground\Blade\View\Components\Snippets" filename="View/Components/Snippets.php" line-rate="0" branch-rate="0" complexity="3">
+          <methods>
+            <method name="__construct" signature="array $snippets" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="24" hits="0"/>
+              </lines>
+            </method>
+            <method name="render" signature="" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="28" hits="0"/>
+                <line number="30" hits="0"/>
+                <line number="31" hits="0"/>
+                <line number="32" hits="0"/>
+                <line number="33" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="0"/>
+            <line number="28" hits="0"/>
+            <line number="30" hits="0"/>
+            <line number="31" hits="0"/>
+            <line number="32" hits="0"/>
+            <line number="33" hits="0"/>
           </lines>
         </class>
       </classes>

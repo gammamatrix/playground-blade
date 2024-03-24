@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-17 01:24:40</timestamp>
+  <timestamp>2024-03-24 22:11:10</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>89</methodCount>
+    <methodCount>91</methodCount>
     <crapMethodCount>8</crapMethodCount>
     <crapLoad>97</crapLoad>
-    <totalCrap>1606.26</totalCrap>
-    <crapMethodPercent>8.99</crapMethodPercent>
+    <totalCrap>1614.26</totalCrap>
+    <crapMethodPercent>8.79</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -966,6 +966,28 @@
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\View\Components</package>
+      <className>Playground\Blade\View\Components\Snippets</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(array $snippets)</methodSignature>
+      <fullMethod>__construct(array $snippets)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\View\Components</package>
+      <className>Playground\Blade\View\Components\Snippets</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
