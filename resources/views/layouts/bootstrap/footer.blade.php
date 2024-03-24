@@ -1,4 +1,5 @@
 <footer class="mt-auto py-3">
+    @stack('snippet-footer-top') {{-- snippet-footer rank === {3001, 4000} --}}
     <nav class="nav nav-pills flex-column flex-sm-row">
         <span class="flex-sm-fill text-center navbar-text">
             {{ config('app.name') }}
@@ -19,5 +20,5 @@
             @endauth
         @endif
     </nav>
-    <!-- @stack('snippet-footer') {{-- snippet-main rank === 200 --}} -->
+    @stack('snippet-footer-bottom') {{-- snippet-footer rank === {4001, 5000} --}}
 </footer>

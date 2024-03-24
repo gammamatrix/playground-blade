@@ -85,7 +85,7 @@ $withSearch = isset($withSearch) && is_bool($withSearch) ? $withSearch : false;
 /**
  * @var boolean $withSnippets Show the snippets in the layout.
  */
-$withSnippets = isset($withSnippets) && is_bool($withSnippets) ? $withSnippets : false;
+$withSnippets = isset($withSnippets) && is_bool($withSnippets) ? $withSnippets : true;
 
 /**
  * @var boolean $withVue Enable Vue JS
@@ -103,15 +103,15 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
 
     <title>{{ !empty($appName) ? sprintf('%1$s: ', $appName) : '' }}@yield('title')</title>
 
-@foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset_slug => $asset)
-@if (!$withEditor)
-@continue(in_array($asset_slug, ['ckeditor', 'ckeditor-style', 'ckeditor-bootstrap']))
-@endif
-@if (!$withVue)
-@continue(in_array($asset_slug, ['vue']))
-@endif
-    {!! $asset !!}
-@endforeach
+    @foreach (Playground\Blade\Facades\Ui::headAssets($theme) as $asset_slug => $asset)
+        @if (!$withEditor)
+            @continue(in_array($asset_slug, ['ckeditor', 'ckeditor-style', 'ckeditor-bootstrap']))
+        @endif
+        @if (!$withVue)
+            @continue(in_array($asset_slug, ['vue']))
+        @endif
+        {!! $asset !!}
+    @endforeach
 
     @stack('scripts')
     @yield('head')
@@ -127,7 +127,15 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
 
 <body class="{{ $withBodyClass }}" {!! $theme->bodyStyle() !!}>
 
+    @if ($withSnippets && !empty($snippets))
+        <x-playground::snippets :snippets="$snippets" />
+    @endif
+
+    @stack('snippet-banner') {{-- snippet-banner rank: {-3000, -2000} --}}
+
     @yield('pre-header')
+
+    @stack('snippet-header') {{-- snippet-header rank: {-1999, -1000} --}}
 
     @yield('header')
 
@@ -154,12 +162,18 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
     @yield('pre-main')
 
     <main role="main" class="{{ $withMainClass }}">
+        @stack('snippet-main-header') {{-- snippet-main rank === {-999, 0} --}}
         @yield('breadcrumbs')
         @includeWhen($withAlerts, sprintf('%1$slayouts/bootstrap/alerts', $package_config['view']))
         @includeWhen($withErrors, sprintf('%1$slayouts/bootstrap/errors', $package_config['view']))
         @yield('main')
+        @stack('snippet-main') {{-- snippet-main rank === {0, 1000} --}}
         @yield('content')
+        @stack('snippet-content') {{-- snippet-content rank === {1001, 2000}, {rank < -3000 || rank > 5000} --}}
         @yield('content-end')
+        @stack('snippet-main-footer') {{-- snippet-main rank === {2001, 3000} --}}
+        {{-- snippet-footer-top rank === {3001, 4000} --}}
+        {{-- snippet-footer-bottom rank === {4001, 5000} --}}
     </main>
 
     @yield('pre-footer')
