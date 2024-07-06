@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.41030534351145" branch-rate="0" lines-covered="215" lines-valid="524" branches-covered="0" branches-valid="0" complexity="282" version="0.4" timestamp="1712005074">
+<coverage line-rate="0.41030534351145" branch-rate="0" lines-covered="215" lines-valid="524" branches-covered="0" branches-valid="0" complexity="282" version="0.4" timestamp="1720284910">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -1630,26 +1630,26 @@
           <methods>
             <method name="__construct" signature="string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeUnlock, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?Illuminate\Pagination\LengthAwarePaginator $paginator" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="88" hits="2"/>
+                <line number="93" hits="2"/>
               </lines>
             </method>
             <method name="render" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="92" hits="2"/>
-                <line number="94" hits="2"/>
-                <line number="95" hits="2"/>
-                <line number="96" hits="2"/>
                 <line number="97" hits="2"/>
+                <line number="99" hits="2"/>
+                <line number="100" hits="2"/>
+                <line number="101" hits="2"/>
+                <line number="102" hits="2"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="88" hits="2"/>
-            <line number="92" hits="2"/>
-            <line number="94" hits="2"/>
-            <line number="95" hits="2"/>
-            <line number="96" hits="2"/>
+            <line number="93" hits="2"/>
             <line number="97" hits="2"/>
+            <line number="99" hits="2"/>
+            <line number="100" hits="2"/>
+            <line number="101" hits="2"/>
+            <line number="102" hits="2"/>
           </lines>
         </class>
       </classes>
