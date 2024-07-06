@@ -86,6 +86,38 @@ php artisan vendor:publish --tag playground-blade-errors
 composer test
 ```
 
+## Cloc
+
+```sh
+composer cloc
+```
+
+```
+➜  playground-blade git:(develop) ✗ composer cloc
+> cloc --exclude-dir=output,vendor .
+     154 text files.
+     118 unique files.
+      38 files ignored.
+
+github.com/AlDanial/cloc v 1.98  T=0.10 s (1143.8 files/s, 81948.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Blade                           49            397             13           2700
+PHP                             47            466            518           2524
+CSS                             10            139            141            461
+SVG                              2              2              2            301
+YAML                             1              5              0            275
+XML                              3              0              7            221
+Markdown                         3             47              0             98
+JSON                             1              0              0             65
+JavaScript                       1              0             35             22
+INI                              1              3              0             12
+-------------------------------------------------------------------------------
+SUM:                           118           1059            716           6679
+-------------------------------------------------------------------------------
+```
+
 ## PHPStan
 
 Tests at level 9 on:

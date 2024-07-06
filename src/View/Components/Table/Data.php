@@ -8,6 +8,7 @@ namespace Playground\Blade\View\Components\Table;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\Component;
 
@@ -83,6 +84,10 @@ class Data extends Component
          */
         public array $styling = [],
         public string $class = '',
+
+        /**
+         * @var ?LengthAwarePaginator<Model>
+         */
         public ?LengthAwarePaginator $paginator = null,
     ) {
     }
