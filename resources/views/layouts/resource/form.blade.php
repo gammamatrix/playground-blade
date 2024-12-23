@@ -188,7 +188,7 @@ if ('patch' === $_method) {
                                     <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                                     <button type="reset" class="btn btn-warning">{{ __('Reset') }}</button>
                                     <a class="btn btn-danger"
-                                        href="{{ route($meta['info']['model_route']) }}">{{ __('Cancel') }}</a>
+                                        href="{{ old('_return_url') }}">{{ __('Cancel') }}</a>
                                 </div>
                             </fieldset>
                         @endif
