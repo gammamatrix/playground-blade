@@ -9,7 +9,7 @@
 
 ##teamcity[testStarted name='test_instance_with_docs' locationHint='php_qn:///app/tests/Unit/Assets/Comment/InstanceTest.php::\Tests\Unit\Playground\Blade\Assets\Comment\InstanceTest::test_instance_with_docs' flowId='1']
 
-##teamcity[testFinished name='test_instance_with_docs' duration='157' flowId='1']
+##teamcity[testFinished name='test_instance_with_docs' duration='160' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\Assets\Comment\InstanceTest' flowId='1']
 
@@ -17,7 +17,7 @@
 
 ##teamcity[testStarted name='test_instance_with_docs' locationHint='php_qn:///app/tests/Unit/Assets/Font/InstanceTest.php::\Tests\Unit\Playground\Blade\Assets\Font\InstanceTest::test_instance_with_docs' flowId='1']
 
-##teamcity[testFinished name='test_instance_with_docs' duration='36' flowId='1']
+##teamcity[testFinished name='test_instance_with_docs' duration='35' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\Assets\Font\InstanceTest' flowId='1']
 
@@ -65,7 +65,7 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='15' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='14' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
@@ -73,7 +73,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_without_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_label_on_title_column' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_label_on_title_column' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_label_on_title_column' duration='8' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_label_on_title_column' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_with_label_on_title_column' flowId='1']
 
@@ -89,7 +89,7 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='10' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='9' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
@@ -109,15 +109,15 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='12' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='11' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='16' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='15' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_select' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_with_select' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_select' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_select' duration='8' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest' flowId='1']
 
@@ -125,11 +125,11 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='8' flowId='1']
 
 ##teamcity[testStarted name='test_component_renders_empty_view_without_labels_or_classes' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_renders_empty_view_without_labels_or_classes' flowId='1']
 
-##teamcity[testFinished name='test_component_renders_empty_view_without_labels_or_classes' duration='11' flowId='1']
+##teamcity[testFinished name='test_component_renders_empty_view_without_labels_or_classes' duration='10' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_true_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_true_value' flowId='1']
 
@@ -137,11 +137,11 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_with_false_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_false_value' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_false_value' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_false_value' duration='8' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_null_value' locationHint='php_qn:///app/tests/Unit/View/Components/ModelFlag/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest::test_component_can_render_view_with_null_value' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_with_null_value' duration='9' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_with_null_value' duration='8' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\ModelFlag\ComponentTest' flowId='1']
 
