@@ -1,6 +1,6 @@
 @if ($withDelete || $withEdit)
-<div class="btn-group float-end" role="group"
-    aria-label="{{ $meta['info']['model_label'] }} Controls and Actions">
+<div class="btn-group {{$css ?? 'float-end'}}" role="group"
+    aria-label="{{ __(':model_label Controls and Actions', ['model_label' => $meta['info']['model_label']]) }}">
     <button id="detail-actions" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
         aria-expanded="false">
         <span class="fas fa-gear"></span> {{ __('Actions') }}

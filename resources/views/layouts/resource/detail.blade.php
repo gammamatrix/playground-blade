@@ -28,12 +28,16 @@ $parent = $withParent && $data && is_callable([$data, 'parent']) ? $data->parent
 
 $withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
 
+$_return_url = old('_return_url');
+
+$routeModule = route($meta['info']['module_route']);
+$routeModel = route($meta['info']['model_route']);
 $routeShow = !$data ? '' : route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 $routeLock = !$data ? '' : route(sprintf('%1$s.lock', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
 $routeUnlock = !$data ? '' : route(sprintf('%1$s.unlock', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-$routeDelete = !$data ? '' : route(sprintf('%1$s.destroy', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $routeShow]);
+$routeDelete = !$data ? '' : route(sprintf('%1$s.destroy', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
 $routeRestore = !$data ? '' : route(sprintf('%1$s.restore', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-$routeEdit = !$data ? '' : route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $routeShow]);
+$routeEdit = !$data ? '' : route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
 
 $user = \Illuminate\Support\Facades\Auth::user();
 
@@ -71,6 +75,21 @@ $withLock = \Playground\Auth\Facades\Can::access($user, [
     'privilege' => $withPrivilege . ':lock',
     'roles' => ['admin', 'manager'],
 ])->allowed();
+
+/**
+ * @var boolean|string $withAccordion
+ */
+$withAccordion = isset($withAccordion) && (is_bool($withAccordion) || is_string($withAccordion)) ? $withAccordion : false;
+
+/**
+ * @var boolean|string $withAccordionFlags
+ */
+$withAccordionFlags = isset($withAccordionFlags) && (is_bool($withAccordionFlags) || is_string($withAccordionFlags)) ? $withAccordionFlags : true;
+
+/**
+ * @var boolean|string $withAccordionTimestamps
+ */
+$withAccordionTimestamps = isset($withAccordionTimestamps) && (is_bool($withAccordionTimestamps) || is_string($withAccordionTimestamps)) ? $withAccordionTimestamps : true;
 
 /**
  * @var boolean|string $withCard
@@ -119,48 +138,56 @@ $hasTables = !empty($dataDetail['tables']) && is_array($dataDetail['tables']);
 
 ?>
 @extends($package_config['layout'])
-@section('title', sprintf(
-    '%1$s - %2$s - %3$s',
-    $data[$meta['info']['model_attribute']],
-    $meta['info']['module_label'],
-    $meta['info']['model_label']
-))
+@section('title', sprintf('%1$s - %2$s - %3$s', $data[$meta['info']['model_attribute']], $meta['info']['module_label'],
+    $meta['info']['model_label']))
 @section('breadcrumbs')
-<nav aria-label="breadcrumb" class="container-fluid mt-3">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a
-                href="{{ route($meta['info']['module_route']) }}">{{ $meta['info']['module_label'] }}</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a
-                href="{{ route($meta['info']['model_route']) }}">{{ $meta['info']['model_label'] }} Index</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a
-                href="{{ route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->id]) }}">{{ $data[$meta['info']['model_attribute']] }}</a>
-        </li>
-    </ol>
-</nav>
+    <nav aria-label="breadcrumb" class="container-fluid mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">{{ __('Home') }}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{{ $routeModule }}">
+                    {{ __($meta['info']['module_label']) }}
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{{ $routeModel }}">
+                    {{ __(':module_label Index', ['module_label' => $meta['info']['model_label']]) }}
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <a href="{{ $routeShow }}">
+                    {{ __($data[$meta['info']['model_attribute']]) }}
+                </a>
+            </li>
+        </ol>
+    </nav>
 @endsection
 @section('content')
-<div class="container-fluid">
+    <div class="container-fluid">
 
-@yield('section-header')
+        @yield('section-header')
 
-@includeWhen($withCard, 'playground::layouts.resource.detail-card')
+        @includeWhen($withCard, 'playground::layouts.resource.detail-card')
 
-@yield('section-primary')
+        @includeWhen($withAccordion, 'playground::layouts.resource.detail-accordion')
 
-@yield('section-secondary')
+        @yield('section-primary')
 
-@yield('section-children')
+        @yield('section-secondary')
 
-@includeWhen($withTables, 'playground::layouts.resource.detail-tables')
+        @yield('section-children')
 
-@yield('section-tables')
+        @includeWhen($withTables, 'playground::layouts.resource.detail-tables')
 
-@yield('section-tertiary')
+        @yield('section-tables')
 
-@yield('section-footer')
+        @yield('section-tertiary')
 
-</div>
+        @yield('section-footer')
+
+    </div>
 @endsection
 
 @push('body')

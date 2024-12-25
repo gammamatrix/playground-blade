@@ -13,7 +13,7 @@
                 <td>
                     <a
                         href="{{ route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $parent->id]) }}">
-                        {{ $parent->label }}
+                        {{ __($parent->label) }}
                     </a>
                 </td>
             </tr>
