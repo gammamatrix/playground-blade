@@ -3,7 +3,13 @@
         <h1 class="accordion-header" id="accordion-header-0">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-item-0"
                 aria-expanded="true" aria-controls="accordion-item-0">
-                {{ __($data->getAttributeValue($meta['info']['model_attribute'])) }}
+                @if (!empty($modelLabel))
+                    @if (!empty($accordionlLabel))
+                        {{ __(':model_label :accordion_label: :model_attribute', ['model_label' => $modelLabel, 'accordion_label' => $accordionlLabel, 'model_attribute' => $data->getAttributeValue($meta['info']['model_attribute'])]) }}
+                    @else
+                        {{ __(':model_label: :model_attribute', ['model_label' => $modelLabel, 'model_attribute' => $data->getAttributeValue($meta['info']['model_attribute'])]) }}
+                    @endif
+                @endif
             </button>
         </h1>
         <div id="accordion-item-0" class="accordion-collapse collapse show" aria-labelledby="accordion-header-0"

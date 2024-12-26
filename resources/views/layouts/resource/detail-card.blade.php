@@ -2,12 +2,12 @@
     @if($withCardHeader)
     <div class="card-header">
         @include('playground::layouts.resource.detail-actions')
-        <h1>{{ $data->getAttributeValue($meta['info']['model_attribute']) }}</h1>
+        <h1>{{ __($data->getAttributeValue($meta['info']['model_attribute'])) }}</h1>
     </div>
     @endif
     @if ($withImage && $data && $data->image)
         <div class="card-header">
-            <img class="card-img-top" src="{{ $data->image }}" alt="{{ $meta['info']['model_label'] }} Image">
+            <img class="card-img-top" src="{{ $data->image }}" alt="{{ __(':model_label Image', ['model_label' => $meta['info']['model_label']]) }}">
         </div>
     @endif
     @if($withCardBody)
