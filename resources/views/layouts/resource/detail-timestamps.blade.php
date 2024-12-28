@@ -17,4 +17,10 @@
         <time datetime="{{ $data['deleted_at']->toW3cString() }}">{{ $data['deleted_at']->toDayDateTimeString() }}</time>
     </li>
     @endif
+    @if ($data->closed_at)
+    <li class="list-group-item">
+        {{ __('Closed At') }}:
+        <time datetime="{{ $data['closed_at']->toW3cString() }}">{{ $data['closed_at']->toDayDateTimeString() }}</time>
+    </li>
+    @endif
 </ul>

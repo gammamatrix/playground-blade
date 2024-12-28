@@ -6,6 +6,8 @@
     $routeParameter = !empty($routeParameter) && is_string($routeParameter) ? $routeParameter : '';
     $record = !empty($record) && is_array($record) ? $record : [];
 
+    $fkModelData = [];
+
     $hasColumnError = false;
 
     /**
@@ -63,7 +65,7 @@
     /**
      * @var string $isFk Is the column a foreign key?
      */
-    $isFk = 'fk' === $columnMeta['linkType'];
+    $isFk = in_array($columnMeta['linkType'], ['fk', 'filter-id']);
     // The foreign key needs a property to access.
     $isFk = $isFk && isset($columnMeta['property']) && !empty($columnMeta['property']);
     if ($preferLinkSlug) {
@@ -85,7 +87,10 @@
     //     '$isUrlLink' => $isUrlLink,
     //     '$link' => $link,
     //     '$record' => $record,
-    //     '$datum' => $datum,
+    //     // '$datum' => $datum,
+    //     '$routeParameter' => $routeParameter,
+    //     '$routeParameterKey' => $routeParameterKey,
+    //     '$record[$routeParameterKey]' => $record[$routeParameterKey] ?? 'nope',
     // ]);
 
     // Check for slug link first.
@@ -98,7 +103,11 @@
     } elseif ($preferLinkGo) {
         $link = empty($record[$routeParameterKey]) ? '' : route($columnMeta['linkRoute'], ['go' => $record[$routeParameterKey]]);
     } elseif ($isFk) {
-        $link = empty($record[$column]) ? '' : route($columnMeta['linkRoute'], [$routeParameter => $record[$column]]);
+        if (!empty($record[$column]) && !empty($columnMeta['routeParameter']) && !empty($columnMeta['routeParameterKey'])) {
+            $link = route($columnMeta['linkRoute'], [
+                $columnMeta['routeParameter'] => $record[$columnMeta['routeParameterKey']],
+            ]);
+        }
     }
 
     if ($isUrlLink) {
@@ -117,8 +126,8 @@
     //     '$isFk' => $isFk,
     //     '$isUrlLink' => $isUrlLink,
     //     '$link' => $link,
-    //     '$record' => $record,
-    //     '$datum' => $datum,
+    //     // '$record' => $record,
+    //     // '$datum' => $datum,
     // ]);
 
     if ($isFk && !empty($accessor)) {
@@ -126,8 +135,12 @@
             $fkModel = $datum && is_callable([$datum, $accessor]) ? $datum->{$accessor}()->first() : null;
             if ($fkModel) {
                 $fkModelData = $fkModel->toArray();
-                if (!empty($property) && isset($fkModelData[$property])) {
-                    $value = $fkModelData[$property];
+                if (!empty($property)) {
+                    if ($property === 'label_or_title') {
+                        $value = $fkModel->label_or_title;
+                    } elseif (isset($fkModelData[$property])) {
+                        $value = $fkModelData[$property];
+                    }
                 }
             }
         } catch (\Throwable $th) {
@@ -170,6 +183,7 @@
     }
 
     $isFlag = isset($columnMeta['flag']) && is_bool($columnMeta['flag']) && $columnMeta['flag'];
+    $withImage = isset($columnMeta['with-image']) && is_bool($columnMeta['with-image']) && $columnMeta['with-image'];
 
     // dump([
     //     '__METHOD__' => __METHOD__,
@@ -195,6 +209,8 @@
 
         @if ($isFlag)
             <x-playground::model-flag :$columnMeta :$value />
+        @elseif ($withImage)
+            <x-playground::model-image :$columnMeta :$fkModelData :$value />
         @elseif ($columnMeta['html'])
             {!! $value !!}
         @elseif ($isDate)
