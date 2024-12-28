@@ -21,25 +21,40 @@ class ServiceProvider extends AuthServiceProvider
 
     public function boot(): void
     {
+        /**
+         * @var array<string, mixed> $config
+         */
         $config = config($this->package);
-        if (! empty($config)) {
 
-            $this->loadViewsFrom(
-                dirname(__DIR__).'/resources/views',
-                'playground'
-            );
+        if (! empty($config['load']) && is_array($config['load'])) {
 
-            Blade::componentNamespace('Playground\\Blade\\View\\Components', 'playground');
+            if (! empty($config['load']['translations'])) {
+                $this->loadTranslationsFrom(
+                    dirname(__DIR__).'/lang',
+                    $this->package
+                );
+            }
 
+            if (! empty($config['load']['views'])) {
+
+                Blade::componentNamespace('Playground\\Blade\\View\\Components', 'playground');
+
+                $this->loadViewsFrom(
+                    dirname(__DIR__).'/resources/views',
+                    'playground'
+                );
+            }
             if ($this->app->runningInConsole()) {
                 // Publish configuration
                 $this->publishes([
-                    sprintf('%1$s/config/playground-blade.php', dirname(__DIR__)) => config_path('playground-blade.php'),
+                    sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package)),
                 ], 'playground-config');
 
                 $this->publishesAssets();
             }
+        }
 
+        if (! empty($config['about'])) {
             $this->about();
         }
     }

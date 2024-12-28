@@ -98,12 +98,23 @@ if (empty($hasMetaInfo) && !empty($data)) {
  */
 $model_attribute = $hasMetaInfo && $data && is_string($data->getAttributeValue($meta['info']['model_attribute'])) ? $data->getAttributeValue($meta['info']['model_attribute']) : '';
 
+$_return_url = old('_return_url');
+
+$routeModule = route($meta['info']['module_route']);
+$routeModel = route($meta['info']['model_route']);
+
+$routeShow = '';
+$routeCreate = route(sprintf('%1$s.create', $meta['info']['model_route']), ['_return_url' => $_return_url]);
+$routeEdit = '';
+
 $formTitle = '';
 $_methodUrl = '';
 $_method = empty($_method) ? '' : $_method;
 if ('patch' === $_method) {
     $formTitle = sprintf('Editing: %1$s', $model_attribute);
     $_methodUrl = route(sprintf('%1$s.patch', $meta['info']['model_route']), $data?->getAttributeValue('id'));
+    $routeShow = route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
+    $routeEdit = route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
 } elseif ('post' === $_method) {
     $formTitle = sprintf('Create a %1$s', $meta['info']['model_label']);
     $_methodUrl = route(sprintf('%1$s.post', $meta['info']['model_route']));
@@ -117,18 +128,42 @@ if ('patch' === $_method) {
 @section('breadcrumbs')
     <nav aria-label="breadcrumb" class="container-fluid mt-3">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a
-                    href="{{ route($meta['info']['module_route']) }}">{{ $meta['info']['module_label'] }}</a></li>
-            <li class="breadcrumb-item"><a href="{{ route($meta['info']['model_route']) }}">{{ $meta['info']['model_label'] }}
-                    Index</a></li>
-            @if ('post' === $_method)
-                <li class="breadcrumb-item active" aria-current="page"><a
-                        href="{{ route(sprintf('%1$s.create', $meta['info']['model_route'])) }}">Create</a></li>
-            @elseif ('patch' === $_method)
-                <li class="breadcrumb-item active" aria-current="page"><a
-                        href="{{ route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->id]) }}">{{ $formTitle }}</a>
+            <li class="breadcrumb-item">
+                <a href="/">{{ __('Home') }}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{{ $routeModule }}">
+                    {{ __($meta['info']['module_label']) }}
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{{ $routeModel }}">
+                    {{ __(':module_label Index', ['module_label' => $meta['info']['model_label']]) }}
+                </a>
+            </li>
+            @if ($routeShow)
+                <li class="breadcrumb-item">
+                    <a href="{{ $routeShow }}">
+                        {{ __($data[$meta['info']['model_attribute']]) }}
+                    </a>
                 </li>
+            @endif
+            @if ('post' === $_method)
+                @if ($routeCreate)
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="{{ $routeCreate }}">
+                            {{ __('Create') }}
+                        </a>
+                    </li>
+                @endif
+            @elseif ('patch' === $_method)
+                @if ($routeEdit)
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="{{ $routeEdit }}">
+                            {{ __('Edit') }}
+                        </a>
+                    </li>
+                @endif
             @endif
         </ol>
     </nav>
@@ -145,7 +180,7 @@ if ('patch' === $_method) {
 
                     @csrf
 
-                    <input type="hidden" name="_return_url" value="{{ old('_return_url') }}">
+                    <input type="hidden" name="_return_url" value="{{ $_return_url }}">
 
                     @if ('patch' === $_method)
                         <input type="hidden" name="id" value="{{ old('id') }}">
@@ -185,10 +220,15 @@ if ('patch' === $_method) {
                         @else
                             <fieldset class="mb-3">
                                 <div class="button-group float-end">
-                                    <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
-                                    <button type="reset" class="btn btn-warning">{{ __('Reset') }}</button>
-                                    <a class="btn btn-danger"
-                                        href="{{ route($meta['info']['model_route']) }}">{{ __('Cancel') }}</a>
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Submit') }}
+                                    </button>
+                                    <button type="reset" class="btn btn-warning">
+                                        {{ __('Reset') }}
+                                    </button>
+                                    <a class="btn btn-danger" href="{{ $_return_url }}">
+                                        {{ __('Cancel') }}
+                                    </a>
                                 </div>
                             </fieldset>
                         @endif

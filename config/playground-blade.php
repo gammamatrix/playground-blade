@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+    'about' => (bool) env('PLAYGROUND_BLADE_ABOUT', true),
     'app' => [
         'name' => env('PLAYGROUND_BLADE_APP_NAME', 'Demo'),
         'url' => env('PLAYGROUND_BLADE_APP_URL', '/'),
@@ -11,6 +12,7 @@ return [
     'view' => env('PLAYGROUND_BLADE_VIEW', 'playground::'),
     'load' => [
         'views' => (bool) env('PLAYGROUND_BLADE_LOAD_VIEWS', true),
+        'translations' => (bool) env('PLAYGROUND_BLADE_LOAD_TRANSLATIONS', true),
     ],
     'session' => [
         'enable' => (bool) env('PLAYGROUND_BLADE_SESSION_ENABLE', true),

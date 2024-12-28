@@ -28,6 +28,10 @@ class ColumnSelect extends Component
         public string $key = 'label',
         public string $label = '',
         public string $pattern = '',
+        /**
+         * @var array<string, array<string, string|bool>>
+         */
+        public array $flags = [],
         public bool|string $placeholder = false,
         /**
          * @var array<int, array<string, string>> $records

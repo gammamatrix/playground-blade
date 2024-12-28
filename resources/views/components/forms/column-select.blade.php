@@ -56,6 +56,7 @@ $attributes = trim(
 //     '__METHOD__' => __METHOD__,
 //     '__FILE__' => __FILE__,
 //     '__LINE__' => __LINE__,
+//     '$flags' => $flags,
 //     '$key' => $key,
 //     '$column' => $column,
 //     '$records' => $records,
@@ -66,10 +67,14 @@ $attributes = trim(
 <div class="{{ trim(sprintf('%s %s %s', $withoutMargin, $advanced, $class)) }}">
     <div class="input-group my-3">
         @if (empty($column))
-            <div class="alert alert-danger">Expecting a column for the form select.</div>
+            <div class="alert alert-danger">
+                Expecting a column for the form select.
+            </div>
         @endif
         @if ($label)
-            <label class="input-group-text" for="form-input-{{ $column }}">{{ $label }}</label>
+            <label class="input-group-text" for="form-input-{{ $column }}">
+                {{ $label }}
+            </label>
         @endif
         <select class="form-select @error($column) is-invalid @enderror" value="{{ $oldValue }}"
             {!! $required !!}{!! $attributes !!}>
@@ -78,7 +83,23 @@ $attributes = trim(
             @endif
             @foreach ($records as $record)
                 <option value="{{ $record[$id] }}" @if ($record[$id] === $oldValue) selected @endif>
-                    {{ $record[$key] }}</option>
+                    @if (!empty($flags) && is_array($flags))
+                        @foreach ($flags as $flagKey => $flagMeta)
+                            @if (array_key_exists($flagKey, $record) && is_bool($record[$flagKey]))
+                                @if ($record[$flagKey])
+                                    @if (!empty($flagMeta['enabled']))
+                                        {{ $flagMeta['enabled'] }} -
+                                    @endif
+                                @else
+                                    @if (!empty($flagMeta['disabled']))
+                                        {{ $flagMeta['disabled'] }} -
+                                    @endif
+                                @endif
+                            @endif
+                        @endforeach
+                    @endif
+                    {{ $record[$key] }}
+                </option>
             @endforeach
         </select>
     </div>
@@ -88,11 +109,15 @@ $attributes = trim(
         </div>
     @else
         @error($column)
-            <div class="invalid-feedback" id="form-input-error-{{ $column }}">{{ $message }}</div>
+            <div class="invalid-feedback" id="form-input-error-{{ $column }}">
+                {{ $message }}
+            </div>
         @enderror
     @endif
     @if ($described)
-        <small id="form-input-help-{{ $column }}" class="form-text text-muted">{!! $described !!}</small>
+        <small id="form-input-help-{{ $column }}" class="form-text text-muted">
+            {!! $described !!}
+        </small>
     @endif
     {{ $slot }}
 </div>

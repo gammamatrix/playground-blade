@@ -101,6 +101,7 @@ if ($withTable) {
         'routeEdit' => sprintf('%1$s.edit', $meta['info']['model_route']),
         'routeDelete' => sprintf('%1$s.destroy', $meta['info']['model_route']),
         'routeRestore' => sprintf('%1$s.restore', $meta['info']['model_route']),
+        'routeShow' => sprintf('%1$s.show', $meta['info']['model_route']),
         'routeUnlock' => sprintf('%1$s.unlock', $meta['info']['model_route']),
         'paginator' => $paginator ?? null,
         'privilege' => $withPrivilege,
@@ -117,11 +118,21 @@ if ($withTable) {
 @section('breadcrumbs')
     <nav aria-label="breadcrumb" class="container-fluid mt-3">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a
-                    href="{{ route($meta['info']['module_route']) }}">{{ $meta['info']['module_label'] }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a
-                    href="{{ route($meta['info']['model_route']) }}">{{ $meta['info']['model_label'] }} Index</a></li>
+            <li class="breadcrumb-item">
+                <a href="/">
+                    {{ __('Home') }}
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{{ route($meta['info']['module_route']) }}">
+                    {{ __($meta['info']['module_label']) }}
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <a href="{{ route($meta['info']['model_route']) }}">
+                    {{ __(':model_label Index', ['model_label' => $meta['info']['model_label']]) }}
+                </a>
+            </li>
         </ol>
     </nav>
 @endsection
