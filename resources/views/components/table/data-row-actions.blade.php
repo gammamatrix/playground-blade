@@ -1,5 +1,5 @@
 <th>
-    <div class="text-nowrap" role="group" aria-label="{{ __('playground::pagination.row.actions.label') }}">
+    <div class="text-nowrap" role="group" aria-label="{{ __('playground-blade::pagination.row.actions.label') }}">
         @if ($withUnlock && !empty($record['locked']) && $routeUnlock)
             @include('playground::components/table/data-row-actions-unlock')
         @else

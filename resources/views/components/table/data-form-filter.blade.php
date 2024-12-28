@@ -12,6 +12,8 @@
         </button>
     </div>
 
+@include('playground::components/table/data-form-filter-columns')
+
 @includeWhen($trashable, 'playground::components/table/data-form-filter-trash')
 
 @includeWhen(!empty($meta['ids']), 'playground::components/table/data-form-filter-ids')

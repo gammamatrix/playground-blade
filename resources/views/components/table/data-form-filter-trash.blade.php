@@ -10,7 +10,7 @@ if (!empty($trashable) && !empty($validated) && !empty($validated['filter']) && 
     }
 }
 ?>
-<fieldset class="mb-3" id="{{ $id }}-fieldset-filter-ids">
+<fieldset class="mb-3" id="{{ $id }}-fieldset-filter-trash">
     <legend>
         Filter Trash
     </legend>

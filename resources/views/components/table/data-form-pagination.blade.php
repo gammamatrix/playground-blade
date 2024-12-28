@@ -1,11 +1,11 @@
 <fieldset class="mb-3">
 
-    <legend>{{ __('playground::pagination.form.label') }}</legend>
+    <legend>{{ __('playground-blade::pagination.form.label') }}</legend>
 
     <div class="input-group mb-3">
 
         <label class="input-group-text" for="form_per_page">
-            {{ __('playground::pagination.show', [
+            {{ __('playground-blade::pagination.show', [
                 'currentPage' => $paginator->currentPage(),
                 'lastPage' => $paginator->lastPage(),
                 'perPage' => $paginator->perPage(),
@@ -28,7 +28,7 @@
         </span>
 
         <button type="submit" class="btn btn-success">
-            {{ __('playground::pagination.go') }}
+            {{ __('playground-blade::pagination.go') }}
         </button>
     </div>
 
