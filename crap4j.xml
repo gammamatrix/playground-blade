@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-12-26 20:57:44</timestamp>
+  <timestamp>2024-12-28 19:10:56</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>91</methodCount>
+    <methodCount>93</methodCount>
     <crapMethodCount>8</crapMethodCount>
     <crapLoad>97</crapLoad>
-    <totalCrap>1614.26</totalCrap>
-    <crapMethodPercent>8.79</crapMethodPercent>
+    <totalCrap>1622.26</totalCrap>
+    <crapMethodPercent>8.6</crapMethodPercent>
   </stats>
   <methods>
     <method>
@@ -928,8 +928,8 @@
       <package>Playground\Blade\View\Components\Forms</package>
       <className>Playground\Blade\View\Components\Forms\ColumnSelect</className>
       <methodName>__construct</methodName>
-      <methodSignature>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, bool $default, string $described, ?bool $disabled, string $errorMessage, string $id, string $key, string $label, string $pattern, bool|string $placeholder, array $records, array $rules, string $step, ?bool $readonly, string $type, bool $withoutMargin)</methodSignature>
-      <fullMethod>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, bool $default, string $described, ?bool $disabled, string $errorMessage, string $id, string $key, string $label, string $pattern, bool|string $placeholder, array $records, array $rules, string $step, ?bool $readonly, string $type, bool $withoutMargin)</fullMethod>
+      <methodSignature>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, bool $default, string $described, ?bool $disabled, string $errorMessage, string $id, string $key, string $label, string $pattern, array $flags, bool|string $placeholder, array $records, array $rules, string $step, ?bool $readonly, string $type, bool $withoutMargin)</methodSignature>
+      <fullMethod>__construct(bool $advanced, ?bool $autocomplete, string $class, string $column, bool $default, string $described, ?bool $disabled, string $errorMessage, string $id, string $key, string $label, string $pattern, array $flags, bool|string $placeholder, array $records, array $rules, string $step, ?bool $readonly, string $type, bool $withoutMargin)</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -966,6 +966,28 @@
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\View\Components</package>
+      <className>Playground\Blade\View\Components\ModelImage</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(array $columnMeta, array $fkModelData, mixed $value)</methodSignature>
+      <fullMethod>__construct(array $columnMeta, array $fkModelData, mixed $value)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Blade\View\Components</package>
+      <className>Playground\Blade\View\Components\ModelImage</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
+      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

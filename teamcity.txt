@@ -65,7 +65,7 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='14' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='15' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/Column/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\Column\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
@@ -89,11 +89,11 @@
 
 ##teamcity[testStarted name='test_component_instance' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_instance' flowId='1']
 
-##teamcity[testFinished name='test_component_instance' duration='10' flowId='1']
+##teamcity[testFinished name='test_component_instance' duration='9' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='12' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='11' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_content_textarea' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnEditor/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\ComponentTest::test_component_can_render_view_with_content_textarea' flowId='1']
 
@@ -113,7 +113,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view_without_parameters' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_without_parameters' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='15' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view_without_parameters' duration='17' flowId='1']
 
 ##teamcity[testStarted name='test_component_can_render_view_with_select' locationHint='php_qn:///app/tests/Unit/View/Components/Forms/ColumnSelect/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Forms\ColumnSelect\ComponentTest::test_component_can_render_view_with_select' flowId='1']
 
@@ -153,7 +153,7 @@
 
 ##teamcity[testStarted name='test_component_can_render_view' locationHint='php_qn:///app/tests/Unit/View/Components/Table/Data/ComponentTest.php::\Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest::test_component_can_render_view' flowId='1']
 
-##teamcity[testFinished name='test_component_can_render_view' duration='21' flowId='1']
+##teamcity[testFinished name='test_component_can_render_view' duration='22' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Blade\View\Components\Table\Data\ComponentTest' flowId='1']
 
@@ -165,7 +165,7 @@
 
 ##teamcity[testStarted name='test_command_about_displays_package_information_and_succeed_with_code_0' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Blade\Console\Commands\About\CommandTest::test_command_about_displays_package_information_and_succeed_with_code_0' flowId='1']
 
-##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='167' flowId='1']
+##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed_with_code_0' duration='164' flowId='1']
 
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Blade\Console\Commands\About\CommandTest' flowId='1']
 
