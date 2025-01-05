@@ -20,6 +20,11 @@ $data = empty($data) ? null : $data;
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
 
 /**
+ * @var boolean $withBodyScript
+ */
+$withBodyScript = isset($withBodyScript) && is_bool($withBodyScript) ? $withBodyScript : true;
+
+/**
  * @var boolean|string $withFormInfo
  */
 $withFormInfo = isset($withFormInfo) && (is_bool($withFormInfo) || is_string($withFormInfo)) ? $withFormInfo : true;
@@ -60,6 +65,41 @@ $withFormParent = isset($withFormParent) && is_bool($withFormParent) ? $withForm
 $withFormButtons = isset($withFormButtons) && (is_bool($withFormButtons) || is_string($withFormButtons)) ? $withFormButtons : true;
 
 /**
+ * @var boolean|string $withFormLifecycle
+ */
+$withFormLifecycle = isset($withFormLifecycle) && (is_bool($withFormLifecycle) || is_string($withFormLifecycle)) ? $withFormLifecycle : true;
+
+ /**
+ * @var boolean|string $withFormStatus
+ */
+$withFormStatus = isset($withFormStatus) && (is_bool($withFormStatus) || is_string($withFormStatus)) ? $withFormStatus : true;
+
+/**
+ * @var boolean|string $withFormFlags
+ */
+$withFormFlags = isset($withFormFlags) && (is_bool($withFormFlags) || is_string($withFormFlags)) ? $withFormFlags : true;
+
+/**
+ * @var boolean|string $withFormMatrix
+ */
+$withFormMatrix = isset($withFormMatrix) && (is_bool($withFormMatrix) || is_string($withFormMatrix)) ? $withFormMatrix : true;
+
+/**
+ * @var boolean|string $withFormPermissions
+ */
+$withFormPermissions = isset($withFormPermissions) && (is_bool($withFormPermissions) || is_string($withFormPermissions)) ? $withFormPermissions : true;
+
+/**
+ * @var boolean|string $withFormPublishing
+ */
+$withFormPublishing = isset($withFormPublishing) && (is_bool($withFormPublishing) || is_string($withFormPublishing)) ? $withFormPublishing : true;
+
+/**
+ * @var boolean|string $withFormPlanning
+ */
+$withFormPlanning = isset($withFormPlanning) && (is_bool($withFormPlanning) || is_string($withFormPlanning)) ? $withFormPlanning : true;
+
+ /**
  * @var boolean|string $withFormStatus
  */
 $withFormStatus = isset($withFormStatus) && (is_bool($withFormStatus) || is_string($withFormStatus)) ? $withFormStatus : true;
@@ -192,11 +232,19 @@ if ('patch' === $_method) {
                         @if (is_string($withFormInfo))
                             @include($withFormInfo)
                         @else
-                            @include('playground::layouts.resource.form-information')
+                            @include('playground::layouts.resource.form-info')
                         @endif
                     @endif
 
                     @yield('form-secondary')
+
+                    @if ($withFormLifecycle)
+                        @if (is_string($withFormLifecycle))
+                            @include($withFormLifecycle)
+                        @else
+                            @include('playground::layouts.resource.form-lifecycle')
+                        @endif
+                    @endif
 
                     @if ($withFormStatus)
                         @if (is_string($withFormStatus))
@@ -206,9 +254,49 @@ if ('patch' === $_method) {
                         @endif
                     @endif
 
+                    @if ($withFormFlags)
+                        @if (is_string($withFormFlags))
+                            @include($withFormFlags)
+                        @else
+                            @include('playground::layouts.resource.form-flags')
+                        @endif
+                    @endif
+
+                    @if ($withFormMatrix)
+                        @if (is_string($withFormMatrix))
+                            @include($withFormMatrix)
+                        @else
+                            @include('playground::layouts.resource.form-matrix')
+                        @endif
+                    @endif
+
+                    @if ($withFormPermissions)
+                        @if (is_string($withFormPermissions))
+                            @include($withFormPermissions)
+                        @else
+                            @include('playground::layouts.resource.form-permissions')
+                        @endif
+                    @endif
+
+                    @if ($withFormPlanning)
+                        @if (is_string($withFormPlanning))
+                            @include($withFormPlanning)
+                        @else
+                            @include('playground::layouts.resource.form-planning')
+                        @endif
+                    @endif
+
+                    @if ($withFormPublishing)
+                        @if (is_string($withFormPublishing))
+                            @include($withFormPublishing)
+                        @else
+                            @include('playground::layouts.resource.form-publishing')
+                        @endif
+                    @endif
+
                     @yield('form-tertiary')
 
-                    @if ($withFormContent || $withFormDescription || $withFormContent || $withFormContent)
+                    @if ($withFormContent || $withFormDescription || $withFormContent)
                         @include('playground::layouts.resource.form-content')
                     @endif
 
@@ -244,6 +332,8 @@ if ('patch' === $_method) {
     </div>
 @endsection
 
+@if ($withBodyScript)
+
 @push('body')
     <script type="application/javascript">
 window.onload = function() {
@@ -264,3 +354,5 @@ window.onload = function() {
 }
 </script>
 @endpush
+
+@endif

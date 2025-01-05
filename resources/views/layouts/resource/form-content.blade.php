@@ -1,4 +1,4 @@
-<fieldset class="mb-3">
+<fieldset class="mb-3" id="fieldset-content">
 
     <legend>{{ __('Content Details') }}</legend>
 
