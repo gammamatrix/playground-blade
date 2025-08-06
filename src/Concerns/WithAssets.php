@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\Concerns;
 
 use Playground\Blade\Assets;
@@ -27,7 +28,7 @@ trait WithAssets
     protected array $headAssets = [];
 
     /**
-     * @param array<string, mixed> $assets
+     * @param  array<string, mixed>  $assets
      */
     public function loadBodyAssets(array $assets = []): self
     {
@@ -68,7 +69,7 @@ trait WithAssets
     }
 
     /**
-     * @param array<string, mixed> $assets
+     * @param  array<string, mixed>  $assets
      */
     public function loadHeadAssets(array $assets = []): self
     {
@@ -121,7 +122,7 @@ trait WithAssets
     /**
      * @return array<string, Assets\Asset>
      */
-    public function bodyAssets(Theme $theme = null): array
+    public function bodyAssets(?Theme $theme = null): array
     {
         if (! $theme) {
             return $this->initAssets()->bodyAssets;
@@ -136,7 +137,7 @@ trait WithAssets
     /**
      * @return array<string, Assets\Asset>
      */
-    public function headAssets(Theme $theme = null): array
+    public function headAssets(?Theme $theme = null): array
     {
         if (! $theme) {
             return $this->initAssets()->headAssets;

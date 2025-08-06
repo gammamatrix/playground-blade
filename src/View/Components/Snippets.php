@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\View\Components;
 
 use Illuminate\Contracts\View\Factory;
@@ -20,8 +21,7 @@ class Snippets extends Component
          * @var array<int, array<string, mixed>> $snippets
          */
         public array $snippets = [],
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {

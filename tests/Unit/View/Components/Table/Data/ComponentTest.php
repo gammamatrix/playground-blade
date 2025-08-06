@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Blade\View\Components\Table\Data;
 
 use Illuminate\Contracts\View\View;
@@ -29,7 +30,7 @@ class ComponentTest extends TestCase
 
     public function test_component_instance(): void
     {
-        $instance = new DataTable();
+        $instance = new DataTable;
 
         $this->assertInstanceOf(DataTable::class, $instance);
         $this->assertInstanceOf(View::class, $instance->render());

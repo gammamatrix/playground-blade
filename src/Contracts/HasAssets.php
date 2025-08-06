@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\Contracts;
 
 use Playground\Blade\Assets;
@@ -16,12 +17,12 @@ interface HasAssets
     public function initAssets(): self;
 
     /**
-     * @param array<string, mixed> $assets
+     * @param  array<string, mixed>  $assets
      */
     public function loadBodyAssets(array $assets = []): self;
 
     /**
-     * @param array<string, mixed> $assets
+     * @param  array<string, mixed>  $assets
      */
     public function loadHeadAssets(array $assets = []): self;
 

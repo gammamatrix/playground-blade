@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\Themes;
 
 use Playground\Blade\Themes\Contracts\Bootstrap as BootstrapContract;

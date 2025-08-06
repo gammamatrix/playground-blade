@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor;
 
 use Illuminate\Contracts\View\View;
@@ -29,7 +30,7 @@ class ComponentTest extends TestCase
 
     public function test_component_instance(): void
     {
-        $instance = new ColumnEditor();
+        $instance = new ColumnEditor;
 
         $this->assertInstanceOf(ColumnEditor::class, $instance);
         $this->assertInstanceOf(View::class, $instance->render());

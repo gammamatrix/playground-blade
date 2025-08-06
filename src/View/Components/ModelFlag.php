@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\View\Components;
 
 use Illuminate\Contracts\View\Factory;
@@ -21,8 +22,7 @@ class ModelFlag extends Component
          */
         public array $columnMeta = [],
         public mixed $value = null
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {

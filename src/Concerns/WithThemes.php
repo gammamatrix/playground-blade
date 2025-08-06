@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\Concerns;
 
 use Playground\Blade\Themes;
@@ -57,7 +58,7 @@ trait WithThemes
     }
 
     /**
-     * @param array<string, mixed> $themes
+     * @param  array<string, mixed>  $themes
      */
     public function loadThemes(array $themes = [], bool $enabled = true): self
     {

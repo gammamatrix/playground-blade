@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\View\Components\Table;
 
 use Illuminate\Contracts\View\Factory;
@@ -89,8 +90,7 @@ class Data extends Component
          * @var ?LengthAwarePaginator<Model>
          */
         public ?LengthAwarePaginator $paginator = null,
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {

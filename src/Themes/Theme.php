@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\Themes;
 
 use Playground\Blade\Concerns\WithAssets;
@@ -48,7 +49,7 @@ class Theme implements HasAssets
     }
 
     /**
-     * @param array<string, mixed> $options
+     * @param  array<string, mixed>  $options
      */
     public function setOptions(array $options = []): self
     {
@@ -145,7 +146,7 @@ class Theme implements HasAssets
     ];
 
     /**
-     * @param array<string, mixed> $background
+     * @param  array<string, mixed>  $background
      */
     public function setBackground(array $background = []): self
     {

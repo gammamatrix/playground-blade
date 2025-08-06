@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade;
 
 use Illuminate\Foundation\Console\AboutCommand;
@@ -94,7 +95,7 @@ class ServiceProvider extends AuthServiceProvider
         );
 
         $this->app->scoped('playground-blade-ui', function () {
-            return new Ui();
+            return new Ui;
         });
     }
 

@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Blade\View\Components;
 
 use Illuminate\Contracts\View\Factory;
@@ -26,8 +27,7 @@ class ModelImage extends Component
          */
         public array $fkModelData = [],
         public mixed $value = null
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {

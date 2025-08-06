@@ -1,7 +1,7 @@
 includes:
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/phpstan/phpstan-phpunit/rules.neon
-    #- vendor/tomasvotruba/bladestan/config/extension.neon
+    - vendor/tomasvotruba/bladestan/config/extension.neon
     - vendor/larastan/larastan/extension.neon
 
 parameters:
@@ -24,3 +24,8 @@ parameters:
 
     # editorUrl: 'vscode://file/%%file%%:%%line%%'
     # editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
+
+    ignoreErrors:
+        -
+            message: "#Called 'env' outside of the config directory which returns null when the config is cached, use 'config'.#"
+            path: *config/*.php

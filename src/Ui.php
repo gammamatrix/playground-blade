@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade;
 
 use Playground\Blade\Concerns\WithAssets;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\Contracts;
 
 use Playground\Blade\Themes;
@@ -16,7 +17,7 @@ interface HasThemes
     public function initThemes(): self;
 
     /**
-     * @param array<string, mixed> $themes
+     * @param  array<string, mixed>  $themes
      */
     public function loadThemes(array $themes = []): self;
 

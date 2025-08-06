@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Tests\Unit\Playground\Blade\Assets\Script;
 
 use Playground\Blade\Assets\Script;

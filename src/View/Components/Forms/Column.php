@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\View\Components\Forms;
 
 use Illuminate\Contracts\View\Factory;
@@ -42,8 +43,7 @@ class Column extends Component
         public ?int $step = null,
         public string $type = 'text',
         public bool $withoutMargin = false,
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {

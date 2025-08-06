@@ -2,7 +2,8 @@
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-blade/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/testdox.txt)
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/coverage.svg)](tests)
-[![PHPStan Level 9 src and tests](https://img.shields.io/badge/PHPStan-level%209-brightgreen)](.github/workflows/ci.yml#L115)
+
+[//]: # ([![PHPStan Level 10 src and tests]&#40;https://img.shields.io/badge/PHPStan-level%2010-brightgreen&#41;]&#40;.github/workflows/ci.yml#L115&#41;)
 
 The Playground Blade package for [Laravel](https://laravel.com/docs/11.x) applications.
 

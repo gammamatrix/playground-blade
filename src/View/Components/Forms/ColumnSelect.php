@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\View\Components\Forms;
 
 use Illuminate\Contracts\View\Factory;
@@ -49,8 +50,7 @@ class ColumnSelect extends Component
         public ?bool $readonly = null,
         public string $type = '',
         public bool $withoutMargin = false,
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {

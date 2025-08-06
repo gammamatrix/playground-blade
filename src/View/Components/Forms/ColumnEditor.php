@@ -4,6 +4,7 @@ declare(strict_types=1);
 /**
  * Playground
  */
+
 namespace Playground\Blade\View\Components\Forms;
 
 use Illuminate\Contracts\View\Factory;
@@ -34,8 +35,7 @@ class ColumnEditor extends Component
         public string $described = '',
         public ?bool $disabled = null,
         public ?bool $readonly = null,
-    ) {
-    }
+    ) {}
 
     public function render(): Factory|View
     {
