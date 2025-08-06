@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2025-01-05 18:57:42</timestamp>
+  <timestamp>2025-08-06 15:16:18</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>93</methodCount>
@@ -532,8 +532,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithAssets</className>
       <methodName>bodyAssets</methodName>
-      <methodSignature>bodyAssets(Playground\Blade\Themes\Theme $theme): array</methodSignature>
-      <fullMethod>bodyAssets(Playground\Blade\Themes\Theme $theme): array</fullMethod>
+      <methodSignature>bodyAssets(?Playground\Blade\Themes\Theme $theme): array</methodSignature>
+      <fullMethod>bodyAssets(?Playground\Blade\Themes\Theme $theme): array</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -543,8 +543,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithAssets</className>
       <methodName>headAssets</methodName>
-      <methodSignature>headAssets(Playground\Blade\Themes\Theme $theme): array</methodSignature>
-      <fullMethod>headAssets(Playground\Blade\Themes\Theme $theme): array</fullMethod>
+      <methodSignature>headAssets(?Playground\Blade\Themes\Theme $theme): array</methodSignature>
+      <fullMethod>headAssets(?Playground\Blade\Themes\Theme $theme): array</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
