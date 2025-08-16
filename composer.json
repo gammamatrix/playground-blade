@@ -19,11 +19,14 @@
     ],
     "require": {
         "php": "^8.4",
-        "gammamatrix/playground": "74.x-dev"
+        "gammamatrix/playground": "74.x-dev",
+        "illuminate/support": "^12.0",
+        "illuminate/view": "^12.0"
     },
     "require-dev": {
         "gammamatrix/playground-auth": "74.x-dev",
         "gammamatrix/playground-test": "74.x-dev",
+        "illuminate/testing": "^12.0",
         "tomasvotruba/bladestan": "^0.11.3"
     },
     "minimum-stability": "dev",
@@ -60,6 +63,7 @@
         "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max --error-format=blade",
         "format": "vendor/bin/pint",
         "cloc": "cloc --exclude-dir=output,vendor .",
-        "test": "vendor/bin/testbench package:test"
+        "test": "vendor/bin/testbench package:test",
+        "test-dev": "vendor/bin/phpunit -c phpunit-dev.xml"
     }
 }
