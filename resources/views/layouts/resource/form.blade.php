@@ -124,47 +124,38 @@ $withFormIntroduction = isset($withFormIntroduction) && is_bool($withFormIntrodu
  */
 $withFormSummary = isset($withFormSummary) && is_bool($withFormSummary) ? $withFormSummary : true;
 
-/**
- * @var boolean $hasMetaInfo
- */
-$hasMetaInfo = !empty($meta['info']) && is_array($meta['info']) && !empty($meta['info']['model_attribute']) && is_string($meta['info']['model_attribute']);
-
-if (empty($hasMetaInfo) && !empty($data)) {
-    throw new RuntimeException('Expecting meta and data info for resources/views/layouts/resource/form.blade.php', 500);
+$packageInfo = $meta['info'] ?? null;
+if (!($packageInfo instanceof \Playground\PackageInfo)) {
+    throw new RuntimeException('Expecting package info for resources/views/layouts/resource/form.blade.php', 500);
 }
-
-/**
- * @var string $model_attribute
- */
-$model_attribute = $hasMetaInfo && $data && is_string($data->getAttributeValue($meta['info']['model_attribute'])) ? $data->getAttributeValue($meta['info']['model_attribute']) : '';
 
 $_return_url = old('_return_url');
 
-$routeModule = route($meta['info']['module_route']);
-$routeModel = route($meta['info']['model_route']);
+$routeModule = route($packageInfo->module_route());
+$routeModel = route($packageInfo->model_route());
 
 $routeShow = '';
-$routeCreate = route(sprintf('%1$s.create', $meta['info']['model_route']), ['_return_url' => $_return_url]);
+$routeCreate = route(sprintf('%1$s.create', $packageInfo->model_route()), ['_return_url' => $_return_url]);
 $routeEdit = '';
 
 $formTitle = '';
 $_methodUrl = '';
 $_method = empty($_method) ? '' : $_method;
 if ('patch' === $_method) {
-    $formTitle = sprintf('Editing: %1$s', $model_attribute);
-    $_methodUrl = route(sprintf('%1$s.patch', $meta['info']['model_route']), $data?->getAttributeValue('id'));
-    $routeShow = route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-    $routeEdit = route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
+    $formTitle = sprintf('Editing: %1$s', $packageInfo->model_attribute());
+    $_methodUrl = route(sprintf('%1$s.patch', $packageInfo->model_route()), $data?->getAttributeValue('id'));
+    $routeShow = route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_slug() => $data?->getAttributeValue('id')]);
+    $routeEdit = route(sprintf('%1$s.edit', $packageInfo->model_route()), [$packageInfo->model_slug() => $data?->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
 } elseif ('post' === $_method) {
-    $formTitle = sprintf('Create a %1$s', $meta['info']['model_label']);
-    $_methodUrl = route(sprintf('%1$s.post', $meta['info']['model_route']));
+    $formTitle = sprintf('Create a %1$s', $packageInfo->model_label());
+    $_methodUrl = route(sprintf('%1$s.post', $packageInfo->model_route()));
 }
 
 ?>
 @extends($package_config['layout'], [
     'withEditor' => true,
 ])
-@section('title', sprintf('%1$s - %2$s Form', $meta['info']['module_label'], $meta['info']['model_label']))
+@section('title', sprintf('%1$s - %2$s Form', $packageInfo->module_label(), $packageInfo->model_label()))
 @section('breadcrumbs')
     <nav aria-label="breadcrumb" class="container-fluid mt-3">
         <ol class="breadcrumb">
@@ -173,18 +164,18 @@ if ('patch' === $_method) {
             </li>
             <li class="breadcrumb-item">
                 <a href="{{ $routeModule }}">
-                    {{ __($meta['info']['module_label']) }}
+                    {{ __($packageInfo->module_label()) }}
                 </a>
             </li>
             <li class="breadcrumb-item">
                 <a href="{{ $routeModel }}">
-                    {{ __(':module_label Index', ['module_label' => $meta['info']['model_label']]) }}
+                    {{ __(':module_label Index', ['module_label' => $packageInfo->model_label()]) }}
                 </a>
             </li>
             @if ($routeShow)
                 <li class="breadcrumb-item">
                     <a href="{{ $routeShow }}">
-                        {{ __($data[$meta['info']['model_attribute']]) }}
+                        {{ __($data[$packageInfo->model_attribute()]) }}
                     </a>
                 </li>
             @endif

@@ -31,6 +31,11 @@ $withTable = isset($withTable) && is_bool($withTable) ? $withTable : true;
  */
 $withTable = isset($withTable) && (is_bool($withTable) || is_string($withTable)) ? $withTable : true;
 
+$packageInfo = $meta['info'] ?? null;
+if (!($packageInfo instanceof \Playground\PackageInfo)) {
+    throw new RuntimeException('Expecting package info for resources/views/layouts/resource/index.blade.php', 500);
+}
+
 /**
  * @var array<string, array<string, mixed>> $withTableColumns
  */
@@ -43,14 +48,14 @@ if ($withTable) {
         $withTableColumns = [
             'label' => [
                 'linkType' => 'id',
-                'linkRoute' => sprintf('%1$s.show', $meta['info']['model_route']),
+                'linkRoute' => sprintf('%1$s.show', $packageInfo->model_route()),
                 'label' => 'Label',
                 'filter' => 'id',
             ],
             'slug' => [
                 'hide-sm' => true,
                 // 'linkType' => 'slug',
-                'linkRoute' => sprintf('%1$s.slug', $meta['info']['model_route']),
+                'linkRoute' => sprintf('%1$s.slug', $packageInfo->model_route()),
                 'label' => 'Slug',
             ],
             'active' => [
@@ -76,7 +81,7 @@ if ($withTable) {
                 // 'linkType' => 'fk',
                 // 'accessor' => 'parent',
                 'property' => 'label',
-                // 'linkRoute' => sprintf('%1$s.id', $meta['info']['model_route']),
+                // 'linkRoute' => sprintf('%1$s.id', $packageInfo->model_route()),
                 'label' => 'Parent',
                 'filter' => 'parent_id',
             ],
@@ -90,19 +95,19 @@ if ($withTable) {
     $tableComponent = [
         'trashable' => true,
         'columns' => $withTableColumns,
-        'id' => sprintf('%1$s-index', $meta['info']['model_slug']),
+        'id' => sprintf('%1$s-index', $packageInfo->model_slug()),
         'collapsible' => true,
         'sort' => $sort ?? [],
         'filters' => $filters ?? [],
         'validated' => $validated ?? [],
         'modelActions' => true,
-        'routeParameter' => $meta['info']['model_slug'],
+        'routeParameter' => $packageInfo->model_slug(),
         'routeParameterKey' => 'id',
-        'routeEdit' => sprintf('%1$s.edit', $meta['info']['model_route']),
-        'routeDelete' => sprintf('%1$s.destroy', $meta['info']['model_route']),
-        'routeRestore' => sprintf('%1$s.restore', $meta['info']['model_route']),
-        'routeShow' => sprintf('%1$s.show', $meta['info']['model_route']),
-        'routeUnlock' => sprintf('%1$s.unlock', $meta['info']['model_route']),
+        'routeEdit' => sprintf('%1$s.edit', $packageInfo->model_route()),
+        'routeDelete' => sprintf('%1$s.destroy', $packageInfo->model_route()),
+        'routeRestore' => sprintf('%1$s.restore', $packageInfo->model_route()),
+        'routeShow' => sprintf('%1$s.show', $packageInfo->model_route()),
+        'routeUnlock' => sprintf('%1$s.unlock', $packageInfo->model_route()),
         'paginator' => $paginator ?? null,
         'privilege' => $withPrivilege,
         'styling' => [
@@ -114,7 +119,7 @@ if ($withTable) {
 }
 ?>
 @extends($package_config['layout'])
-@section('title', sprintf('%1$s - %2$s Index', $meta['info']['module_label'], $meta['info']['model_label']))
+@section('title', sprintf('%1$s - %2$s Index', $packageInfo->module_label(), $packageInfo->model_label()))
 @section('breadcrumbs')
     <nav aria-label="breadcrumb" class="container-fluid mt-3">
         <ol class="breadcrumb">
@@ -124,13 +129,13 @@ if ($withTable) {
                 </a>
             </li>
             <li class="breadcrumb-item">
-                <a href="{{ route($meta['info']['module_route']) }}">
-                    {{ __($meta['info']['module_label']) }}
+                <a href="{{ route($packageInfo->module_route()) }}">
+                    {{ __($packageInfo->module_label()) }}
                 </a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-                <a href="{{ route($meta['info']['model_route']) }}">
-                    {{ __(':model_label Index', ['model_label' => $meta['info']['model_label']]) }}
+                <a href="{{ route($packageInfo->model_route()) }}">
+                    {{ __(':model_label Index', ['model_label' => $packageInfo->model_label()]) }}
                 </a>
             </li>
         </ol>
@@ -143,8 +148,8 @@ if ($withTable) {
             @if ($withCreate)
                 <div class="col-md-12 mb-3">
                     <div class="btn-group float-end px-3" role="group"
-                        aria-label="{{ $meta['info']['model_label'] }} Controls and Actions">
-                        <a class="btn btn-primary" href="{{ route(sprintf('%1$s.create', $meta['info']['model_route'])) }}"
+                        aria-label="{{ $packageInfo->model_label() }} Controls and Actions">
+                        <a class="btn btn-primary" href="{{ route(sprintf('%1$s.create', $packageInfo->model_route())) }}"
                             role="button">Create</a>
                     </div>
                 </div>
@@ -165,7 +170,7 @@ if ($withTable) {
                 :id="$tableComponent['id']" :meta="$meta" :validated="$meta['validated']" :sort="$meta['sortable']" :privilege="$tableComponent['privilege']" :collapsible="true"
                 :route-parameter="$tableComponent['routeParameter']" :route-parameter-key="$tableComponent['routeParameterKey']" :route-edit="$tableComponent['routeEdit']" :route-delete="$tableComponent['routeDelete']" :route-restore="$tableComponent['routeRestore']"
                 :route-unlock="$tableComponent['routeUnlock']" :styling="$tableComponent['styling']">
-                {{ $meta['info']['model_label_plural'] }}
+                {{ $packageInfo->model_label_plural() }}
             </x-playground::table.data>
 
         </div>

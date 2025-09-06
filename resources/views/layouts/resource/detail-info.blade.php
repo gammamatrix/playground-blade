@@ -9,10 +9,10 @@
         @yield('detail-info-table-body')
         @if ($parent)
             <tr>
-                <th scope="row">{{ __('Parent ' . $meta['info']['model_label']) }}</th>
+                <th scope="row">{{ __('Parent ' . $packageInfo->model_label()) }}</th>
                 <td>
                     <a
-                        href="{{ route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $parent->id]) }}">
+                        href="{{ route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_slug() => $parent->id]) }}">
                         {{ __($parent->label) }}
                     </a>
                 </td>

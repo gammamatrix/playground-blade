@@ -5,9 +5,9 @@
                 aria-expanded="true" aria-controls="accordion-item-0">
                 @if (!empty($modelLabel))
                     @if (!empty($accordionlLabel))
-                        {{ __(':model_label :accordion_label: :model_attribute', ['model_label' => $modelLabel, 'accordion_label' => $accordionlLabel, 'model_attribute' => $data->getAttributeValue($meta['info']['model_attribute'])]) }}
+                        {{ __(':model_label :accordion_label: :model_attribute', ['model_label' => $modelLabel, 'accordion_label' => $accordionlLabel, 'model_attribute' => $data->getAttributeValue($packageInfo->model_attribute())]) }}
                     @else
-                        {{ __(':model_label: :model_attribute', ['model_label' => $modelLabel, 'model_attribute' => $data->getAttributeValue($meta['info']['model_attribute'])]) }}
+                        {{ __(':model_label: :model_attribute', ['model_label' => $modelLabel, 'model_attribute' => $data->getAttributeValue($packageInfo->model_attribute())]) }}
                     @endif
                 @endif
             </button>

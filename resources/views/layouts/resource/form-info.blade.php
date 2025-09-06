@@ -26,7 +26,7 @@
     @endif
 
     @if ($withFormParent && !empty($parents))
-        <x-playground::forms.column-select column="parent_id" :key="$meta['info']['model_attribute']" label="Parent Setting"
+        <x-playground::forms.column-select column="parent_id" :key="$packageInfo->model_attribute()" label="Parent Setting"
             :records="$parents" />
     @endif
 

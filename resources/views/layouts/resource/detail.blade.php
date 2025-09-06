@@ -19,25 +19,33 @@ $data = empty($data) ? null : $data;
 
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
 
+$packageInfo = $meta['info'] ?? null;
+if (!($packageInfo instanceof \Playground\PackageInfo) || !($data instanceof \Illuminate\Database\Eloquent\Model)) {
+    throw new RuntimeException('Expecting data and package info for resources/views/layouts/resource/detail.blade.php', 500);
+}
+
 /**
  * @var boolean $withParent
  */
 $withParent = isset($withParent) && is_bool($withParent) ? $withParent : true;
 
+/**
+ * @var ?\Illuminate\Database\Eloquent\Model $parent
+ */
 $parent = $withParent && $data && is_callable([$data, 'parent']) ? $data->parent()->first() : null;
 
-$withPrivilege = !empty($meta['info']) && !empty($meta['info']['privilege']) && is_string($meta['info']['privilege']) ? $meta['info']['privilege'] : 'playground';
+$withPrivilege = !empty($meta['info']) && !empty($packageInfo->privilege()) && is_string($packageInfo->privilege()) ? $packageInfo->privilege() : 'playground';
 
 $_return_url = old('_return_url');
 
-$routeModule = route($meta['info']['module_route']);
-$routeModel = route($meta['info']['model_route']);
-$routeShow = !$data ? '' : route(sprintf('%1$s.show', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-$routeLock = !$data ? '' : route(sprintf('%1$s.lock', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-$routeUnlock = !$data ? '' : route(sprintf('%1$s.unlock', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-$routeDelete = !$data ? '' : route(sprintf('%1$s.destroy', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
-$routeRestore = !$data ? '' : route(sprintf('%1$s.restore', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id')]);
-$routeEdit = !$data ? '' : route(sprintf('%1$s.edit', $meta['info']['model_route']), [$meta['info']['model_slug'] => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
+$routeModule = route($packageInfo->module_route());
+$routeModel = route($packageInfo->model_route());
+$routeShow = route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_slug() => $data->getAttributeValue('id')]);
+$routeLock = route(sprintf('%1$s.lock', $packageInfo->model_route()), [$packageInfo->model_slug() => $data->getAttributeValue('id')]);
+$routeUnlock = route(sprintf('%1$s.unlock', $packageInfo->model_route()), [$packageInfo->model_slug() => $data->getAttributeValue('id')]);
+$routeDelete = route(sprintf('%1$s.destroy', $packageInfo->model_route()), [$packageInfo->model_slug() => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
+$routeRestore = route(sprintf('%1$s.restore', $packageInfo->model_route()), [$packageInfo->model_slug() => $data->getAttributeValue('id')]);
+$routeEdit = route(sprintf('%1$s.edit', $packageInfo->model_route()), [$packageInfo->model_slug() => $data->getAttributeValue('id'), '_return_url' => $_return_url ?: $routeShow]);
 
 $user = \Illuminate\Support\Facades\Auth::user();
 
@@ -138,8 +146,8 @@ $hasTables = !empty($dataDetail['tables']) && is_array($dataDetail['tables']);
 
 ?>
 @extends($package_config['layout'])
-@section('title', sprintf('%1$s - %2$s - %3$s', $data[$meta['info']['model_attribute']], $meta['info']['module_label'],
-    $meta['info']['model_label']))
+@section('title', sprintf('%1$s - %2$s - %3$s', $data[$packageInfo->model_attribute()], $packageInfo->module_label(),
+    $packageInfo->model_label()))
 @section('breadcrumbs')
     <nav aria-label="breadcrumb" class="container-fluid mt-3">
         <ol class="breadcrumb">
@@ -148,17 +156,17 @@ $hasTables = !empty($dataDetail['tables']) && is_array($dataDetail['tables']);
             </li>
             <li class="breadcrumb-item">
                 <a href="{{ $routeModule }}">
-                    {{ __($meta['info']['module_label']) }}
+                    {{ __($packageInfo->module_label()) }}
                 </a>
             </li>
             <li class="breadcrumb-item">
                 <a href="{{ $routeModel }}">
-                    {{ __(':module_label Index', ['module_label' => $meta['info']['model_label']]) }}
+                    {{ __(':module_label Index', ['module_label' => $packageInfo->model_label()]) }}
                 </a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
                 <a href="{{ $routeShow }}">
-                    {{ __($data[$meta['info']['model_attribute']]) }}
+                    {{ __($data[$packageInfo->model_attribute()]) }}
                 </a>
             </li>
         </ol>

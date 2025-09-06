@@ -1,6 +1,6 @@
 @if ($hasTables)
 @foreach ($dataDetail['tables'] as $table)
-    <div class="row" id="{{ sprintf('section-%1$s-%2$s', $meta['info']['model_slug'], $table) }}">
+    <div class="row" id="{{ sprintf('section-%1$s-%2$s', $packageInfo->model_slug(), $table) }}">
         @php
             $hasTable = is_string($table) && !empty($dataDetail[$table]) && !empty($dataDetail[$table]['label']) && !empty($$table) && is_object($$table);
         @endphp
@@ -12,8 +12,8 @@
             } else {
                 $components_table = [
                     'columns' => [
-                        $meta['info']['model_attribute'] => [
-                            'label' => ucfirst($meta['info']['model_attribute']),
+                        $packageInfo->model_attribute() => [
+                            'label' => ucfirst($packageInfo->model_attribute()),
                         ],
                         'slug' => [
                             // 'linkType' => 'slug',
@@ -22,7 +22,7 @@
                         ],
                     ],
                     'modelActions' => true,
-                    'routeEdit' => sprintf('%1$s.edit', $meta['info']['model_route']),
+                    'routeEdit' => sprintf('%1$s.edit', $packageInfo->model_route()),
                     'paginator' => $$table,
                     'styling' => [
                         'header' => [

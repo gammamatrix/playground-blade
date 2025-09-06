@@ -1,3 +1,4 @@
+@php return; /** TODO fix gids */ @endphp
 <fieldset class="mb-3" id="fieldset-permissions">
 
     <legend>{{ __('Permissions') }}</legend>
