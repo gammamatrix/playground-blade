@@ -32,6 +32,7 @@ class ComponentTest extends TestCase
     {
         $instance = new ColumnSelect;
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(ColumnSelect::class, $instance);
         $this->assertInstanceOf(View::class, $instance->render());
     }

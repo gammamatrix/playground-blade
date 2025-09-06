@@ -23,12 +23,10 @@ class ColumnEditor extends Component
         public string $errorMessage = '',
         public string $label = '',
         /**
-         * Options for rules:
-         *
-         * - bool $rules[required] - Make the column required.
-         * - int $rules[maxlength] - Limit the number of characters in the content.
-         *
-         * @var array<string, mixed> $rules
+         * @var array{
+         *     required?: bool, // Make the column required.
+         *     maxlength?: integer // Limit the number of characters in the content.
+         * } $rules
          */
         public array $rules = [],
         public bool $withoutMargin = false,
@@ -39,11 +37,16 @@ class ColumnEditor extends Component
 
     public function render(): Factory|View
     {
-        $prefix = config('playground-blade.view');
+        $prefix = config('playground-blade.view', '');
 
-        return view(sprintf(
+        /**
+         * @var view-string $view
+         */
+        $view = sprintf(
             '%1$scomponents.forms.column-editor',
             is_string($prefix) ? $prefix : ''
-        ));
+        );
+
+        return view($view);
     }
 }

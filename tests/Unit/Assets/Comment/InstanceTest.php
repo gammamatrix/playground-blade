@@ -23,6 +23,7 @@ class InstanceTest extends TestCase
 
         $instance = new Comment($options);
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(Comment::class, $instance);
 
         $expected = '<!-- http://example.com/comments -->';

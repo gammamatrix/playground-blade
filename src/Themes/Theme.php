@@ -33,6 +33,40 @@ class Theme implements HasAssets
         mixed $options = null
     ) {
         if (is_array($options)) {
+            /**
+             * @var array{
+             *     bsTheme?: string,
+             *     enable?: bool,
+             *     label?: string,
+             *     key?: string,
+             *     icon?: string,
+             *     provider?: string,
+             *     session?: string,
+             *     background?: array{
+             *         attachment?: string,
+             *         color?: string,
+             *         linear-gradient?: string,
+             *         image?: string,
+             *         repeat?: string,
+             *         size?: string,
+             *     },
+             *     head?: array{
+             *         comment?: array<string, mixed>,
+             *         font?: array<string, mixed>,
+             *         icon?: array<string, mixed>,
+             *         link?: array<string, mixed>,
+             *         script?: array<string, mixed>,
+             *         style?: array<string, mixed>,
+             *         stylesheet?: array<string, mixed>,
+             *     },
+             *     body?: array{
+             *         comment?: array<string, mixed>,
+             *         script?: array<string, mixed>,
+             *         style?: array<string, mixed>,
+             *         link?: array<string, mixed>,
+             *     }
+             * } $options
+             */
             $this->setOptions($options);
         }
     }
@@ -49,7 +83,37 @@ class Theme implements HasAssets
     }
 
     /**
-     * @param  array<string, mixed>  $options
+     * @param array{
+     *     enable?: bool,
+     *     label?: string,
+     *     key?: string,
+     *     icon?: string,
+     *     provider?: string,
+     *     session?: string,
+     *     background?: array{
+     *         attachment?: string,
+     *         color?: string,
+     *         linear-gradient?: string,
+     *         image?: string,
+     *         repeat?: string,
+     *         size?: string,
+     *     },
+     *     head?: array{
+     *         comment?: array<string, mixed>,
+     *         font?: array<string, mixed>,
+     *         icon?: array<string, mixed>,
+     *         link?: array<string, mixed>,
+     *         script?: array<string, mixed>,
+     *         style?: array<string, mixed>,
+     *         stylesheet?: array<string, mixed>,
+     *     },
+     *     body?: array{
+     *         comment?: array<string, mixed>,
+     *         script?: array<string, mixed>,
+     *         style?: array<string, mixed>,
+     *         link?: array<string, mixed>,
+     *     }
+     * } $options
      */
     public function setOptions(array $options = []): self
     {
@@ -172,6 +236,7 @@ class Theme implements HasAssets
                 'auto',
                 'auto auto',
             ]) || (
+                // TODO verify the pattern
                 preg_match('/([\d\.\%rempxvhautocontaincover ])+/', $background['size'])
             ))) {
             $this->background['size'] = $background['size'];

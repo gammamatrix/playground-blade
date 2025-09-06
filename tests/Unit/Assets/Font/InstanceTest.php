@@ -23,6 +23,7 @@ class InstanceTest extends TestCase
 
         $instance = new Font($options);
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(Font::class, $instance);
 
         $this->assertSame($options['docs'], $instance->docs());

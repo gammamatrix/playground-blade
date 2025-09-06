@@ -87,18 +87,23 @@ class Data extends Component
         public string $class = '',
 
         /**
-         * @var ?LengthAwarePaginator<Model>
+         * @var ?LengthAwarePaginator<int, Model>
          */
         public ?LengthAwarePaginator $paginator = null,
     ) {}
 
     public function render(): Factory|View
     {
-        $prefix = config('playground-blade.view');
+        $prefix = config('playground-blade.view', '');
 
-        return view(sprintf(
-            '%1$scomponents.table.data',
+        /**
+         * @var view-string $view
+         */
+        $view = sprintf(
+            '%1$scomponents.model.flag',
             is_string($prefix) ? $prefix : ''
-        ));
+        );
+
+        return view($view);
     }
 }

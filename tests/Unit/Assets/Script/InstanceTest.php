@@ -23,6 +23,7 @@ class InstanceTest extends TestCase
 
         $instance = new Script($options);
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(Script::class, $instance);
 
         $this->assertSame($options['docs'], $instance->docs());

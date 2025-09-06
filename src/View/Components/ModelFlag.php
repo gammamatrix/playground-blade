@@ -28,9 +28,14 @@ class ModelFlag extends Component
     {
         $prefix = config('playground-blade.view');
 
-        return view(sprintf(
+        /**
+         * @var view-string $view
+         */
+        $view = sprintf(
             '%1$scomponents.model.flag',
             is_string($prefix) ? $prefix : ''
-        ));
+        );
+
+        return view($view);
     }
 }

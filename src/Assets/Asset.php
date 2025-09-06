@@ -19,6 +19,9 @@ abstract class Asset implements Stringable
     public function __construct(mixed $options = null)
     {
         if (is_array($options)) {
+            /**
+             * @var array<string, mixed> $options
+             */
             $this->setOptions($options);
         }
     }

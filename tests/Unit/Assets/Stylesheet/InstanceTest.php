@@ -23,6 +23,7 @@ class InstanceTest extends TestCase
 
         $instance = new Stylesheet($options);
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(Stylesheet::class, $instance);
 
         $this->assertSame($options['docs'], $instance->docs());

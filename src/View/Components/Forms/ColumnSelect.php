@@ -56,9 +56,14 @@ class ColumnSelect extends Component
     {
         $prefix = config('playground-blade.view');
 
-        return view(sprintf(
+        /**
+         * @var view-string $view
+         */
+        $view = sprintf(
             '%1$scomponents.forms.column-select',
             is_string($prefix) ? $prefix : ''
-        ));
+        );
+
+        return view($view);
     }
 }

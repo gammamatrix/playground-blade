@@ -33,6 +33,46 @@ trait WithThemes
             return $this;
         }
 
+        /**
+         * @var array{
+         *      session: array{
+         *          enable: bool,
+         *          theme_name: string,
+         *      },
+         *      themes: array<string, array{
+         *          bsTheme?: string,
+         *          enable: bool,
+         *          label: string,
+         *          key: string,
+         *          icon?: string,
+         *          provider?: string,
+         *          session?: string,
+         *          background: array{
+         *              attachment?: string,
+         *              color?: string,
+         *              linear-gradient?: string,
+         *              image?: string,
+         *              repeat?: string,
+         *              size?: string,
+         *          },
+         *          head?: array{
+         *              comment?: array<string, mixed>,
+         *              font?: array<string, mixed>,
+         *              icon?: array<string, mixed>,
+         *              link?: array<string, mixed>,
+         *              script?: array<string, mixed>,
+         *              style?: array<string, mixed>,
+         *              stylesheet?: array<string, mixed>,
+         *          },
+         *          body?: array{
+         *              comment?: array<string, mixed>,
+         *              script?: array<string, mixed>,
+         *              style?: array<string, mixed>,
+         *              link?: array<string, mixed>,
+         *          }
+         *      }>,
+         * } $config
+         */
         $config = config('playground-blade');
 
         if (is_array($config)) {

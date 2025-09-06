@@ -34,6 +34,7 @@ class ComponentTest extends TestCase
         $value = null;
         $instance = new ModelFlag($columnMeta, $value);
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(ModelFlag::class, $instance);
         $this->assertInstanceOf(View::class, $instance->render());
     }

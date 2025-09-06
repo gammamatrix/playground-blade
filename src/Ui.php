@@ -26,16 +26,33 @@ class Ui implements HasAssets, HasThemes
             return $this;
         }
 
-        $config = config('playground-blade');
+        /**
+         * @var array{
+         *         head?: array{
+         *              comment?: array<string, mixed>,
+         *              font?: array<string, mixed>,
+         *              icon?: array<string, mixed>,
+         *              link?: array<string, mixed>,
+         *              script?: array<string, mixed>,
+         *              style?: array<string, mixed>,
+         *              stylesheet?: array<string, mixed>,
+         *          },
+         *          body?: array{
+         *              comment?: array<string, mixed>,
+         *              script?: array<string, mixed>,
+         *              style?: array<string, mixed>,
+         *              link?: array<string, mixed>,
+         *          },
+         *  } $assets
+         */
+        $assets = config('playground-blade.assets');
 
-        if (is_array($config)) {
-            if (! empty($config['assets']) && is_array($config['assets'])) {
-                if (! empty($config['assets']['head']) && is_array($config['assets']['head'])) {
-                    $this->loadHeadAssets($config['assets']['head']);
-                }
-                if (! empty($config['assets']['body']) && is_array($config['assets']['body'])) {
-                    $this->loadBodyAssets($config['assets']['body']);
-                }
+        if (! empty($assets) && is_array($assets)) {
+            if (! empty($assets['head']) && is_array($assets['head'])) {
+                $this->loadHeadAssets($assets['head']);
+            }
+            if (! empty($assets['body']) && is_array($assets['body'])) {
+                $this->loadBodyAssets($assets['body']);
             }
         }
 

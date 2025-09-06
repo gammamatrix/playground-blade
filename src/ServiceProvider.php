@@ -76,8 +76,8 @@ class ServiceProvider extends AuthServiceProvider
         AboutCommand::add('Playground: Blade', fn () => [
             '<fg=yellow;options=bold>Load</> Views' => ! empty($load['views']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
 
-            '<fg=blue;options=bold>View</> [layout]' => sprintf('[%s]', $config['layout']),
-            '<fg=blue;options=bold>View</> [prefix]' => sprintf('[%s]', $config['view']),
+            '<fg=blue;options=bold>View</> [layout]' => sprintf('[%s]', is_string($config['layout']) ? $config['layout'] : ''),
+            '<fg=blue;options=bold>View</> [prefix]' => sprintf('[%s]', is_string($config['view']) ? $config['view'] : ''),
 
             '<fg=blue;options=bold>Assets</> [head]' => sprintf('[%s]', $libs_head),
             '<fg=blue;options=bold>Assets</> [body]' => sprintf('[%s]', $libs_body),

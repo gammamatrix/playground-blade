@@ -47,9 +47,9 @@ trait WithAssets
             ) {
                 $type = $meta['asset'];
             }
+            $asset = null;
             if ($key && is_string($key) && in_array($type, $allowed)) {
 
-                $asset = null;
                 if ($type === 'script') {
                     $asset = new Assets\Script($meta);
                 } elseif ($type === 'style') {
@@ -59,9 +59,7 @@ trait WithAssets
                 } elseif ($type === 'comment') {
                     $asset = new Assets\Comment($meta);
                 }
-                if ($asset) {
-                    $this->bodyAssets[$key] = $asset;
-                }
+                $this->bodyAssets[$key] = $asset;
             }
         }
 
@@ -110,9 +108,7 @@ trait WithAssets
                     $asset = new Assets\Comment($meta);
                 }
 
-                if ($asset) {
-                    $this->headAssets[$key] = $asset;
-                }
+                $this->headAssets[$key] = $asset;
             }
         }
 

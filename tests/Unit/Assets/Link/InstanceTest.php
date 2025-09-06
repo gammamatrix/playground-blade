@@ -23,6 +23,7 @@ class InstanceTest extends TestCase
 
         $instance = new Link($options);
 
+        /** @phpstan-ignore method.alreadyNarrowedType */
         $this->assertInstanceOf(Link::class, $instance);
 
         $this->assertSame($options['docs'], $instance->docs());

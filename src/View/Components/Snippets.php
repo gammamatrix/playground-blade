@@ -27,9 +27,14 @@ class Snippets extends Component
     {
         $prefix = config('playground-blade.view');
 
-        return view(sprintf(
+        /**
+         * @var view-string $view
+         */
+        $view = sprintf(
             '%1$scomponents.snippets',
             is_string($prefix) ? $prefix : ''
-        ));
+        );
+
+        return view($view);
     }
 }
