@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2025-08-16 17:45:13</timestamp>
+  <timestamp>2025-09-06 21:14:24</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>93</methodCount>
     <crapMethodCount>8</crapMethodCount>
-    <crapLoad>97</crapLoad>
-    <totalCrap>1626.26</totalCrap>
+    <crapLoad>94</crapLoad>
+    <totalCrap>1552.26</totalCrap>
     <crapMethodPercent>8.6</crapMethodPercent>
   </stats>
   <methods>
@@ -512,10 +512,10 @@
       <methodName>loadBodyAssets</methodName>
       <methodSignature>loadBodyAssets(array $assets): self</methodSignature>
       <fullMethod>loadBodyAssets(array $assets): self</fullMethod>
-      <crap>182</crap>
-      <complexity>13</complexity>
+      <crap>156</crap>
+      <complexity>12</complexity>
       <coverage>0</coverage>
-      <crapLoad>13</crapLoad>
+      <crapLoad>12</crapLoad>
     </method>
     <method>
       <package>Playground\Blade\Concerns</package>
@@ -523,10 +523,10 @@
       <methodName>loadHeadAssets</methodName>
       <methodSignature>loadHeadAssets(array $assets): self</methodSignature>
       <fullMethod>loadHeadAssets(array $assets): self</fullMethod>
-      <crap>272</crap>
-      <complexity>16</complexity>
+      <crap>240</crap>
+      <complexity>15</complexity>
       <coverage>0</coverage>
-      <crapLoad>16</crapLoad>
+      <crapLoad>15</crapLoad>
     </method>
     <method>
       <package>Playground\Blade\Concerns</package>
@@ -664,8 +664,8 @@
       <package>Playground\Blade\Facades</package>
       <className>Playground\Blade\Facades\Ui</className>
       <methodName>getFacadeAccessor</methodName>
-      <methodSignature>getFacadeAccessor()</methodSignature>
-      <fullMethod>getFacadeAccessor()</fullMethod>
+      <methodSignature>getFacadeAccessor(): string</methodSignature>
+      <fullMethod>getFacadeAccessor(): string</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -688,8 +688,8 @@
       <methodName>about</methodName>
       <methodSignature>about(): void</methodSignature>
       <fullMethod>about(): void</fullMethod>
-      <crap>11</crap>
-      <complexity>11</complexity>
+      <crap>13</crap>
+      <complexity>13</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -875,10 +875,10 @@
       <methodName>initAssets</methodName>
       <methodSignature>initAssets(): self</methodSignature>
       <fullMethod>initAssets(): self</fullMethod>
-      <crap>90</crap>
-      <complexity>9</complexity>
+      <crap>72</crap>
+      <complexity>8</complexity>
       <coverage>0</coverage>
-      <crapLoad>9</crapLoad>
+      <crapLoad>8</crapLoad>
     </method>
     <method>
       <package>Playground\Blade\View\Components\Forms</package>
