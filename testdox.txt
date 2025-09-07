@@ -1,6 +1,11 @@
 Command (Tests\Feature\Playground\Blade\Console\Commands\About\Command)
  [x] Command about displays package information and succeed with code 0
 
+Component (Tests\Feature\Playground\Blade\View\Components\Table\Data\Component)
+ [x] Component instance
+ [x] Component can render empty view without columns
+ [x] Component can render view
+
 Component (Tests\Unit\Playground\Blade\View\Components\Forms\ColumnEditor\Component)
  [x] Component instance
  [x] Component can render view without parameters
@@ -28,7 +33,7 @@ Component (Tests\Unit\Playground\Blade\View\Components\ModelFlag\Component)
 
 Component (Tests\Unit\Playground\Blade\View\Components\Table\Data\Component)
  [x] Component instance
- [x] Component can render view
+ [x] Component cannot render view without paginator
 
 Instance (Tests\Unit\Playground\Blade\Assets\Comment\Instance)
  [x] Instance with docs
