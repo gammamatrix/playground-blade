@@ -100,7 +100,7 @@ class Data extends Component
          * @var view-string $view
          */
         $view = sprintf(
-            '%1$scomponents.model.flag',
+            '%1$scomponents.table.data',
             is_string($prefix) ? $prefix : ''
         );
 
