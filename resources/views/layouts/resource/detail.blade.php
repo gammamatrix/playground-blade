@@ -38,7 +38,7 @@ if ($withParent && is_callable([$data, 'parent'])) {
     $parent = $parent instanceof \Illuminate\Database\Eloquent\Relations\HasOne ? $parent->first() : null;
 }
 
-$withPrivilege = !empty($meta['info']) && !empty($packageInfo->privilege()) && is_string($packageInfo->privilege()) ? $packageInfo->privilege() : 'playground';
+$withPrivilege = $packageInfo->privilege() ?: 'playground';
 
 $_return_url = old('_return_url');
 
