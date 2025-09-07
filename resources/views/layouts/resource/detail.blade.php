@@ -34,8 +34,8 @@ $withParent = isset($withParent) && is_bool($withParent) ? $withParent : true;
  */
 $parent = null;
 if ($withParent && is_callable([$data, 'parent'])) {
-    // TODO this parent no longer calls first, make sure it still works.
     $parent = $data->parent();
+    $parent = $parent instanceof \Illuminate\Database\Eloquent\Relations\HasOne ? $parent->first() : null;
 }
 
 $withPrivilege = !empty($meta['info']) && !empty($packageInfo->privilege()) && is_string($packageInfo->privilege()) ? $packageInfo->privilege() : 'playground';

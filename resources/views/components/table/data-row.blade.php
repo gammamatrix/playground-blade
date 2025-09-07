@@ -140,11 +140,13 @@
         if ($isFk && !empty($accessor)) {
             try {
                 /**
-                 * // TODO removed first here
                  * @var ?\Illuminate\Database\Eloquent\Model $fkModel
                  */
-                $fkModel = $datum && is_callable([$datum, $accessor]) ? $datum->{$accessor}() : null;
-                //$fkModel = $datum && is_callable([$datum, $accessor]) ? $datum->{$accessor}()->first() : null;
+                $fkModel = null;
+                if ($datum && is_callable([$datum, $accessor])) {
+                    $fkModel = $datum->{$accessor}();
+                    $fkModel = $fkModel instanceof \Illuminate\Database\Eloquent\Relations\Relation ? $fkModel->first() : null;
+                }
                 if ($fkModel) {
                     $fkModelData = $fkModel->toArray();
                     if (!empty($property)) {
