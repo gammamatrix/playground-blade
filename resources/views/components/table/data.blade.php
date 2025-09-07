@@ -7,9 +7,22 @@
  * @component components/table
  */
 
+if (empty($paginator) || !($paginator instanceof Illuminate\Contracts\Pagination\LengthAwarePaginator)) {
+    throw new RuntimeException('Expecting a LengthAwarePaginator for $paginator in resources/views/components/table/data.blade.php');
+}
+
 $user = \Illuminate\Support\Facades\Auth::user();
 
+/**
+ * @var array<string, mixed> $meta
+ */
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
+
+/**
+ * @var array<string, mixed> $validated
+ */
+$validated = empty($validated) || !is_array($validated) ? [] : $validated;
+
 $withPrivilege = \Playground\Auth\Facades\Can::withPrivilege($meta);
 
 $withRestore = \Playground\Auth\Facades\Can::access($user, [
@@ -45,11 +58,10 @@ $withUnlock = \Playground\Auth\Facades\Can::access($user, [
  */
 $columns = isset($columns) && is_array($columns) ? $columns : [];
 
-if (empty($paginator) || empty($columns)) {
+if (empty($columns)) {
     // Only render this component if a paginator instance has been provided with columns.
     return;
 }
-
 $perPage = $paginator->perPage();
 
 // $id = empty($id) ? 'table-component' : $id;
@@ -85,6 +97,14 @@ $showForm = true;
 //     '$columns' => $columns,
 // ]);
 
+/**
+ * @var array{
+ *     header: array{
+ *         badge: string,
+ *         class: string,
+ *     }
+ * } $styling
+ */
 $styling = isset($styling) && is_array($styling) ? $styling : [];
 $hasHeaderStyling = isset($styling['header']) && is_array($styling['header']) && !empty($styling['header']);
 $headerClass = '';
@@ -157,7 +177,7 @@ if ($hasHeaderStyling && isset($styling['header']['class']) && is_string($stylin
                             @if ($icon)
                                 <span class="{{ $icon }}"></span>
                             @endif
-                            {{ $slot }}
+                            {{ !empty($slot) ? $slot : '' }}
                             <span class="{{ $badge }}">{{ $paginator->count() }} </span>
 
                             <div class="float-end">

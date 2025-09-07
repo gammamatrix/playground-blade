@@ -1,5 +1,8 @@
 @foreach ($columns as $column => $columnMeta)
         <?php
+        if (empty($columnMeta) || !is_array($columnMeta)) {
+            $columnMeta = [];
+        }
         $value = '';
         $column = !empty($column) && is_string($column) ? $column : '';
         $routeParameterKey = !empty($routeParameterKey) && is_string($routeParameterKey) ? $routeParameterKey : '';
@@ -25,26 +28,30 @@
          */
         $property = isset($columnMeta['property']) && is_string($columnMeta['property']) ? $columnMeta['property'] : '';
 
-        $columnMeta['class'] = isset($columnMeta['class']) ? $columnMeta['class'] : '';
+        $columnMeta['class'] = isset($columnMeta['class']) && is_string($columnMeta['class']) ? $columnMeta['class'] : '';
         if (isset($columnMeta['classes']) && is_array($columnMeta['classes'])) {
             $columnMeta['class'] .= empty($columnMeta['class']) ? $columnMeta['class'] : ' ' . $columnMeta['class'];
         }
-        $columnMeta['linkType'] = isset($columnMeta['linkType']) ? $columnMeta['linkType'] : '';
-        $columnMeta['linkRoute'] = isset($columnMeta['linkRoute']) ? $columnMeta['linkRoute'] : '';
+        $columnMeta['linkType'] = isset($columnMeta['linkType']) && is_string($columnMeta['linkType']) ? $columnMeta['linkType'] : '';
+        $columnMeta['linkRoute'] = isset($columnMeta['linkRoute']) && is_string($columnMeta['linkRoute']) ? $columnMeta['linkRoute'] : '';
 
-        $columnMeta['type'] = isset($columnMeta['type']) ? $columnMeta['type'] : '';
-        $columnMeta['html'] = isset($columnMeta['html']) && is_bool($columnMeta['html']) ? $columnMeta['html'] : false;
-        $columnMeta['action'] = isset($columnMeta['action']) ? $columnMeta['action'] : '';
-
-        $columnMeta['showSpec'] = isset($columnMeta['showSpec']) && is_bool($columnMeta['showSpec']) ? $columnMeta['showSpec'] : false;
+        $columnMeta['type'] = isset($columnMeta['type']) && is_string($columnMeta['type']) ? $columnMeta['type'] : '';
+        $columnMeta['html'] = isset($columnMeta['html']) && is_bool($columnMeta['html']) && $columnMeta['html'];
+        $columnMeta['action'] = isset($columnMeta['action']) && is_string($columnMeta['action']) ? $columnMeta['action'] : '';
 
         $columnMeta['filter'] = isset($columnMeta['filter']) && is_string($columnMeta['filter']) && !empty($record[$column]) ? $columnMeta['filter'] : null;
 
         if ($columnMeta['filter']) {
-            $columnMeta['filter_id'] = empty($record[$columnMeta['filter']]) ? '' : $record[$columnMeta['filter']];
+            $columnMeta['filter_id'] = empty($record[$columnMeta['filter']]) || !is_string($record[$columnMeta['filter']]) ? '' : $record[$columnMeta['filter']];
             $columnMeta['filter_css_id'] = 'filter_' . $columnMeta['filter'] . '_' . $columnMeta['filter_id'];
             $columnMeta['filter_name'] = 'filter[' . $columnMeta['filter'] . '][]';
-            $columnMeta['filter_checked'] = !empty($validated['filter']) && !empty($validated['filter'][$columnMeta['filter']]) && is_array($validated['filter'][$columnMeta['filter']]) && in_array($record[$columnMeta['filter']], $validated['filter'][$columnMeta['filter']]) ? 'checked' : '';
+            $columnMeta['filter_checked'] = !empty($validated) && is_array($validated) && !empty($validated['filter']) && is_array($validated['filter'])
+            && !empty($validated['filter'][$columnMeta['filter']])
+            && is_array($validated['filter'][$columnMeta['filter']])
+            && in_array(
+                $record[$columnMeta['filter']],
+                $validated['filter'][$columnMeta['filter']]
+            ) ? 'checked' : '';
         }
 
         /**
@@ -58,12 +65,12 @@
         $isUrlLink = 'url' === $columnMeta['linkType'];
 
         /**
-         * @var string $isDate Is the column a datetime column?
+         * @var bool $isDate Is the column a datetime column?
          */
         $isDate = 'date' === $columnMeta['type'];
 
         /**
-         * @var string $isFk Is the column a foreign key?
+         * @var bool $isFk Is the column a foreign key?
          */
         $isFk = in_array($columnMeta['linkType'], ['fk', 'filter-id']);
         // The foreign key needs a property to access.
@@ -132,12 +139,17 @@
 
         if ($isFk && !empty($accessor)) {
             try {
-                $fkModel = $datum && is_callable([$datum, $accessor]) ? $datum->{$accessor}()->first() : null;
+                /**
+                 * // TODO removed first here
+                 * @var ?\Illuminate\Database\Eloquent\Model $fkModel
+                 */
+                $fkModel = $datum && is_callable([$datum, $accessor]) ? $datum->{$accessor}() : null;
+                //$fkModel = $datum && is_callable([$datum, $accessor]) ? $datum->{$accessor}()->first() : null;
                 if ($fkModel) {
                     $fkModelData = $fkModel->toArray();
                     if (!empty($property)) {
                         if ($property === 'label_or_title') {
-                            $value = $fkModel->label_or_title;
+                            $value = $fkModel->getAttribute('label_or_title');
                         } elseif (isset($fkModelData[$property])) {
                             $value = $fkModelData[$property];
                         }
@@ -162,11 +174,6 @@
             //     '$datum' => $datum,
             //     '$fkModel' => $fkModel ? $fkModel->toArray() : $fkModel,
             // ]);
-        } elseif ($columnMeta['showSpec']) {
-            // Get the label of the type.
-            $accessor = empty($accessor) ? 'spec' : $accessor;
-            $property = empty($property) ? 'label' : $property;
-            $value = $datum->{$accessor}[$property];
         } else {
             // Set the value of the column.
             $value = $datum?->getAttributeValue($column);

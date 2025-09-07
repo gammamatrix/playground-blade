@@ -37,9 +37,11 @@ class ComponentTest extends TestCase
         $this->assertInstanceOf(View::class, $instance->render());
     }
 
-    public function test_component_can_render_view(): void
+    public function test_component_cannot_render_view_without_paginator(): void
     {
+        $this->expectException(\Illuminate\View\ViewException::class);
+        $this->expectExceptionMessage('Expecting a LengthAwarePaginator for $paginator in resources/views/components/table/data.blade.php');
         $view = $this->blade('<x-playground::table.data />', []);
-        $this->assertEmpty($view->__toString());
+        $view->__toString();
     }
 }

@@ -32,7 +32,11 @@ $withParent = isset($withParent) && is_bool($withParent) ? $withParent : true;
 /**
  * @var ?\Illuminate\Database\Eloquent\Model $parent
  */
-$parent = $withParent && $data && is_callable([$data, 'parent']) ? $data->parent()->first() : null;
+$parent = null;
+if ($withParent && is_callable([$data, 'parent'])) {
+    // TODO this parent no longer calls first, make sure it still works.
+    $parent = $data->parent();
+}
 
 $withPrivilege = !empty($meta['info']) && !empty($packageInfo->privilege()) && is_string($packageInfo->privilege()) ? $packageInfo->privilege() : 'playground';
 
@@ -142,7 +146,7 @@ $withTables = isset($withTables) && is_bool($withTables) ? $withTables : true;
 /**
  * @var boolean $hasTables
  */
-$hasTables = !empty($dataDetail['tables']) && is_array($dataDetail['tables']);
+$hasTables = !empty($dataDetail) && is_array($dataDetail) && !empty($dataDetail['tables']) && is_array($dataDetail['tables']);
 
 ?>
 @extends($package_config['layout'])

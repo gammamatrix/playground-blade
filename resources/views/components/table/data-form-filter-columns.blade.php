@@ -13,6 +13,7 @@ $columns = [
 
 $viewableColumns = 'standard';
 if (!empty($validated)
+    && is_array($validated)
     && !empty($validated['columns'])
     && is_string($validated['columns'])
     && in_array($validated['columns'], array_keys($columns))

@@ -21,7 +21,7 @@
             @if ($icon)
                 <span class="{{ $icon }}"></span>
             @endif
-            {{ $slot }}
+            {{ !empty($slot) ? $slot : '' }}
 
             <span class="{{ $badge }}">{{ $paginator->count() }} </span>
 

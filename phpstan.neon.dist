@@ -9,6 +9,7 @@ parameters:
 
     paths:
         - config
+        - lang
         - src
         - tests
         - resources/views

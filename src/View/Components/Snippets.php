@@ -31,7 +31,7 @@ class Snippets extends Component
          * @var view-string $view
          */
         $view = sprintf(
-            '%1$scomponents.snippets',
+            '%1$scomponents.snippets.stacks',
             is_string($prefix) ? $prefix : ''
         );
 

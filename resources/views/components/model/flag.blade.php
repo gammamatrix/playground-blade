@@ -1,4 +1,6 @@
 <?php
+$columnMeta = empty($columnMeta) || !is_array($columnMeta) ? [] : $columnMeta;
+
 $hasFlagOnFalseClass = !empty($columnMeta['onFalseClass']) && is_string($columnMeta['onFalseClass']);
 
 $hasFlagOnFalseLabel = !empty($columnMeta['onFalseLabel']) && is_string($columnMeta['onFalseLabel']);

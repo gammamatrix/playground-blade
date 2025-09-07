@@ -9,6 +9,9 @@
 
 $package_config = config('playground-blade');
 
+/**
+ * @var array<string, mixed> $meta
+ */
 $meta = empty($meta) || !is_array($meta) ? [] : $meta;
 $withPrivilege = \Playground\Auth\Facades\Can::withPrivilege($meta);
 

@@ -3,8 +3,9 @@ $default = isset($default) ? $default : null;
 $type = isset($type) && is_string($type) ? $type : 'text';
 $label = isset($label) && is_string($label) ? $label : '';
 $column = isset($column) && is_string($column) ? $column : '';
+$pattern = isset($pattern) && is_string($pattern) ? $pattern : '';
 $oldValue = old($column);
-$hasRules = isset($rules) && is_array($rules) && !empty($rules);
+$rules = isset($rules) && is_array($rules) ? $rules : [];
 $withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
 
 if ('datetime-local' === $type && $oldValue && (is_string($oldValue) || $oldValue instanceof DateTimeInterface)) {
@@ -18,8 +19,8 @@ if ('datetime-local' === $type && $oldValue && (is_string($oldValue) || $oldValu
 if (empty($oldValue) && !is_null($default)) {
     $oldValue = $default;
 }
-$min = $hasRules && isset($rules['min']) ? $rules['min'] : null;
-$max = $hasRules && isset($rules['max']) ? $rules['max'] : null;
+$min = isset($rules['min']) && is_scalar($rules['min']) ? strval($rules['min']) : null;
+$max = isset($rules['max']) && is_scalar($rules['max']) ? strval($rules['max']) : null;
 
 $step = !empty($step) && is_numeric($step) && in_array($type, ['number']) ? $step : null;
 
@@ -62,7 +63,7 @@ if (!empty($pattern)) {
 
 if (!is_null($min)) {
     if ('datetime-local' === $type) {
-        $min = date('Y-m-d\Th:i:s', strtotime($min));
+        $min = date('Y-m-d\Th:i:s', intval(strtotime($min)));
     }
     $min = sprintf('min="%1$s" ', $min);
 } else {
@@ -71,7 +72,7 @@ if (!is_null($min)) {
 
 if (!is_null($max)) {
     if ('datetime-local' === $type) {
-        $max = date('Y-m-d\TH:i:s', strtotime($max));
+        $max = date('Y-m-d\TH:i:s', intval(strtotime($max)));
     }
     $max = sprintf('max="%1$s" ', $max);
 } else {
@@ -96,9 +97,9 @@ $hasError = $errors && $errors->get($column);
 
 $describedby = trim(implode(' ', array_filter([sprintf('form-input-%1$s', $column), $hasError ? sprintf('form-input-error-%1$s', $column) : '', $described ? sprintf('form-input-help-%1$s', $column) : ''])));
 
-$maxlength = $hasRules && isset($rules['maxlength']) && is_numeric($rules['maxlength']) && $rules['maxlength'] > 0 ? sprintf('maxlength="%1$d" ', $rules['maxlength']) : '';
+$maxlength = isset($rules['maxlength']) && is_numeric($rules['maxlength']) && $rules['maxlength'] > 0 ? sprintf('maxlength="%1$d" ', $rules['maxlength']) : '';
 
-$required = $hasRules && isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
+$required = isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
 
 $attributes = trim(
     implode(

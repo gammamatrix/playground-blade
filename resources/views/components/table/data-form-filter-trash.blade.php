@@ -2,7 +2,7 @@
 if (empty($trashed)) {
     $trashed = 'hide';
 }
-if (!empty($trashable) && !empty($validated) && !empty($validated['filter']) && !empty($validated['filter']['trash'])) {
+if (!empty($trashable) && !empty($validated) && is_array($validated) && !empty($validated['filter']) && is_array($validated['filter']) && !empty($validated['filter']['trash'])) {
     if ('with' === $validated['filter']['trash']) {
         $trashed = 'with';
     } elseif ('only' === $validated['filter']['trash']) {

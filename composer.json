@@ -25,6 +25,7 @@
     },
     "require-dev": {
         "gammamatrix/playground-auth": "74.x-dev",
+        "gammamatrix/playground-cms": "74.x-dev",
         "gammamatrix/playground-test": "74.x-dev",
         "illuminate/testing": "^12.0",
         "tomasvotruba/bladestan": "^0.11.3"
