@@ -22,12 +22,13 @@
         <x-playground::forms.column column="slug" label="Slug" :autocomplete="false" :rules="[
             'required' => !empty($_method) && 'patch' === $_method,
             'maxlength' => 255,
-        ]" />
+        ]"/>
     @endif
 
     @if ($withFormParent && !empty($parents))
-        <x-playground::forms.column-select column="parent_id" :key="$packageInfo->model_attribute()" label="Parent Setting"
-            :records="$parents" />
+        <x-playground::forms.column-select column="parent_id" :key="$packageInfo->model_attribute()"
+                                           label="Parent Setting"
+                                           :records="$parents"/>
     @endif
 
     @yield('fieldset-info')

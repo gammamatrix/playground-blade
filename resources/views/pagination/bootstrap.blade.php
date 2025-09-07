@@ -11,7 +11,7 @@
         @else
             <li class="page-item">
                 <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev"
-                    aria-label="@lang('playground::pagination.previous')">
+                   aria-label="@lang('playground::pagination.previous')">
                     &lsaquo;
                 </a>
             </li>
@@ -52,7 +52,7 @@
         @if ($paginator->hasMorePages())
             <li class="page-item">
                 <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"
-                    aria-label="@lang('playground::pagination.next')">
+                   aria-label="@lang('playground::pagination.next')">
                     &rsaquo;
                 </a>
             </li>

@@ -3,7 +3,7 @@ $label = isset($label) && is_string($label) ? $label : '';
 $column = isset($column) && is_string($column) ? $column : '';
 $oldValue = old($column);
 
-if (!isset($rules) || ! is_array($rules)) {
+if (!isset($rules) || !is_array($rules)) {
     $rules = [];
 }
 /**

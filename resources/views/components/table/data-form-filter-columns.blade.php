@@ -38,13 +38,13 @@ if (!empty($validated)
                 <div class="input-group mb-3">
 
                     @foreach($columns as $column => $columnMeta)
-                    <div class="form-check me-2">
-                        <input class="form-check-input" type="radio" name="columns" id="filter_columns_{{$column}}"
-                            {{ $column === $viewableColumns ? 'checked' : '' }} value="{{$column}}">
-                        <label class="form-check-label" for="filter_columns_{{$column}}">
-                            {{$columnMeta['label'] ?? 'view' }}
-                        </label>
-                    </div>
+                        <div class="form-check me-2">
+                            <input class="form-check-input" type="radio" name="columns" id="filter_columns_{{$column}}"
+                                   {{ $column === $viewableColumns ? 'checked' : '' }} value="{{$column}}">
+                            <label class="form-check-label" for="filter_columns_{{$column}}">
+                                {{$columnMeta['label'] ?? 'view' }}
+                            </label>
+                        </div>
                     @endforeach
                 </div>
             </div>

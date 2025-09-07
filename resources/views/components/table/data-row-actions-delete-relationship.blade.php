@@ -1,5 +1,5 @@
 <form class="d-inline-block" method="POST"
-    action="{{ route($routeDelete, [$routeDeleteRelationship => $routeDeleteRelationshipId, 'relationship' => $routeDeleteRelationship]) }}">
+      action="{{ route($routeDelete, [$routeDeleteRelationship => $routeDeleteRelationshipId, 'relationship' => $routeDeleteRelationship]) }}">
     @method('DELETE')
     @csrf
     <input type="hidden" name="_return_url" value="{{ $returnUrl }}">

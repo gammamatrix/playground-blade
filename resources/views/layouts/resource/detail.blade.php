@@ -200,11 +200,11 @@ $hasTables = !empty($dataDetail['tables']) && is_array($dataDetail['tables']);
 
 @push('body')
     <script type="application/javascript">
-window.onload = function() {
-    'use strict';
-    if (typeof playground === 'object') {
-        playground.forms.validation();
-    }
-}
-</script>
+        window.onload = function () {
+            'use strict';
+            if (typeof playground === 'object') {
+                playground.forms.validation();
+            }
+        }
+    </script>
 @endpush

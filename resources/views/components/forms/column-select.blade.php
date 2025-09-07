@@ -109,9 +109,9 @@ $attributes = trim(
         </div>
     @else
         @error($column)
-            <div class="invalid-feedback" id="form-input-error-{{ $column }}">
-                {{ $message }}
-            </div>
+        <div class="invalid-feedback" id="form-input-error-{{ $column }}">
+            {{ $message }}
+        </div>
         @enderror
     @endif
     @if ($described)

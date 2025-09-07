@@ -69,7 +69,7 @@ $withFormButtons = isset($withFormButtons) && (is_bool($withFormButtons) || is_s
  */
 $withFormLifecycle = isset($withFormLifecycle) && (is_bool($withFormLifecycle) || is_string($withFormLifecycle)) ? $withFormLifecycle : true;
 
- /**
+/**
  * @var boolean|string $withFormStatus
  */
 $withFormStatus = isset($withFormStatus) && (is_bool($withFormStatus) || is_string($withFormStatus)) ? $withFormStatus : true;
@@ -99,7 +99,7 @@ $withFormPublishing = isset($withFormPublishing) && (is_bool($withFormPublishing
  */
 $withFormPlanning = isset($withFormPlanning) && (is_bool($withFormPlanning) || is_string($withFormPlanning)) ? $withFormPlanning : true;
 
- /**
+/**
  * @var boolean|string $withFormStatus
  */
 $withFormStatus = isset($withFormStatus) && (is_bool($withFormStatus) || is_string($withFormStatus)) ? $withFormStatus : true;
@@ -325,25 +325,25 @@ if ('patch' === $_method) {
 
 @if ($withBodyScript)
 
-@push('body')
-    <script type="application/javascript">
-window.onload = function() {
-    'use strict';
-@if ($withFormSummary)
-    if (typeof playground === 'object') {
-        playground.forms.editor('#form-input-summary');
-    }
-@endif
-@if ($withFormContent)
-    if (typeof playground === 'object') {
-        playground.forms.editor('#form-input-content');
-    }
-@endif
-    if (typeof playground === 'object') {
-        playground.forms.validation();
-    }
-}
-</script>
-@endpush
+    @push('body')
+        <script type="application/javascript">
+            window.onload = function () {
+                'use strict';
+                @if ($withFormSummary)
+                if (typeof playground === 'object') {
+                    playground.forms.editor('#form-input-summary');
+                }
+                @endif
+                    @if ($withFormContent)
+                if (typeof playground === 'object') {
+                    playground.forms.editor('#form-input-content');
+                }
+                @endif
+                if (typeof playground === 'object') {
+                    playground.forms.validation();
+                }
+            }
+        </script>
+    @endpush
 
 @endif

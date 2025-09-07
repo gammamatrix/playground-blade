@@ -4,13 +4,13 @@
 
     <div class="row">
         <div class="col">
-            <x-playground::forms.column type="datetime-local" column="embargo_at" label="Embargo Until" />
+            <x-playground::forms.column type="datetime-local" column="embargo_at" label="Embargo Until"/>
         </div>
         <div class="col">
-            <x-playground::forms.column type="datetime-local" column="published_at" label="Published" />
+            <x-playground::forms.column type="datetime-local" column="published_at" label="Published"/>
         </div>
         <div class="col">
-            <x-playground::forms.column type="datetime-local" column="released_at" label="Released" />
+            <x-playground::forms.column type="datetime-local" column="released_at" label="Released"/>
         </div>
     </div>
 

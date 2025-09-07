@@ -20,7 +20,7 @@
         </select>
 
         @if (!empty($validated['page']))
-            <input type="hidden" name="page" value="{{ $validated['page'] }}" />
+            <input type="hidden" name="page" value="{{ $validated['page'] }}"/>
         @endif
 
         <span class="input-group-text">

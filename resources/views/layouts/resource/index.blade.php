@@ -148,9 +148,10 @@ if ($withTable) {
             @if ($withCreate)
                 <div class="col-md-12 mb-3">
                     <div class="btn-group float-end px-3" role="group"
-                        aria-label="{{ $packageInfo->model_label() }} Controls and Actions">
-                        <a class="btn btn-primary" href="{{ route(sprintf('%1$s.create', $packageInfo->model_route())) }}"
-                            role="button">Create</a>
+                         aria-label="{{ $packageInfo->model_label() }} Controls and Actions">
+                        <a class="btn btn-primary"
+                           href="{{ route(sprintf('%1$s.create', $packageInfo->model_route())) }}"
+                           role="button">Create</a>
                     </div>
                 </div>
             @endif
@@ -166,10 +167,18 @@ if ($withTable) {
 
             @yield('section-secondary')
 
-            <x-playground::table.data :columns="$withTableColumns" :paginator="$paginator" :model-actions="true" :trashable="true"
-                :id="$tableComponent['id']" :meta="$meta" :validated="$meta['validated']" :sort="$meta['sortable']" :privilege="$tableComponent['privilege']" :collapsible="true"
-                :route-parameter="$tableComponent['routeParameter']" :route-parameter-key="$tableComponent['routeParameterKey']" :route-edit="$tableComponent['routeEdit']" :route-delete="$tableComponent['routeDelete']" :route-restore="$tableComponent['routeRestore']"
-                :route-unlock="$tableComponent['routeUnlock']" :styling="$tableComponent['styling']">
+            <x-playground::table.data :columns="$withTableColumns" :paginator="$paginator" :model-actions="true"
+                                      :trashable="true"
+                                      :id="$tableComponent['id']" :meta="$meta" :validated="$meta['validated']"
+                                      :sort="$meta['sortable']" :privilege="$tableComponent['privilege']"
+                                      :collapsible="true"
+                                      :route-parameter="$tableComponent['routeParameter']"
+                                      :route-parameter-key="$tableComponent['routeParameterKey']"
+                                      :route-edit="$tableComponent['routeEdit']"
+                                      :route-delete="$tableComponent['routeDelete']"
+                                      :route-restore="$tableComponent['routeRestore']"
+                                      :route-unlock="$tableComponent['routeUnlock']"
+                                      :styling="$tableComponent['styling']">
                 {{ $packageInfo->model_label_plural() }}
             </x-playground::table.data>
 

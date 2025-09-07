@@ -1,25 +1,22 @@
 <table class="table">
+    @yield('detail-info-table-header')
     <tbody>
-        @yield('detail-info-table-header')
-        <tbody>
+    <tr>
+        <th scope="row">{{ __('Slug') }}</th>
+        <td>{{ $data->slug }}</td>
+    </tr>
+    @yield('detail-info-table-body')
+    @if ($parent)
         <tr>
-            <th scope="row">{{ __('Slug') }}</th>
-            <td>{{ $data->slug }}</td>
+            <th scope="row">{{ __('Parent ' . $packageInfo->model_label()) }}</th>
+            <td>
+                <a
+                    href="{{ route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_slug() => $parent->id]) }}">
+                    {{ __($parent->label) }}
+                </a>
+            </td>
         </tr>
-        @yield('detail-info-table-body')
-        @if ($parent)
-            <tr>
-                <th scope="row">{{ __('Parent ' . $packageInfo->model_label()) }}</th>
-                <td>
-                    <a
-                        href="{{ route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_slug() => $parent->id]) }}">
-                        {{ __($parent->label) }}
-                    </a>
-                </td>
-            </tr>
-        @endif
-        </tbody>
-        @yield('detail-info-table-header')
+    @endif
     </tbody>
 </table>
 

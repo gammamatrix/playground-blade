@@ -20,6 +20,7 @@
 .phpunit.cache
 build
 composer.lock
+package-lock.json
 database/dumps/
 logs
 node_modules

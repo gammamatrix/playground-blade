@@ -23,7 +23,7 @@ if (!empty($trashable) && !empty($validated) && !empty($validated['filter']) && 
 
                     <div class="form-check me-2">
                         <input class="form-check-input" type="radio" name="filter[trash]" id="filter_trash"
-                            {{ 'hide' === $trashed ? 'checked' : '' }} value="">
+                               {{ 'hide' === $trashed ? 'checked' : '' }} value="">
                         <label class="form-check-label" for="filter_trash">
                             <i class="fa-regular fa-trash-can"></i>
                             Hide Trash
@@ -31,7 +31,7 @@ if (!empty($trashable) && !empty($validated) && !empty($validated['filter']) && 
                     </div>
                     <div class="form-check me-2">
                         <input class="form-check-input" type="radio" name="filter[trash]" id="filter_trash_with"
-                            {{ 'with' === $trashed ? 'checked' : '' }} value="with">
+                               {{ 'with' === $trashed ? 'checked' : '' }} value="with">
                         <label class="form-check-label" for="filter_trash_with">
                             <i class="fa-solid fa-trash"></i>
                             With Trash
@@ -39,7 +39,7 @@ if (!empty($trashable) && !empty($validated) && !empty($validated['filter']) && 
                     </div>
                     <div class="form-check me-2">
                         <input class="form-check-input" type="radio" name="filter[trash]" id="filter_trash_only"
-                            {{ 'only' === $trashed ? 'checked' : '' }} value="only">
+                               {{ 'only' === $trashed ? 'checked' : '' }} value="only">
                         <label class="form-check-label" for="filter_trash_only">
                             <i class="fa-solid fa-trash-arrow-up"></i>
                             Only Trash

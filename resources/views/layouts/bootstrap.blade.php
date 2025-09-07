@@ -127,72 +127,72 @@ $withPlayground = isset($withPlayground) && is_bool($withPlayground) ? $withPlay
 
 <body class="{{ $withBodyClass }}" {!! $theme->bodyStyle() !!}>
 
-    @if ($withSnippets && !empty($snippets))
-        <x-playground::snippets :snippets="$snippets" />
-    @endif
+@if ($withSnippets && !empty($snippets))
+    <x-playground::snippets :snippets="$snippets"/>
+@endif
 
-    @stack('snippet-banner') {{-- snippet-banner rank: {-3000, -2000} --}}
+@stack('snippet-banner') {{-- snippet-banner rank: {-3000, -2000} --}}
 
-    @yield('pre-header')
+@yield('pre-header')
 
-    @stack('snippet-header') {{-- snippet-header rank: {-1999, -1000} --}}
+@stack('snippet-header') {{-- snippet-header rank: {-1999, -1000} --}}
 
-    @yield('header')
+@yield('header')
 
-    @yield('pre-nav')
+@yield('pre-nav')
 
-    @if (is_bool($withNav))
-        @include(sprintf('%1$slayouts/bootstrap/nav', $package_config['view']))
-    @elseif (!empty($withNav) && is_string($withNav))
-        @include($withNav)
-    @endif
+@if (is_bool($withNav))
+    @include(sprintf('%1$slayouts/bootstrap/nav', $package_config['view']))
+@elseif (!empty($withNav) && is_string($withNav))
+    @include($withNav)
+@endif
 
-    @if (is_bool($withSidebarLeft))
-        @include(sprintf('%1$slayouts/bootstrap/sidebar-left', $package_config['view']))
-    @elseif (!empty($withSidebarLeft) && is_string($withSidebarLeft))
-        @include($withSidebarLeft)
-    @endif
+@if (is_bool($withSidebarLeft))
+    @include(sprintf('%1$slayouts/bootstrap/sidebar-left', $package_config['view']))
+@elseif (!empty($withSidebarLeft) && is_string($withSidebarLeft))
+    @include($withSidebarLeft)
+@endif
 
-    @if (is_bool($withSidebarRight))
-        @include(sprintf('%1$slayouts/bootstrap/sidebar-right', $package_config['view']))
-    @elseif (!empty($withSidebarRight) && is_string($withSidebarRight))
-        @include($withSidebarRight)
-    @endif
+@if (is_bool($withSidebarRight))
+    @include(sprintf('%1$slayouts/bootstrap/sidebar-right', $package_config['view']))
+@elseif (!empty($withSidebarRight) && is_string($withSidebarRight))
+    @include($withSidebarRight)
+@endif
 
-    @yield('pre-main')
+@yield('pre-main')
 
-    <main role="main" class="{{ $withMainClass }}">
-        @stack('snippet-main-header') {{-- snippet-main rank === {-999, 0} --}}
-        @yield('breadcrumbs')
-        @includeWhen($withAlerts, sprintf('%1$slayouts/bootstrap/alerts', $package_config['view']))
-        @includeWhen($withErrors, sprintf('%1$slayouts/bootstrap/errors', $package_config['view']))
-        @yield('main')
-        @stack('snippet-main') {{-- snippet-main rank === {0, 1000} --}}
-        @yield('content')
-        @stack('snippet-content') {{-- snippet-content rank === {1001, 2000}, {rank < -3000 || rank > 5000} --}}
-        @yield('content-end')
-        @stack('snippet-main-footer') {{-- snippet-main rank === {2001, 3000} --}}
-        {{-- snippet-footer-top rank === {3001, 4000} --}}
-        {{-- snippet-footer-bottom rank === {4001, 5000} --}}
-    </main>
+<main role="main" class="{{ $withMainClass }}">
+    @stack('snippet-main-header') {{-- snippet-main rank === {-999, 0} --}}
+    @yield('breadcrumbs')
+    @includeWhen($withAlerts, sprintf('%1$slayouts/bootstrap/alerts', $package_config['view']))
+    @includeWhen($withErrors, sprintf('%1$slayouts/bootstrap/errors', $package_config['view']))
+    @yield('main')
+    @stack('snippet-main') {{-- snippet-main rank === {0, 1000} --}}
+    @yield('content')
+    @stack('snippet-content') {{-- snippet-content rank === {1001, 2000}, {rank < -3000 || rank > 5000} --}}
+    @yield('content-end')
+    @stack('snippet-main-footer') {{-- snippet-main rank === {2001, 3000} --}}
+    {{-- snippet-footer-top rank === {3001, 4000} --}}
+    {{-- snippet-footer-bottom rank === {4001, 5000} --}}
+</main>
 
-    @yield('pre-footer')
+@yield('pre-footer')
 
-    @if (is_bool($withFooter))
-        @include(sprintf('%1$slayouts/bootstrap/footer', $package_config['view']))
-    @elseif (!empty($withFooter) && is_string($withFooter))
-        @include($withFooter)
-    @endif
+@if (is_bool($withFooter))
+    @include(sprintf('%1$slayouts/bootstrap/footer', $package_config['view']))
+@elseif (!empty($withFooter) && is_string($withFooter))
+    @include($withFooter)
+@endif
 
-    @yield('body')
-    @stack('body-first')
-    @stack('body')
-    @stack('modals')
-    @stack('body-last')
+@yield('body')
+@stack('body-first')
+@stack('body')
+@stack('modals')
+@stack('body-last')
 
-    @foreach (Playground\Blade\Facades\Ui::bodyAssets($theme) as $asset)
-        {!! $asset !!}
-    @endforeach
+@foreach (Playground\Blade\Facades\Ui::bodyAssets($theme) as $asset)
+    {!! $asset !!}
+@endforeach
 
 </body>
 

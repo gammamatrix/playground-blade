@@ -6,7 +6,9 @@
                 <i class="fa-solid fa-filter"></i>
                 <span class="d-none d-sm-inline">Go</span>
             </button>
-            <button class="btn btn-warning btn-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#{{$id}}-fieldset-filter-dates .container" aria-expanded="true" aria-controls="{{$id}}-fieldset-filter-dates .container">
+            <button class="btn btn-warning btn-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#{{$id}}-fieldset-filter-dates .container" aria-expanded="true"
+                    aria-controls="{{$id}}-fieldset-filter-dates .container">
                 <i class="fa-solid fa-eye-slash"></i>
                 <i class="fa-solid fa-calendar-days"></i>
             </button>
@@ -19,20 +21,24 @@
 
             @foreach ($meta['dates'] as $column => $meta_column)
 
-            @php $hasValidated = !empty($validated['filter']) && !empty($validated['filter'][$column]); @endphp
+                @php $hasValidated = !empty($validated['filter']) && !empty($validated['filter'][$column]); @endphp
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" for="form_filter_{{$column}}">
-                        {{$meta_column['label']}}
-                    </label>
-                    @if ($hasValidated && is_array($validated['filter'][$column]))
-                    <input type="text" class="form-control" aria-label="" id="form_filter_{{$column}}" name="filter[{{$column}}][value]" value="{{$hasValidated && !empty($validated['filter'][$column]['value'])? $validated['filter'][$column]['value'] : ''}}">
-                    @elseif ($hasValidated && is_string($validated['filter'][$column]))
-                    <input type="text" class="form-control" aria-label="" id="form_filter_{{$column}}" name="filter[{{$column}}]" value="{{$hasValidated ? $validated['filter'][$column] : ''}}">
-                    @endif
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="form_filter_{{$column}}">
+                            {{$meta_column['label']}}
+                        </label>
+                        @if ($hasValidated && is_array($validated['filter'][$column]))
+                            <input type="text" class="form-control" aria-label="" id="form_filter_{{$column}}"
+                                   name="filter[{{$column}}][value]"
+                                   value="{{$hasValidated && !empty($validated['filter'][$column]['value'])? $validated['filter'][$column]['value'] : ''}}">
+                        @elseif ($hasValidated && is_string($validated['filter'][$column]))
+                            <input type="text" class="form-control" aria-label="" id="form_filter_{{$column}}"
+                                   name="filter[{{$column}}]"
+                                   value="{{$hasValidated ? $validated['filter'][$column] : ''}}">
+                        @endif
+                    </div>
                 </div>
-            </div>
 
             @endforeach
 

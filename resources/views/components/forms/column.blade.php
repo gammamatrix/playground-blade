@@ -157,14 +157,14 @@ $attributes = trim(
         <div class="alert alert-danger">Expecting a column for the form input.</div>
     @endif
     <input type="{{ $type }}" class="form-control @error($column) is-invalid @enderror" value="{{ $oldValue }}"
-        aria-describedby="{{ $describedby }}" {!! $attributes !!}>
+           aria-describedby="{{ $describedby }}" {!! $attributes !!}>
     @if ($errorMessage)
         <div class="invalid-feedback">
             {{ $errorMessage }}
         </div>
     @else
         @error($column)
-            <div class="invalid-feedback" id="form-input-error-{{ $column }}">{{ $message }}</div>
+        <div class="invalid-feedback" id="form-input-error-{{ $column }}">{{ $message }}</div>
         @enderror
     @endif
     @if ($described)

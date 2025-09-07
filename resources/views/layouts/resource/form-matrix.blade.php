@@ -11,7 +11,7 @@
                         {{ __('x') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-x" name="x" step="1"
-                        value="{{ old('x') }}">
+                           value="{{ old('x') }}">
                 </div>
             </div>
             <div class="col">
@@ -20,7 +20,7 @@
                         {{ __('y') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-y" name="y" step="1"
-                        value="{{ old('y') }}">
+                           value="{{ old('y') }}">
                 </div>
             </div>
             <div class="col">
@@ -29,7 +29,7 @@
                         {{ __('z') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-z" name="z" step="1"
-                        value="{{ old('z') }}">
+                           value="{{ old('z') }}">
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                         {{ __('r') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-r" name="r" step="any"
-                        value="{{ old('r') }}">
+                           value="{{ old('r') }}">
                 </div>
             </div>
             <div class="col">
@@ -50,7 +50,7 @@
                         {{ __('theta') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-theta" name="theta" step="any"
-                        value="{{ old('theta') }}">
+                           value="{{ old('theta') }}">
                 </div>
             </div>
             <div class="col">
@@ -59,7 +59,7 @@
                         {{ __('rho') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-rho" name="rho" step="any"
-                        value="{{ old('rho') }}">
+                           value="{{ old('rho') }}">
                 </div>
             </div>
             <div class="col">
@@ -68,7 +68,7 @@
                         {{ __('phi') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-phi" name="phi" step="any"
-                        value="{{ old('phi') }}">
+                           value="{{ old('phi') }}">
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                         {{ __('Elevation') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-elevation" name="elevation" step="any"
-                        value="{{ old('elevation') }}">
+                           value="{{ old('elevation') }}">
                 </div>
             </div>
             <div class="col">
@@ -89,7 +89,7 @@
                         {{ __('Latitude') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-latitude" name="latitude" min="-90"
-                        max="90" step="any" value="{{ old('latitude') }}">
+                           max="90" step="any" value="{{ old('latitude') }}">
                 </div>
             </div>
             <div class="col">
@@ -98,7 +98,7 @@
                         {{ __('Longitude') }}
                     </label>
                     <input type="number" class="form-control" id="form-input-longitude" name="longitude" min="-180"
-                        max="180" step="any" value="{{ old('longitude') }}">
+                           max="180" step="any" value="{{ old('longitude') }}">
                 </div>
             </div>
         </div>
