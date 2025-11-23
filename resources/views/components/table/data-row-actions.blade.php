@@ -1,12 +1,17 @@
 <th>
-    <div class="text-nowrap" role="group" aria-label="{{ __('playground-blade::pagination.row.actions.label') }}">
-        @if ($withUnlock && !empty($record['locked']) && $routeUnlock)
-            @include('playground::components/table/data-row-actions-unlock')
+    <div
+        class="text-nowrap"
+        role="group"
+        aria-label="{{ __("playground-blade::pagination.row.actions.label") }}"
+    >
+        @if ($withUnlock && ! empty($record["locked"]) && $routeUnlock)
+            @include("playground::components/table/data-row-actions-unlock")
         @else
-            @if ($withDelete && $routeDelete && empty($record['deleted_at']))
-                @include('playground::components/table/data-row-actions-delete')
+            @if ($withDelete && $routeDelete && empty($record["deleted_at"]))
+                @include("playground::components/table/data-row-actions-delete")
             @endif
-            @include('playground::components/table/data-row-actions-edit')
+
+            @include("playground::components/table/data-row-actions-edit")
         @endif
     </div>
 </th>

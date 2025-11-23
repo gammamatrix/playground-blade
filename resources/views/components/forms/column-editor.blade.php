@@ -1,30 +1,55 @@
 <?php
-$label = isset($label) && is_string($label) ? $label : '';
-$column = isset($column) && is_string($column) ? $column : '';
+$label = isset($label) && is_string($label) ? $label : "";
+$column = isset($column) && is_string($column) ? $column : "";
 $oldValue = old($column);
 
-if (!isset($rules) || !is_array($rules)) {
+if (! isset($rules) || ! is_array($rules)) {
     $rules = [];
 }
 /**
  * @var bool|string $disabled
  */
-$disabled = isset($disabled) && $disabled ? 'disabled' : '';
+$disabled = isset($disabled) && $disabled ? "disabled" : "";
 
 /**
  * @var bool|string $readonly
  */
-$readonly = isset($readonly) && $readonly ? 'readonly' : '';
+$readonly = isset($readonly) && $readonly ? "readonly" : "";
 
-$advanced = isset($advanced) && $advanced ? 'form-advanced' : '';
-$klass = isset($klass) && is_string($klass) ? $klass : '';
-$withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
+$advanced = isset($advanced) && $advanced ? "form-advanced" : "";
+$klass = isset($klass) && is_string($klass) ? $klass : "";
+$withoutMargin = isset($withoutMargin) && $withoutMargin ? "" : "mb-3";
 
-$maxlength = isset($rules['maxlength']) && is_numeric($rules['maxlength']) && $rules['maxlength'] > 0 ? sprintf('maxlength="%1$d" ', $rules['maxlength']) : '';
+$maxlength =
+    isset($rules["maxlength"]) &&
+    is_numeric($rules["maxlength"]) &&
+    $rules["maxlength"] > 0
+        ? sprintf('maxlength="%1$d" ', $rules["maxlength"])
+        : "";
 
-$required = isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
+$required =
+    isset($rules["required"]) &&
+    is_bool($rules["required"]) &&
+    $rules["required"]
+        ? "required "
+        : "";
 
-$attributes = trim(implode(' ', array_filter([$readonly, $disabled, $maxlength, $required, sprintf('id="form-input-%1$s"', $column), sprintf('name="%1$s"', $column), sprintf('class="%1$s"', implode(' ', ['form-control'])), sprintf('aria-label="%1$s"', $label), sprintf('aria-describedby="form-input-%1$s"', $column)])));
+$attributes = trim(
+    implode(
+        " ",
+        array_filter([
+            $readonly,
+            $disabled,
+            $maxlength,
+            $required,
+            sprintf('id="form-input-%1$s"', $column),
+            sprintf('name="%1$s"', $column),
+            sprintf('class="%1$s"', implode(" ", ["form-control"])),
+            sprintf('aria-label="%1$s"', $label),
+            sprintf('aria-describedby="form-input-%1$s"', $column),
+        ]),
+    ),
+);
 
 // dump([
 //     '__METHOD__' => __METHOD__,
@@ -36,18 +61,26 @@ $attributes = trim(implode(' ', array_filter([$readonly, $disabled, $maxlength, 
 // ]);
 
 ?>
-<div class="{{ trim(sprintf('%s %s %s', $withoutMargin, $advanced, $class)) }}">
 
-    <label for="form-input-{{ $column }}" class="form-label">{{ $label }}</label>
+<div
+    class="{{ trim(sprintf("%s %s %s", $withoutMargin, $advanced, $class)) }}"
+>
+    <label for="form-input-{{ $column }}" class="form-label">
+        {{ $label }}
+    </label>
 
     @if (empty($column))
-        <div class="alert alert-danger">Expecting a column for the form editor.</div>
+        <div class="alert alert-danger">
+            Expecting a column for the form editor.
+        </div>
     @endif
 
     <textarea {!! $attributes !!}>{!! $oldValue !!}</textarea>
 
     @if ($described)
-        <small id="form-input-help-{{ $column }}" class="form-text text-muted">{!! $described !!}</small>
+        <small id="form-input-help-{{ $column }}" class="form-text text-muted">
+            {!! $described !!}
+        </small>
     @endif
 
     {{ $slot }}

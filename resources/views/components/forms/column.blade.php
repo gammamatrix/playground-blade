@@ -1,88 +1,108 @@
 <?php
 $default = isset($default) ? $default : null;
-$type = isset($type) && is_string($type) ? $type : 'text';
-$label = isset($label) && is_string($label) ? $label : '';
-$column = isset($column) && is_string($column) ? $column : '';
-$pattern = isset($pattern) && is_string($pattern) ? $pattern : '';
+$type = isset($type) && is_string($type) ? $type : "text";
+$label = isset($label) && is_string($label) ? $label : "";
+$column = isset($column) && is_string($column) ? $column : "";
+$pattern = isset($pattern) && is_string($pattern) ? $pattern : "";
 $oldValue = old($column);
 $rules = isset($rules) && is_array($rules) ? $rules : [];
-$withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
+$withoutMargin = isset($withoutMargin) && $withoutMargin ? "" : "mb-3";
 
-if ('datetime-local' === $type && $oldValue && (is_string($oldValue) || $oldValue instanceof DateTimeInterface)) {
-    $oldValue = Carbon\Carbon::parse($oldValue)->format('Y-m-d\TH:i:s');
+if (
+    "datetime-local" === $type &&
+    $oldValue &&
+    (is_string($oldValue) || $oldValue instanceof DateTimeInterface)
+) {
+    $oldValue = Carbon\Carbon::parse($oldValue)->format("Y-m-d\TH:i:s");
 }
 // dump([
 //     '$column' => $column,
 //     '$oldValue' => $oldValue,
 //     'old()' => old(),
 // ]);
-if (empty($oldValue) && !is_null($default)) {
+if (empty($oldValue) && ! is_null($default)) {
     $oldValue = $default;
 }
-$min = isset($rules['min']) && is_scalar($rules['min']) ? strval($rules['min']) : null;
-$max = isset($rules['max']) && is_scalar($rules['max']) ? strval($rules['max']) : null;
+$min =
+    isset($rules["min"]) && is_scalar($rules["min"])
+        ? strval($rules["min"])
+        : null;
+$max =
+    isset($rules["max"]) && is_scalar($rules["max"])
+        ? strval($rules["max"])
+        : null;
 
-$step = !empty($step) && is_numeric($step) && in_array($type, ['number']) ? $step : null;
+$step =
+    ! empty($step) && is_numeric($step) && in_array($type, ["number"])
+        ? $step
+        : null;
 
-$advanced = isset($advanced) && $advanced ? 'form-advanced' : '';
+$advanced = isset($advanced) && $advanced ? "form-advanced" : "";
 // $class = isset($class) && is_string($class) ? $class : '';
 
-$described = isset($described) && is_string($described) ? $described : '';
+$described = isset($described) && is_string($described) ? $described : "";
 // $pattern = isset($pattern) && is_string($pattern) ? $pattern : '';
 // $errorMessage = isset($errorMessage) && is_string($errorMessage) ? $errorMessage : '';
-$placeholder = isset($placeholder) && (is_string($placeholder) || is_bool($placeholder)) ? $placeholder : false;
-$autocomplete = isset($autocomplete) && is_bool($autocomplete) ? $autocomplete : null;
+$placeholder =
+    isset($placeholder) && (is_string($placeholder) || is_bool($placeholder))
+        ? $placeholder
+        : false;
+$autocomplete =
+    isset($autocomplete) && is_bool($autocomplete) ? $autocomplete : null;
 
 if (is_bool($autocomplete)) {
-    $autocomplete = sprintf('autocomplete="%1$s" ', $autocomplete ? 'on' : 'off');
+    $autocomplete = sprintf(
+        'autocomplete="%1$s" ',
+        $autocomplete ? "on" : "off",
+    );
 } else {
-    $autocomplete = '';
+    $autocomplete = "";
 }
 
 /**
  * @var bool|string $disabled
  */
-$disabled = isset($disabled) && $disabled ? 'disabled' : '';
+$disabled = isset($disabled) && $disabled ? "disabled" : "";
 
 /**
  * @var bool|string $readonly
  */
-$readonly = isset($readonly) && $readonly ? 'readonly' : '';
+$readonly = isset($readonly) && $readonly ? "readonly" : "";
 
 if (is_string($placeholder)) {
     $placeholder = sprintf('placeholder="%1$s" ', $placeholder);
 } elseif ($placeholder) {
     $placeholder = sprintf('placeholder="%1$s" ', $label);
 } else {
-    $placeholder = '';
+    $placeholder = "";
 }
 
-if (!empty($pattern)) {
+if (! empty($pattern)) {
     $pattern = sprintf('pattern="%1$s" ', $pattern);
 }
 
-if (!is_null($min)) {
-    if ('datetime-local' === $type) {
-        $min = date('Y-m-d\Th:i:s', intval(strtotime($min)));
+if (! is_null($min)) {
+    if ("datetime-local" === $type) {
+        $min = date("Y-m-d\Th:i:s", intval(strtotime($min)));
     }
     $min = sprintf('min="%1$s" ', $min);
 } else {
-    $min = '';
+    $min = "";
 }
 
-if (!is_null($max)) {
-    if ('datetime-local' === $type) {
-        $max = date('Y-m-d\TH:i:s', intval(strtotime($max)));
+if (! is_null($max)) {
+    if ("datetime-local" === $type) {
+        $max = date("Y-m-d\TH:i:s", intval(strtotime($max)));
     }
     $max = sprintf('max="%1$s" ', $max);
 } else {
-    $max = '';
+    $max = "";
 }
 
-if (!is_null($step)) {
+if (! is_null($step)) {
     $step = sprintf('step="%1$s" ', $step);
 } else {
-    $step = '';
+    $step = "";
 }
 
 /**
@@ -95,15 +115,34 @@ $hasError = $errors && $errors->get($column);
 //     $describedby = sprintf('aria-describedby="%1$s" ', $describedby);
 // }
 
-$describedby = trim(implode(' ', array_filter([sprintf('form-input-%1$s', $column), $hasError ? sprintf('form-input-error-%1$s', $column) : '', $described ? sprintf('form-input-help-%1$s', $column) : ''])));
+$describedby = trim(
+    implode(
+        " ",
+        array_filter([
+            sprintf('form-input-%1$s', $column),
+            $hasError ? sprintf('form-input-error-%1$s', $column) : "",
+            $described ? sprintf('form-input-help-%1$s', $column) : "",
+        ]),
+    ),
+);
 
-$maxlength = isset($rules['maxlength']) && is_numeric($rules['maxlength']) && $rules['maxlength'] > 0 ? sprintf('maxlength="%1$d" ', $rules['maxlength']) : '';
+$maxlength =
+    isset($rules["maxlength"]) &&
+    is_numeric($rules["maxlength"]) &&
+    $rules["maxlength"] > 0
+        ? sprintf('maxlength="%1$d" ', $rules["maxlength"])
+        : "";
 
-$required = isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
+$required =
+    isset($rules["required"]) &&
+    is_bool($rules["required"]) &&
+    $rules["required"]
+        ? "required "
+        : "";
 
 $attributes = trim(
     implode(
-        ' ',
+        " ",
         array_filter([
             $readonly,
             $disabled,
@@ -150,26 +189,45 @@ $attributes = trim(
 //     '$class' => $class,
 // ]);
 ?>
-<div class="{{ trim(sprintf('%s %s %s', $withoutMargin, $advanced, $class)) }}">
-    @if (!empty($label))
-        <label for="form-input-{{ $column }}" class="form-label">{{ __($label) }}</label>
+
+<div
+    class="{{ trim(sprintf("%s %s %s", $withoutMargin, $advanced, $class)) }}"
+>
+    @if (! empty($label))
+        <label for="form-input-{{ $column }}" class="form-label">
+            {{ __($label) }}
+        </label>
     @endif
+
     @if (empty($column))
-        <div class="alert alert-danger">Expecting a column for the form input.</div>
+        <div class="alert alert-danger">
+            Expecting a column for the form input.
+        </div>
     @endif
-    <input type="{{ $type }}" class="form-control @error($column) is-invalid @enderror" value="{{ $oldValue }}"
-           aria-describedby="{{ $describedby }}" {!! $attributes !!}>
+
+    <input
+        type="{{ $type }}"
+        class="form-control @error($column) is-invalid @enderror"
+        value="{{ $oldValue }}"
+        aria-describedby="{{ $describedby }}"
+        {!! $attributes !!}
+    />
     @if ($errorMessage)
         <div class="invalid-feedback">
             {{ $errorMessage }}
         </div>
     @else
         @error($column)
-        <div class="invalid-feedback" id="form-input-error-{{ $column }}">{{ $message }}</div>
+            <div class="invalid-feedback" id="form-input-error-{{ $column }}">
+                {{ $message }}
+            </div>
         @enderror
     @endif
     @if ($described)
-        <small id="form-input-help-{{ $column }}" class="form-text text-muted">{!! $described !!}</small>
+        <small id="form-input-help-{{ $column }}" class="form-text text-muted">
+            {!! $described !!}
+        </small>
     @endif
+
     {{ $slot }}
 </div>

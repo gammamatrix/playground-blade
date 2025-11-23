@@ -7,8 +7,16 @@
  * @component components/table
  */
 
-if (empty($paginator) || !($paginator instanceof Illuminate\Contracts\Pagination\LengthAwarePaginator)) {
-    throw new RuntimeException('Expecting a LengthAwarePaginator for $paginator in resources/views/components/table/data.blade.php');
+if (
+    empty($paginator) ||
+    ! (
+        $paginator instanceof
+        Illuminate\Contracts\Pagination\LengthAwarePaginator
+    )
+) {
+    throw new RuntimeException(
+        'Expecting a LengthAwarePaginator for $paginator in resources/views/components/table/data.blade.php',
+    );
 }
 
 $user = \Illuminate\Support\Facades\Auth::user();
@@ -16,41 +24,41 @@ $user = \Illuminate\Support\Facades\Auth::user();
 /**
  * @var array<string, mixed> $meta
  */
-$meta = empty($meta) || !is_array($meta) ? [] : $meta;
+$meta = empty($meta) || ! is_array($meta) ? [] : $meta;
 
 /**
  * @var array<string, mixed> $validated
  */
-$validated = empty($validated) || !is_array($validated) ? [] : $validated;
+$validated = empty($validated) || ! is_array($validated) ? [] : $validated;
 
 $withPrivilege = \Playground\Auth\Facades\Can::withPrivilege($meta);
 
 $withRestore = \Playground\Auth\Facades\Can::access($user, [
-    'allow' => false,
-    'any' => true,
-    'privilege' => $withPrivilege . ':restore',
-    'roles' => ['admin', 'manager'],
+    "allow" => false,
+    "any" => true,
+    "privilege" => $withPrivilege . ":restore",
+    "roles" => ["admin", "manager"],
 ])->allowed();
 
 $withDelete = \Playground\Auth\Facades\Can::access($user, [
-    'allow' => false,
-    'any' => true,
-    'privilege' => $withPrivilege . ':delete',
-    'roles' => ['admin', 'manager'],
+    "allow" => false,
+    "any" => true,
+    "privilege" => $withPrivilege . ":delete",
+    "roles" => ["admin", "manager"],
 ])->allowed();
 
 $withEdit = \Playground\Auth\Facades\Can::access($user, [
-    'allow' => false,
-    'any' => true,
-    'privilege' => $withPrivilege . ':edit',
-    'roles' => ['admin', 'manager'],
+    "allow" => false,
+    "any" => true,
+    "privilege" => $withPrivilege . ":edit",
+    "roles" => ["admin", "manager"],
 ])->allowed();
 
 $withUnlock = \Playground\Auth\Facades\Can::access($user, [
-    'allow' => false,
-    'any' => true,
-    'privilege' => $withPrivilege . ':unlock',
-    'roles' => ['admin', 'manager'],
+    "allow" => false,
+    "any" => true,
+    "privilege" => $withPrivilege . ":unlock",
+    "roles" => ["admin", "manager"],
 ])->allowed();
 
 /**
@@ -80,7 +88,8 @@ $perPage = $paginator->perPage();
 // $collapsible = isset($collapsible) ? (boolean) $collapsible : false;
 if (empty($returnUrl)) {
     $url = url();
-    $returnUrl = $url instanceof \Illuminate\Routing\UrlGenerator ? $url->full() : '';
+    $returnUrl =
+        $url instanceof \Illuminate\Routing\UrlGenerator ? $url->full() : "";
 }
 // $filters = isset($filters) ? $filters : null;
 // $validated = isset($validated) ? $validated : null;
@@ -106,8 +115,11 @@ $showForm = true;
  * } $styling
  */
 $styling = isset($styling) && is_array($styling) ? $styling : [];
-$hasHeaderStyling = isset($styling['header']) && is_array($styling['header']) && !empty($styling['header']);
-$headerClass = '';
+$hasHeaderStyling =
+    isset($styling["header"]) &&
+    is_array($styling["header"]) &&
+    ! empty($styling["header"]);
+$headerClass = "";
 
 // dd([
 //     '__METHOD__' => __METHOD__,
@@ -130,79 +142,92 @@ $headerClass = '';
 ################################################################################
 
 //  Header badge
-if ($hasHeaderStyling && isset($styling['header']['badge']) && is_string($styling['header']['badge'])) {
-    $badge = $styling['header']['badge'];
+if (
+    $hasHeaderStyling &&
+    isset($styling["header"]["badge"]) &&
+    is_string($styling["header"]["badge"])
+) {
+    $badge = $styling["header"]["badge"];
 } else {
-    $badge = 'badge bg-success';
+    $badge = "badge bg-success";
 }
 
 //  Header class
-if ($hasHeaderStyling && isset($styling['header']['class']) && is_string($styling['header']['class'])) {
-    $headerClass = $styling['header']['class'];
+if (
+    $hasHeaderStyling &&
+    isset($styling["header"]["class"]) &&
+    is_string($styling["header"]["class"])
+) {
+    $headerClass = $styling["header"]["class"];
 }
 ?>
+
 <div class="panel {{ $headerClass }}" id="{{ $id }}">
-
     <div class="table-responsive">
-
-        @include('playground::components/table/data-form')
+        @include("playground::components/table/data-form")
 
         <table class="table">
-
             <thead>
-            <tr>
-                @foreach ($columns as $column => $columnMeta)
-                    <th class="{{ !empty($columnMeta['hide-sm']) ? 'd-none d-sm-table-cell' : '' }}">
-                        @if (isset($columnMeta['icon']))
-                            <span class="{{ $columnMeta['icon'] }}"></span>
-                        @endif
-                        @if (isset($columnMeta['label']))
-                            {{ $columnMeta['label'] }}
-                        @endif
-                    </th>
-                @endforeach
-                @if ($modelActions)
-                    <th>
-                        Actions
-                    </th>
-                @endif
-            </tr>
+                <tr>
+                    @foreach ($columns as $column => $columnMeta)
+                        <th
+                            class="{{ ! empty($columnMeta["hide-sm"]) ? "d-none d-sm-table-cell" : "" }}"
+                        >
+                            @if (isset($columnMeta["icon"]))
+                                <span class="{{ $columnMeta["icon"] }}"></span>
+                            @endif
+
+                            @if (isset($columnMeta["label"]))
+                                {{ $columnMeta["label"] }}
+                            @endif
+                        </th>
+                    @endforeach
+
+                    @if ($modelActions)
+                        <th>Actions</th>
+                    @endif
+                </tr>
             </thead>
 
             @if ($showLinks && $paginator->count() > 10)
                 <tfoot>
-                <tr>
-                    <td colspan="{{ $modelActions ? count($columns) + 1 : count($columns) }}">
-                        <h2 class="h4">
-                            @if ($icon)
-                                <span class="{{ $icon }}"></span>
-                            @endif
-                            {{ !empty($slot) ? $slot : '' }}
-                            <span class="{{ $badge }}">{{ $paginator->count() }} </span>
+                    <tr>
+                        <td
+                            colspan="{{ $modelActions ? count($columns) + 1 : count($columns) }}"
+                        >
+                            <h2 class="h4">
+                                @if ($icon)
+                                    <span class="{{ $icon }}"></span>
+                                @endif
 
-                            <div class="float-end">
-                                {{ $paginator->links() }}
-                            </div>
-                        </h2>
-                    </td>
-                </tr>
+                                {{ ! empty($slot) ? $slot : "" }}
+                                <span class="{{ $badge }}">
+                                    {{ $paginator->count() }}
+                                </span>
+
+                                <div class="float-end">
+                                    {{ $paginator->links() }}
+                                </div>
+                            </h2>
+                        </td>
+                    </tr>
                 </tfoot>
             @endif
 
             <tbody>
-            @foreach ($paginator as $datum)
-                @php $record = $datum->toArray(); @endphp
-                <tr>
-                    @include('playground::components/table/data-row')
-                    @includeWhen($modelActions, 'playground::components/table/data-row-actions')
-                </tr>
-            @endforeach
-            </tbody>
+                @foreach ($paginator as $datum)
+                    @php
+                        $record = $datum->toArray();
+                    @endphp
 
+                    <tr>
+                        @include("playground::components/table/data-row")
+                        @includeWhen($modelActions, "playground::components/table/data-row-actions")
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
 
-        @include('playground::components/table/data-footer')
-
+        @include("playground::components/table/data-footer")
     </div>
-
 </div>

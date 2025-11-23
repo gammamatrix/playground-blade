@@ -1,17 +1,22 @@
 <nav>
     <ul class="pagination">
-
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="page-item disabled" aria-disabled="true" aria-label="@lang('playground::pagination.previous')">
-                <span class="page-link" aria-hidden="true">
-                    &lsaquo;
-                </span>
+            <li
+                class="page-item disabled"
+                aria-disabled="true"
+                aria-label="@lang("playground::pagination.previous")"
+            >
+                <span class="page-link" aria-hidden="true">&lsaquo;</span>
             </li>
         @else
             <li class="page-item">
-                <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev"
-                   aria-label="@lang('playground::pagination.previous')">
+                <a
+                    class="page-link"
+                    href="{{ $paginator->previousPageUrl() }}"
+                    rel="prev"
+                    aria-label="@lang("playground::pagination.previous")"
+                >
                     &lsaquo;
                 </a>
             </li>
@@ -51,32 +56,43 @@
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
             <li class="page-item">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"
-                   aria-label="@lang('playground::pagination.next')">
+                <a
+                    class="page-link"
+                    href="{{ $paginator->nextPageUrl() }}"
+                    rel="next"
+                    aria-label="@lang("playground::pagination.next")"
+                >
                     &rsaquo;
                 </a>
             </li>
         @else
-            <li class="page-item disabled" aria-disabled="true" aria-label="@lang('playground::pagination.next')">
+            <li
+                class="page-item disabled"
+                aria-disabled="true"
+                aria-label="@lang("playground::pagination.next")"
+            >
                 <span class="page-link" aria-hidden="true">&rsaquo;</span>
             </li>
         @endif
 
         <li class="page-item d-none d-sm-inline">
             <span class="page-link text-nowrap">
-                Page {{ $paginator->currentPage() }} of {{ $paginator->lastPage() }}
+                Page {{ $paginator->currentPage() }} of
+                {{ $paginator->lastPage() }}
             </span>
         </li>
 
         @if ($paginator->total())
             <li class="page-item d-none d-sm-inline">
                 <span class="page-link text-nowrap">
-                    Showing {{ ($paginator->currentPage() - 1) * $paginator->perPage() + 1 }} -
-                    {{ ($paginator->currentPage() - 1) * $paginator->perPage() + $paginator->count() }} of
+                    Showing
+                    {{ ($paginator->currentPage() - 1) * $paginator->perPage() + 1 }}
+                    -
+                    {{ ($paginator->currentPage() - 1) * $paginator->perPage() + $paginator->count() }}
+                    of
                     {{ $paginator->total() }}
                 </span>
             </li>
         @endif
-
     </ul>
 </nav>

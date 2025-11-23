@@ -7,18 +7,17 @@
  *
  */
 
-$package_config = config('playground-blade');
+$package_config = config("playground-blade");
 
 ?>
-@extends($package_config['layout'])
-@section('content')
+
+@extends($package_config["layout"])
+@section("content")
     <div class="container-fluid">
         <div class="row justify-content-center">
+            @yield("section-primary")
 
-            @yield('section-primary')
-
-            @yield('section-secondary')
-
+            @yield("section-secondary")
         </div>
     </div>
 @endsection

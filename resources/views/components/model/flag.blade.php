@@ -1,33 +1,42 @@
 <?php
-$columnMeta = empty($columnMeta) || !is_array($columnMeta) ? [] : $columnMeta;
+$columnMeta = empty($columnMeta) || ! is_array($columnMeta) ? [] : $columnMeta;
 
-$hasFlagOnFalseClass = !empty($columnMeta['onFalseClass']) && is_string($columnMeta['onFalseClass']);
+$hasFlagOnFalseClass =
+    ! empty($columnMeta["onFalseClass"]) &&
+    is_string($columnMeta["onFalseClass"]);
 
-$hasFlagOnFalseLabel = !empty($columnMeta['onFalseLabel']) && is_string($columnMeta['onFalseLabel']);
+$hasFlagOnFalseLabel =
+    ! empty($columnMeta["onFalseLabel"]) &&
+    is_string($columnMeta["onFalseLabel"]);
 
-$hasFlagOnTrueClass = !empty($columnMeta['onTrueClass']) && is_string($columnMeta['onTrueClass']);
+$hasFlagOnTrueClass =
+    ! empty($columnMeta["onTrueClass"]) && is_string($columnMeta["onTrueClass"]);
 
-$hasFlagOnTrueLabel = !empty($columnMeta['onTrueLabel']) && is_string($columnMeta['onTrueLabel']);
+$hasFlagOnTrueLabel =
+    ! empty($columnMeta["onTrueLabel"]) && is_string($columnMeta["onTrueLabel"]);
 
 $hasFlagOnFalse = $hasFlagOnFalseClass || $hasFlagOnFalseLabel;
 $hasFlagOnTrue = $hasFlagOnTrueClass || $hasFlagOnTrueLabel;
 
-if (!($hasFlagOnFalse || $hasFlagOnTrue)) {
+if (! ($hasFlagOnFalse || $hasFlagOnTrue)) {
     return;
 }
 ?>
+
 @if ($value)
     @if ($hasFlagOnTrueClass)
-        <span class="{{ $columnMeta['onTrueClass'] }}"></span>
+        <span class="{{ $columnMeta["onTrueClass"] }}"></span>
     @endif
+
     @if ($hasFlagOnTrueLabel)
-        {{ $columnMeta['onTrueLabel'] }}
+        {{ $columnMeta["onTrueLabel"] }}
     @endif
 @else
     @if ($hasFlagOnFalseClass)
-        <span class="{{ $columnMeta['onFalseClass'] }}"></span>
+        <span class="{{ $columnMeta["onFalseClass"] }}"></span>
     @endif
+
     @if ($hasFlagOnFalseLabel)
-        {{ $columnMeta['onFalseLabel'] }}
+        {{ $columnMeta["onFalseLabel"] }}
     @endif
 @endif

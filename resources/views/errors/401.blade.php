@@ -1,40 +1,42 @@
-@extends('playground::layouts.site')
+@extends("playground::layouts.site")
 
-@section('title', __('Unauthorized'))
+@section("title", __("Unauthorized"))
 
-@section('breadcrumbs')
+@section("breadcrumbs")
     <nav aria-label="breadcrumb" class="m-3">
         <ol class="breadcrumb">
-            @if (Route::has('home'))
+            @if (Route::has("home"))
                 <li class="breadcrumb-item">
-                    <a href="{{ route('home') }}">{{ __('Home') }}</a>
+                    <a href="{{ route("home") }}">{{ __("Home") }}</a>
                 </li>
             @endif
-            <li class="breadcrumb-item active" aria-current="page">
-                401
-            </li>
+
+            <li class="breadcrumb-item active" aria-current="page">401</li>
         </ol>
     </nav>
 @endsection
 
-@section('content')
+@section("content")
     <div class="container">
         <div class="card">
             <div class="card-header">
                 <h1>
                     <small class="text-body-secondary">401</small>
-                    {{ __('Unauthorized') }}
+                    {{ __("Unauthorized") }}
                 </h1>
             </div>
             <div class="card-body bg-warning">
                 <p class="lead text-danger">
-                    {{ __($exception->getMessage() ?: 'Unauthorized') }}
+                    {{ __($exception->getMessage() ?: "Unauthorized") }}
                 </p>
             </div>
             @if (url()->previous() === url()->current())
                 <div class="card-footer">
-                    <a class="btn btn-info float-end" href="{{ url()->previous() }}">
-                        {{ __('Go back') }}
+                    <a
+                        class="btn btn-info float-end"
+                        href="{{ url()->previous() }}"
+                    >
+                        {{ __("Go back") }}
                     </a>
                 </div>
             @endif

@@ -1,44 +1,50 @@
 <?php
-$label = isset($label) && is_string($label) ? $label : '';
-$column = isset($column) && is_string($column) ? $column : '';
+$label = isset($label) && is_string($label) ? $label : "";
+$column = isset($column) && is_string($column) ? $column : "";
 $default = isset($default) && is_bool($default) && $default;
 // $records = isset($records) ? $records : [];
 // $id = isset($id) && is_string($id) && !empty($id) ? $id : 'id';
 // $key = isset($key) && is_string($key) && !empty($key) ? $key : 'label';
 $oldValue = old($column);
-$withoutMargin = isset($withoutMargin) && $withoutMargin ? '' : 'mb-3';
+$withoutMargin = isset($withoutMargin) && $withoutMargin ? "" : "mb-3";
 // $class = isset($class) && is_string($class) ? $class : '';
 // $errorMessage = isset($errorMessage) && is_string($errorMessage) ? $errorMessage : '';
 
 /**
  * @var bool|string $disabled
  */
-$disabled = isset($disabled) && $disabled ? 'disabled' : '';
+$disabled = isset($disabled) && $disabled ? "disabled" : "";
 
 /**
  * @var bool|string $readonly
  */
-$readonly = isset($readonly) && $readonly ? 'readonly' : '';
+$readonly = isset($readonly) && $readonly ? "readonly" : "";
 
-$hasRules = isset($rules) && is_array($rules) && !empty($rules);
+$hasRules = isset($rules) && is_array($rules) && ! empty($rules);
 
-$required = $hasRules && isset($rules['required']) && is_bool($rules['required']) && $rules['required'] ? 'required ' : '';
+$required =
+    $hasRules &&
+    isset($rules["required"]) &&
+    is_bool($rules["required"]) &&
+    $rules["required"]
+        ? "required "
+        : "";
 
 if (is_bool($disabled) && $disabled) {
-    $disabled = 'disabled';
+    $disabled = "disabled";
 } else {
-    $disabled = '';
+    $disabled = "";
 }
 
 if (is_bool($readonly) && $readonly) {
-    $readonly = 'readonly';
+    $readonly = "readonly";
 } else {
-    $readonly = '';
+    $readonly = "";
 }
 
 $attributes = trim(
     implode(
-        ' ',
+        " ",
         array_filter([
             $readonly,
             $disabled,
@@ -64,40 +70,53 @@ $attributes = trim(
 // ]);
 
 ?>
-<div class="{{ trim(sprintf('%s %s %s', $withoutMargin, $advanced, $class)) }}">
+
+<div
+    class="{{ trim(sprintf("%s %s %s", $withoutMargin, $advanced, $class)) }}"
+>
     <div class="input-group my-3">
         @if (empty($column))
             <div class="alert alert-danger">
                 Expecting a column for the form select.
             </div>
         @endif
+
         @if ($label)
             <label class="input-group-text" for="form-input-{{ $column }}">
                 {{ $label }}
             </label>
         @endif
-        <select class="form-select @error($column) is-invalid @enderror" value="{{ $oldValue }}"
-            {!! $required !!}{!! $attributes !!}>
+
+        <select
+            class="form-select @error($column) is-invalid @enderror"
+            value="{{ $oldValue }}"
+            {!! $required !!}{!! $attributes !!}
+        >
             @if ($default)
                 <option @if (empty($oldValue)) selected @endif></option>
             @endif
+
             @foreach ($records as $record)
-                <option value="{{ $record[$id] }}" @if ($record[$id] === $oldValue) selected @endif>
-                    @if (!empty($flags) && is_array($flags))
+                <option
+                    value="{{ $record[$id] }}"
+                    @if ($record[$id] === $oldValue) selected @endif
+                >
+                    @if (! empty($flags) && is_array($flags))
                         @foreach ($flags as $flagKey => $flagMeta)
                             @if (array_key_exists($flagKey, $record) && is_bool($record[$flagKey]))
                                 @if ($record[$flagKey])
-                                    @if (!empty($flagMeta['enabled']))
-                                        {{ $flagMeta['enabled'] }} -
+                                    @if (! empty($flagMeta["enabled"]))
+                                            {{ $flagMeta["enabled"] }} -
                                     @endif
                                 @else
-                                    @if (!empty($flagMeta['disabled']))
-                                        {{ $flagMeta['disabled'] }} -
+                                    @if (! empty($flagMeta["disabled"]))
+                                            {{ $flagMeta["disabled"] }} -
                                     @endif
                                 @endif
                             @endif
                         @endforeach
                     @endif
+
                     {{ $record[$key] }}
                 </option>
             @endforeach
@@ -109,9 +128,9 @@ $attributes = trim(
         </div>
     @else
         @error($column)
-        <div class="invalid-feedback" id="form-input-error-{{ $column }}">
-            {{ $message }}
-        </div>
+            <div class="invalid-feedback" id="form-input-error-{{ $column }}">
+                {{ $message }}
+            </div>
         @enderror
     @endif
     @if ($described)
@@ -119,5 +138,6 @@ $attributes = trim(
             {!! $described !!}
         </small>
     @endif
+
     {{ $slot }}
 </div>
