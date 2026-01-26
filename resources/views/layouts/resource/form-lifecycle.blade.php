@@ -38,6 +38,23 @@
         </div>
         <div class="col">
             <div class="form-check form-check-inline">
+                <input type="hidden" name="completed" value="0" />
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="form-input-completed"
+                    name="completed"
+                    value="1"
+                    {{ old("completed") ? "checked" : "" }}
+                />
+                <label class="form-check-label" for="form-input-completed">
+                    <i class="fa-solid fa-check"></i>
+                    {{ __("Completed") }}
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check form-check-inline">
                 <input type="hidden" name="closed" value="0" />
                 <input
                     class="form-check-input"
@@ -50,6 +67,94 @@
                 <label class="form-check-label" for="form-input-closed">
                     <i class="fa-solid fa-xmark text-info"></i>
                     {{ __("Closed") }}
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="hidden" name="cron" value="0" />
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="form-input-cron"
+                    name="cron"
+                    value="1"
+                    {{ old("cron") ? "checked" : "" }}
+                />
+                <label class="form-check-label" for="form-input-cron">
+                    <i class="fa-regular fa-clock"></i>
+                    {{ __("CRON") }}
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="hidden" name="duplicate" value="0" />
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="form-input-duplicate"
+                    name="duplicate"
+                    value="1"
+                    {{ old("duplicate") ? "checked" : "" }}
+                />
+                <label class="form-check-label" for="form-input-duplicate">
+                    <i class="fa-solid fa-clone"></i>
+                    {{ __("Duplicate") }}
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="hidden" name="fixed" value="0" />
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="form-input-fixed"
+                    name="fixed"
+                    value="1"
+                    {{ old("fixed") ? "checked" : "" }}
+                />
+                <label class="form-check-label" for="form-input-fixed">
+                    <i class="fa-solid fa-wrench text-success"></i>
+                    {{ __("Fixed") }}
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="hidden" name="internal" value="0" />
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="form-input-internal"
+                    name="internal"
+                    value="1"
+                    {{ old("internal") ? "checked" : "" }}
+                />
+                <label class="form-check-label" for="form-input-internal">
+                    <i class="fa-solid fa-clone"></i>
+                    {{ __("Internal") }}
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="hidden" name="flagged" value="0" />
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="form-input-flagged"
+                    name="flagged"
+                    value="1"
+                    {{ old("flagged") ? "checked" : "" }}
+                />
+                <label class="form-check-label" for="form-input-flagged">
+                    <i class="fa-solid fa-flag"></i>
+                    {{ __("Flagged") }}
                 </label>
             </div>
         </div>

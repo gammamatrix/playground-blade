@@ -7,9 +7,7 @@
                         class="alert alert-{{ $key }} col mt-3 mb-3 alert-block alert-dismissible fade show"
                     >
                         @if ($key === "command")
-                            <pre class="user-select-all">
-{!! Session::get($key) !!}
-                            </pre>
+                            <pre class="user-select-all">{!! Session::get($key) !!}</pre>
                         @else
                             <strong>{!! Session::get($key) !!}</strong>
                         @endif
