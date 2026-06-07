@@ -253,8 +253,14 @@
     }
 
     if (is_array($value)) {
+        $values = [];
+        foreach ($value as $k => $v) {
+            if (is_scalar($v)) {
+                $values[] = $v;
+            }
+        }
         if ("implode" === $columnMeta["action"]) {
-            $value = implode(", ", $value);
+            $value = implode(", ", $values);
         } elseif ("json" === $columnMeta["action"]) {
             $value = json_encode($value);
         } else {

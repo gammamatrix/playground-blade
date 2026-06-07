@@ -19,16 +19,16 @@
     ],
     "require": {
         "php": "^8.4",
-        "gammamatrix/playground": "74.x-dev",
-        "illuminate/support": "^12.0",
-        "illuminate/view": "^12.0"
+        "gammamatrix/playground": "75.x-dev",
+        "illuminate/support": "^13.0",
+        "illuminate/view": "^13.0"
     },
     "require-dev": {
-        "gammamatrix/playground-auth": "74.x-dev",
-        "gammamatrix/playground-cms": "74.x-dev",
-        "gammamatrix/playground-test": "74.x-dev",
-        "illuminate/testing": "^12.0",
-        "tomasvotruba/bladestan": "^0.11.3"
+        "gammamatrix/playground-auth": "75.x-dev",
+        "gammamatrix/playground-cms": "75.x-dev",
+        "gammamatrix/playground-test": "75.x-dev",
+        "illuminate/testing": "^13.0",
+        "tomasvotruba/bladestan": "dev-main"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -52,7 +52,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "74.x-dev"
+            "dev-develop": "75.x-dev"
         },
         "laravel": {
             "providers": [

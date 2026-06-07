@@ -8,6 +8,8 @@ declare(strict_types=1);
 namespace Tests\Feature\Playground\Blade\View\Components\Table\Data;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Playground\Blade\View\Components\Table\Data;
 use Playground\Blade\View\Components\Table\Data as DataTable;
 use Playground\Cms\Models\Snippet;
 use Tests\Feature\Playground\Blade\TestCase;
@@ -41,9 +43,9 @@ class ComponentTest extends TestCase
     public function test_component_can_render_empty_view_without_columns(): void
     {
         $paginate = Snippet::paginate();
-        $this->assertInstanceOf(\Illuminate\Pagination\LengthAwarePaginator::class, $paginate);
+        $this->assertInstanceOf(LengthAwarePaginator::class, $paginate);
 
-        $view = $this->component(\Playground\Blade\View\Components\Table\Data::class, [
+        $view = $this->component(Data::class, [
             'paginator' => $paginate,
         ]);
 
@@ -55,7 +57,7 @@ class ComponentTest extends TestCase
         $paginate = Snippet::paginate();
         $this->assertInstanceOf(\Illuminate\Contracts\Pagination\LengthAwarePaginator::class, $paginate);
 
-        $view = $this->component(\Playground\Blade\View\Components\Table\Data::class, [
+        $view = $this->component(Data::class, [
             'paginator' => $paginate,
             'columns' => [
                 'label' => [
