@@ -222,28 +222,6 @@
                 </fieldset>
             </div>
         </div>
-
-        <legend class="text-warning">Access</legend>
-
-        <div class="row">
-            <div class="col">
-                <div class="form-check">
-                    <input type="hidden" name="only_admin" value="0" />
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="form-input-only_admin"
-                        name="only_admin"
-                        value="1"
-                        {{ old("only_admin") ? "checked" : "" }}
-                    />
-                    <label class="form-check-label" for="form-input-only_admin">
-                        <i class="fa-solid fa-user-gear text-info"></i>
-                        {{ __("Only Admin") }}
-                    </label>
-                </div>
-            </div>
-        </div>
     </fieldset>
 
     @yield("fieldset-permissions")

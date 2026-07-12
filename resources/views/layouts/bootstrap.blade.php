@@ -210,6 +210,7 @@ $theme = Playground\Blade\Facades\Ui::theme();
             @if ($withBreadcrumbs)
                 @yield("breadcrumbs")
             @endif
+
             @includeWhen($withAlerts, sprintf('%1$slayouts/bootstrap/alerts', $package_config["view"]))
             @includeWhen($withErrors, sprintf('%1$slayouts/bootstrap/errors', $package_config["view"]))
             @yield("main")
