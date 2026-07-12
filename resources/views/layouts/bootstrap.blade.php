@@ -207,7 +207,9 @@ $theme = Playground\Blade\Facades\Ui::theme();
         <main role="main" class="{{ $withMainClass }}">
             @stack("snippet-main-header")
             {{-- snippet-main rank === {-999, 0} --}}
-            @yield("breadcrumbs")
+            @if ($withBreadcrumbs)
+                @yield("breadcrumbs")
+            @endif
             @includeWhen($withAlerts, sprintf('%1$slayouts/bootstrap/alerts', $package_config["view"]))
             @includeWhen($withErrors, sprintf('%1$slayouts/bootstrap/errors', $package_config["view"]))
             @yield("main")

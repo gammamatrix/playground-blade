@@ -123,7 +123,9 @@ if ($withTable) {
         "modelActions" => true,
         "routeParameter" => $packageInfo->model_slug(),
         "routeParameterKey" => "id",
-        "routeEdit" => sprintf('%1$s.edit', $packageInfo->model_route()),
+        "routeEdit" => empty($routeEdit)
+            ? sprintf('%1$s.edit', $packageInfo->model_route())
+            : $routeEdit,
         "routeDelete" => sprintf('%1$s.destroy', $packageInfo->model_route()),
         "routeRestore" => sprintf('%1$s.restore', $packageInfo->model_route()),
         "routeShow" => sprintf('%1$s.show', $packageInfo->model_route()),

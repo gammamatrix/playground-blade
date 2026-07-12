@@ -26,6 +26,14 @@ $withBodyScript =
     isset($withBodyScript) && is_bool($withBodyScript) ? $withBodyScript : true;
 
 /**
+ * @var boolean $withBreadcrumbs Show the breadcrumbs in the layout.
+ */
+$withBreadcrumbs =
+    isset($withBreadcrumbs) && is_bool($withBreadcrumbs)
+        ? $withBreadcrumbs
+        : true;
+
+/**
  * @var boolean|string $withFormInfo
  */
 $withFormInfo =
@@ -119,6 +127,16 @@ $withFormPermissions =
     isset($withFormPermissions) &&
     (is_bool($withFormPermissions) || is_string($withFormPermissions))
         ? $withFormPermissions
+        : true;
+
+/**
+ * @var boolean|string $withFormContentPermissions
+ */
+$withFormContentPermissions =
+    isset($withFormContentPermissions) &&
+    (is_bool($withFormContentPermissions) ||
+        is_string($withFormContentPermissions))
+        ? $withFormContentPermissions
         : true;
 
 /**
@@ -229,50 +247,14 @@ if ("patch" === $_method) {
     ]
 )
 @section("title", sprintf('%1$s - %2$s Form', $packageInfo->module_label(), $packageInfo->model_label()))
-@section("breadcrumbs")
-    <nav aria-label="breadcrumb" class="container-fluid mt-3">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="/">{{ __("Home") }}</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ $routeModule }}">
-                    {{ __($packageInfo->module_label()) }}
-                </a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ $routeModel }}">
-                    {{ __(":module_label Index", ["module_label" => $packageInfo->model_label()]) }}
-                </a>
-            </li>
-            @if ($routeShow)
-                <li class="breadcrumb-item">
-                    <a href="{{ $routeShow }}">
-                        {{ __($data[$packageInfo->model_attribute()]) }}
-                    </a>
-                </li>
-            @endif
 
-            @if ("post" === $_method)
-                @if ($routeCreate)
-                    <li class="breadcrumb-item active" aria-current="page">
-                        <a href="{{ $routeCreate }}">
-                            {{ __("Create") }}
-                        </a>
-                    </li>
-                @endif
-            @elseif ("patch" === $_method)
-                @if ($routeEdit)
-                    <li class="breadcrumb-item active" aria-current="page">
-                        <a href="{{ $routeEdit }}">
-                            {{ __("Edit") }}
-                        </a>
-                    </li>
-                @endif
-            @endif
-        </ol>
-    </nav>
-@endsection
+@if ($withBreadcrumbs)
+    @if (is_string($withBreadcrumbs))
+        @include($withBreadcrumbs)
+    @else
+        @include("playground::layouts.resource.form-breadcrumbs")
+    @endif
+@endif
 
 @section("content")
     <div class="container-fluid">
@@ -351,6 +333,14 @@ if ("patch" === $_method) {
                             @include($withFormPermissions)
                         @else
                             @include("playground::layouts.resource.form-permissions")
+                        @endif
+                    @endif
+
+                    @if ($withFormContentPermissions)
+                        @if (is_string($withFormContentPermissions))
+                            @include($withFormContentPermissions)
+                        @else
+                            @include("playground::layouts.resource.form-content-permissions")
                         @endif
                     @endif
 

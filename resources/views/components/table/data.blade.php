@@ -188,32 +188,6 @@ if (
                     @endif
                 </tr>
             </thead>
-
-            @if ($showLinks && $paginator->count() > 10)
-                <tfoot>
-                    <tr>
-                        <td
-                            colspan="{{ $modelActions ? count($columns) + 1 : count($columns) }}"
-                        >
-                            <h2 class="h4">
-                                @if ($icon)
-                                    <span class="{{ $icon }}"></span>
-                                @endif
-
-                                {{ ! empty($slot) ? $slot : "" }}
-                                <span class="{{ $badge }}">
-                                    {{ $paginator->count() }}
-                                </span>
-
-                                <div class="float-end">
-                                    {{ $paginator->links() }}
-                                </div>
-                            </h2>
-                        </td>
-                    </tr>
-                </tfoot>
-            @endif
-
             <tbody>
                 @foreach ($paginator as $datum)
                     @php
