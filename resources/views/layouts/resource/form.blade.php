@@ -227,10 +227,10 @@ if ("patch" === $_method) {
         $data?->getAttributeValue("id"),
     );
     $routeShow = route(sprintf('%1$s.show', $packageInfo->model_route()), [
-        $packageInfo->model_slug() => $data?->getAttributeValue("id"),
+        $packageInfo->model_variable() => $data?->getAttributeValue("id"),
     ]);
     $routeEdit = route(sprintf('%1$s.edit', $packageInfo->model_route()), [
-        $packageInfo->model_slug() => $data?->getAttributeValue("id"),
+        $packageInfo->model_variable() => $data?->getAttributeValue("id"),
         "_return_url" => $_return_url ?: $routeShow,
     ]);
 } elseif ("post" === $_method) {

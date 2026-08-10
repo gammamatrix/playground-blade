@@ -54,23 +54,23 @@ $_return_url = old("_return_url");
 $routeModule = route($packageInfo->module_route());
 $routeModel = route($packageInfo->model_route());
 $routeShow = route(sprintf('%1$s.show', $packageInfo->model_route()), [
-    $packageInfo->model_slug() => $data->getAttributeValue("id"),
+    $packageInfo->model_variable() => $data->getAttributeValue("id"),
 ]);
 $routeLock = route(sprintf('%1$s.lock', $packageInfo->model_route()), [
-    $packageInfo->model_slug() => $data->getAttributeValue("id"),
+    $packageInfo->model_variable() => $data->getAttributeValue("id"),
 ]);
 $routeUnlock = route(sprintf('%1$s.unlock', $packageInfo->model_route()), [
-    $packageInfo->model_slug() => $data->getAttributeValue("id"),
+    $packageInfo->model_variable() => $data->getAttributeValue("id"),
 ]);
 $routeDelete = route(sprintf('%1$s.destroy', $packageInfo->model_route()), [
-    $packageInfo->model_slug() => $data->getAttributeValue("id"),
+    $packageInfo->model_variable() => $data->getAttributeValue("id"),
     "_return_url" => $_return_url ?: $routeShow,
 ]);
 $routeRestore = route(sprintf('%1$s.restore', $packageInfo->model_route()), [
-    $packageInfo->model_slug() => $data->getAttributeValue("id"),
+    $packageInfo->model_variable() => $data->getAttributeValue("id"),
 ]);
 $routeEdit = route(sprintf('%1$s.edit', $packageInfo->model_route()), [
-    $packageInfo->model_slug() => $data->getAttributeValue("id"),
+    $packageInfo->model_variable() => $data->getAttributeValue("id"),
     "_return_url" => $_return_url ?: $routeShow,
 ]);
 

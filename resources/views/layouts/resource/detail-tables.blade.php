@@ -2,7 +2,7 @@
     @foreach ($dataDetail["tables"] as $table)
         <div
             class="row"
-            id="{{ sprintf('section-%1$s-%2$s', $packageInfo->model_slug(), $table) }}"
+            id="{{ sprintf('section-%1$s-%2$s', $packageInfo->model_variable(), $table) }}"
         >
             @php
                 $hasTable = is_string($table) && ! empty($dataDetail[$table]) && ! empty($dataDetail[$table]["label"]) && ! empty($$table) && is_object($$table);

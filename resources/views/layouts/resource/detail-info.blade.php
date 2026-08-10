@@ -13,7 +13,7 @@
                 </th>
                 <td>
                     <a
-                        href="{{ route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_slug() => $parent->id]) }}"
+                        href="{{ route(sprintf('%1$s.show', $packageInfo->model_route()), [$packageInfo->model_variable() => $parent->id]) }}"
                     >
                         {{ __($parent->label) }}
                     </a>

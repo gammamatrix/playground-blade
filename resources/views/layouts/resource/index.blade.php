@@ -115,13 +115,13 @@ if ($withTable) {
     $tableComponent = [
         "trashable" => true,
         "columns" => $withTableColumns,
-        "id" => sprintf('%1$s-index', $packageInfo->model_slug()),
+        "id" => sprintf('%1$s-index', $packageInfo->model_variable()),
         "collapsible" => true,
         "sort" => $sort ?? [],
         "filters" => $filters ?? [],
         "validated" => $validated ?? [],
         "modelActions" => true,
-        "routeParameter" => $packageInfo->model_slug(),
+        "routeParameter" => $packageInfo->model_variable(),
         "routeParameterKey" => "id",
         "routeEdit" => empty($routeEdit)
             ? sprintf('%1$s.edit', $packageInfo->model_route())
