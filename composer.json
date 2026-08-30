@@ -61,7 +61,7 @@
         }
     },
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max --error-format=blade",
+        "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max",
         "format": "vendor/bin/pint",
         "format-blade": "npx prettier --write \"resources/views/**/*.blade.php\"",
         "cloc": "cloc --exclude-dir=output,vendor .",
