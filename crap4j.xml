@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-08-30 22:03:41</timestamp>
+  <timestamp>2026-09-09 17:13:14</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>93</methodCount>
@@ -532,8 +532,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithAssets</className>
       <methodName>bodyAssets</methodName>
-      <methodSignature>bodyAssets(?Playground\Blade\Themes\Theme $theme): array</methodSignature>
-      <fullMethod>bodyAssets(?Playground\Blade\Themes\Theme $theme): array</fullMethod>
+      <methodSignature>bodyAssets(?Theme $theme): array</methodSignature>
+      <fullMethod>bodyAssets(?Theme $theme): array</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -543,8 +543,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithAssets</className>
       <methodName>headAssets</methodName>
-      <methodSignature>headAssets(?Playground\Blade\Themes\Theme $theme): array</methodSignature>
-      <fullMethod>headAssets(?Playground\Blade\Themes\Theme $theme): array</fullMethod>
+      <methodSignature>headAssets(?Theme $theme): array</methodSignature>
+      <fullMethod>headAssets(?Theme $theme): array</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -576,8 +576,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithThemes</className>
       <methodName>theme</methodName>
-      <methodSignature>theme(): Playground\Blade\Themes\Theme</methodSignature>
-      <fullMethod>theme(): Playground\Blade\Themes\Theme</fullMethod>
+      <methodSignature>theme(): Themes\Theme</methodSignature>
+      <fullMethod>theme(): Themes\Theme</fullMethod>
       <crap>20</crap>
       <complexity>4</complexity>
       <coverage>0</coverage>
@@ -598,8 +598,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithThemes</className>
       <methodName>getTheme</methodName>
-      <methodSignature>getTheme(string $key): ?Playground\Blade\Themes\Theme</methodSignature>
-      <fullMethod>getTheme(string $key): ?Playground\Blade\Themes\Theme</fullMethod>
+      <methodSignature>getTheme(string $key): ?Themes\Theme</methodSignature>
+      <fullMethod>getTheme(string $key): ?Themes\Theme</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -620,8 +620,8 @@
       <package>Playground\Blade\Concerns</package>
       <className>Playground\Blade\Concerns\WithThemes</className>
       <methodName>saveTheme</methodName>
-      <methodSignature>saveTheme(Playground\Blade\Themes\Theme $theme): self</methodSignature>
-      <fullMethod>saveTheme(Playground\Blade\Themes\Theme $theme): self</fullMethod>
+      <methodSignature>saveTheme(Themes\Theme $theme): self</methodSignature>
+      <fullMethod>saveTheme(Themes\Theme $theme): self</fullMethod>
       <crap>20</crap>
       <complexity>4</complexity>
       <coverage>0</coverage>
@@ -895,8 +895,8 @@
       <package>Playground\Blade\View\Components\Forms</package>
       <className>Playground\Blade\View\Components\Forms\Column</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
@@ -917,8 +917,8 @@
       <package>Playground\Blade\View\Components\Forms</package>
       <className>Playground\Blade\View\Components\Forms\ColumnEditor</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
@@ -939,8 +939,8 @@
       <package>Playground\Blade\View\Components\Forms</package>
       <className>Playground\Blade\View\Components\Forms\ColumnSelect</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
@@ -961,8 +961,8 @@
       <package>Playground\Blade\View\Components</package>
       <className>Playground\Blade\View\Components\ModelFlag</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
@@ -983,8 +983,8 @@
       <package>Playground\Blade\View\Components</package>
       <className>Playground\Blade\View\Components\ModelImage</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -1005,8 +1005,8 @@
       <package>Playground\Blade\View\Components</package>
       <className>Playground\Blade\View\Components\Snippets</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
       <coverage>0</coverage>
@@ -1016,8 +1016,8 @@
       <package>Playground\Blade\View\Components\Table</package>
       <className>Playground\Blade\View\Components\Table\Data</className>
       <methodName>__construct</methodName>
-      <methodSignature>__construct(string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeUnlock, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?Illuminate\Pagination\LengthAwarePaginator $paginator)</methodSignature>
-      <fullMethod>__construct(string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeUnlock, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?Illuminate\Pagination\LengthAwarePaginator $paginator)</fullMethod>
+      <methodSignature>__construct(string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeUnlock, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?LengthAwarePaginator $paginator)</methodSignature>
+      <fullMethod>__construct(string $id, string $icon, string $badge, bool $showPagination, bool $showLinks, bool $modelActions, bool $trashable, string $privilege, string $routeParameter, string $routeParameterKey, string $routeEdit, string $routeRestore, string $routeUnlock, string $routeDelete, string $routeDeleteRelationship, string $routeDeleteRelationshipId, bool $collapsible, string $returnUrl, array $columns, array $filters, array $validated, array $meta, array $sort, array $page_options, int $sorts, array $styling, string $class, ?LengthAwarePaginator $paginator)</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1027,8 +1027,8 @@
       <package>Playground\Blade\View\Components\Table</package>
       <className>Playground\Blade\View\Components\Table\Data</className>
       <methodName>render</methodName>
-      <methodSignature>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</methodSignature>
-      <fullMethod>render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View</fullMethod>
+      <methodSignature>render(): Factory|View</methodSignature>
+      <fullMethod>render(): Factory|View</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
