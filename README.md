@@ -2,9 +2,9 @@
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-blade/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/testdox.txt)
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-blade/testing/develop/coverage.svg)](tests)
-[![PHPStan Level 10 src and tests](https://img.shields.io/badge/PHPStan-level%2010-brightgreen)](.github/workflows/ci.yml#L128)
+[![PHPStan Level 10 src and tests](https://img.shields.io/badge/PHPStan-level%2010-brightgreen)](.github/workflows/ci.yml#L99)
 
-The Playground Blade package for [Laravel](https://laravel.com/docs/11.x) applications.
+The Playground Blade package for [Laravel](https://laravel.com/docs/13.x) applications.
 
 This package provides Blade UI handling.
 
@@ -94,27 +94,26 @@ composer cloc
 
 ```
 ➜  playground-blade git:(develop) ✗ composer cloc
-> cloc --exclude-dir=output,vendor .
-     154 text files.
-     118 unique files.
-      38 files ignored.
+     155 text files.
+     150 unique files.                                          
+       7 files ignored.
 
-github.com/AlDanial/cloc v 1.98  T=0.10 s (1143.8 files/s, 81948.0 lines/s)
+github.com/AlDanial/cloc v 2.08  T=0.07 s (2042.1 files/s, 159911.9 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Blade                           49            397             13           2700
-PHP                             47            466            518           2524
+Blade                           67            438             50           5077
+PHP                             50            557            829           2439
+XML                             12              0              7            775
 CSS                             10            139            141            461
 SVG                              2              2              2            301
-YAML                             1              5              0            275
-XML                              3              0              7            221
-Markdown                         3             47              0             98
-JSON                             1              0              0             65
+YAML                             1              4              0            188
+Markdown                         3             51              0            126
+JSON                             3              0              0             87
 JavaScript                       1              0             35             22
 INI                              1              3              0             12
 -------------------------------------------------------------------------------
-SUM:                           118           1059            716           6679
+SUM:                           150           1194           1064           9488
 -------------------------------------------------------------------------------
 ```
 

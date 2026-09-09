@@ -19,15 +19,12 @@
     ],
     "require": {
         "php": "^8.4",
-        "gammamatrix/playground": "*",
-        "illuminate/support": "^13.0",
-        "illuminate/view": "^13.0"
+        "gammamatrix/playground": "*"
     },
     "require-dev": {
         "gammamatrix/playground-auth": "*",
         "gammamatrix/playground-cms": "*",
         "gammamatrix/playground-test": "*",
-        "illuminate/testing": "^13.0",
         "tomasvotruba/bladestan": "dev-main"
     },
     "minimum-stability": "dev",
@@ -64,7 +61,7 @@
         "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max",
         "format": "vendor/bin/pint",
         "format-blade": "npx prettier --write \"resources/views/**/*.blade.php\"",
-        "cloc": "cloc --exclude-dir=output,vendor .",
+        "cloc": "cloc --exclude-dir=node_modules,output,vendor .",
         "test": "vendor/bin/testbench package:test",
         "test-dev": [
             "Composer\\Config::disableProcessTimeout",
