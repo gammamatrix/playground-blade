@@ -198,6 +198,30 @@ $withFormSummary =
         ? $withFormSummary
         : true;
 
+/**
+ * @var string[] $hideAdvanced
+ */
+$hideAdvanced =
+    isset($hideAdvanced) && is_array($hideAdvanced)
+        ? $hideAdvanced
+        : [
+            "fieldset-content-permissions",
+            "fieldset-lifecycle",
+            "fieldset-matrix",
+            "fieldset-planning",
+            "fieldset-permissions",
+            "fieldset-status",
+            "fieldset-publishing",
+        ];
+
+$hideAdvancedSelectors = "";
+foreach ($hideAdvanced as $hideAdvancedID) {
+    if (is_string($hideAdvancedID) && ! empty($hideAdvancedID)) {
+        $hideAdvancedSelectors .= sprintf('#%1$s, ', $hideAdvancedID);
+    }
+}
+$hideAdvancedSelectors = rtrim($hideAdvancedSelectors, ", ");
+
 $packageInfo = $meta["info"] ?? null;
 if (! ($packageInfo instanceof \Playground\PackageInfo)) {
     throw new RuntimeException(
@@ -407,6 +431,12 @@ if ("patch" === $_method) {
 @if ($withBodyScript)
     @push("body")
         <script type="application/javascript">
+            function hideAdvanced() {
+                $("{{ $hideAdvancedSelectors }}").addClass("d-none");
+            }
+            function showAdvanced() {
+                $("{{ $hideAdvancedSelectors }}").addClass("d-none");
+            }
             window.onload = function () {
                 'use strict';
                 @if ($withFormSummary)
@@ -419,9 +449,11 @@ if ("patch" === $_method) {
                     playground.forms.editor('#form-input-content');
                 }
                 @endif
+                @yield("form-scripts")
                 if (typeof playground === 'object') {
                     playground.forms.validation();
                 }
+                hideAdvanced();
             }
         </script>
     @endpush

@@ -2,8 +2,7 @@ includes:
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/phpstan/phpstan-phpunit/rules.neon
     - vendor/larastan/larastan/extension.neon
-    # TODO bladestan is broken
-    # - vendor/tomasvotruba/bladestan/config/extension.neon
+    - vendor/tomasvotruba/bladestan/config/extension.neon
 
 parameters:
     level: max

@@ -17,8 +17,12 @@
 /vendor                 export-ignore
 /composer.lock          export-ignore
 /package.json           export-ignore
+/pint.json              export-ignore
 /phpunit.xml            export-ignore
 /phpunit.xml.dist       export-ignore
+/phpunit-ci.xml         export-ignore
+/phpunit-dev.xml        export-ignore
 /psalm.xml              export-ignore
 /psalm.xml.dist         export-ignore
+/redocly.yaml           export-ignore
 /testbench.yaml         export-ignore

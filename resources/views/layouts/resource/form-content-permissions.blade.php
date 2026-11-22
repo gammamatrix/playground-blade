@@ -1,4 +1,4 @@
-<fieldset class="mb-3" id="fieldset-permissions">
+<fieldset class="mb-3" id="fieldset-content-permissions">
     <legend>{{ __("Content Permissions") }}</legend>
 
     <fieldset class="fieldset-advanced">
