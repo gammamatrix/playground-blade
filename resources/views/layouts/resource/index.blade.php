@@ -25,11 +25,6 @@ $withCreate = \Playground\Auth\Facades\Can::access($user, [
 ])->allowed();
 
 /**
- * @var boolean $withTable
- */
-$withTable = isset($withTable) && is_bool($withTable) ? $withTable : true;
-
-/**
  * @var boolean|string $withTable
  */
 $withTable =
